@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{ title }}</title>
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/main.css">
+		<meta name="kitgui-page-id" content="{{ kitguiPageID }}">
+		<meta name="robots" content="noindex, nofollow">
+		<!--<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">-->
+		{% block head %}
+
+		{% endblock %}
+	</head>
+	<body>
+		<div id="top">
+			<div class="container">
+				<div class="nav-container">
+					<div class="left-under"></div>
+					<div class="nav">
+						<a href="#">Distribution Services</a>
+						<a href="#">Restaurant Partners</a>
+						<a href="#">Wholesale Partners</a>
+						<a class="logo" href="/"><span></span></a>
+						<a href="#">Industry Insights</a>
+						<a href="#">About Us</a>
+						<a href="#">Customer Resources</a>
+					</div>
+					<div class="right-under"></div>
+				</div>
+				{% block top %}
+
+				{% endblock %}
+			</div>
+		</div>
+		<div id="middle">
+			
+		</div>
+		<div id="bottom">
+			
+		</div>
+		<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+		<script src="/js/main.js"></script>
+		{% block foot %}
+
+		{% endblock %}
+	</body>
+</html>
