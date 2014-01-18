@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{ title }}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/main.css">
+		<meta name="kitgui-page-id" content="{{ kitguiPageID }}">
+		<meta name="robots" content="noindex, nofollow">
+		<!--<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">-->
+		{% block head %}
+
+		{% endblock %}
+	</head>
+	<body>
+		<div id="mobileMenu">
+			<div class="nav">
+				<a href="#">Home</a>
+				<a href="#">Distribution Services</a>
+				<a href="#">Restaurant Partners</a>
+				<a href="#">Wholesale Partners</a>
+				<a href="#">Industry Insights</a>
+				<a href="#">About Us</a>
+				<a href="#">Customer Resources</a>
+			</div>
+		</div>
+		<div id="contentContainer">
+			<div id="top">
+				<div class="container">
+					<div id="mobileTop">
+						<a id="mobileNavToggle" href="#"><i class="fa fa-bars"></i></a>
+						<a class="logo" href="/"></a>
+					</div>
+					<div id="desktopNav">
+						<div class="leftUnder"></div>
+						<div class="nav">
+							<a href="#">Distribution Services</a>
+							<a href="#">Restaurant Partners</a>
+							<a href="#">Wholesale Partners</a>
+							<a class="logo" href="/"><span></span></a>
+							<a href="#">Industry Insights</a>
+							<a href="#">About Us</a>
+							<a href="#">Customer Resources</a>
+						</div>
+						<div class="rightUnder"></div>
+					</div>
+					{% block top %}
+
+					{% endblock %}
+				</div>
+			</div>
+			<div id="middle">
+		
+			</div>
+			<div id="bottom">
+		
+			</div>
+		</div>
+		<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+		<script src="/js/main.js"></script>
+		{% block foot %}
+
+		{% endblock %}
+	</body>
+</html>
