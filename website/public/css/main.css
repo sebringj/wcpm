@@ -2,16 +2,10 @@ html,body {
 	padding:0;
 	margin:0;
 	width:100%;
-	height:100%;
-	overflow:hidden;
-}
-#bodyWrapper {
-	width:200%;
-	height:100%;
+	overflow-x:hidden;
 }
 #contentContainer {
-	width:50%;
-	float:left;
+	width:100%;
 	overflow:hidden;
 }
 #mobileMenu {
@@ -121,18 +115,21 @@ html,body {
 		height:150px;
 		position:relative;
 		text-align:center;
+		
 	}
 	#mobileMenu {
 		width:260px;
+		position:fixed;
 		height:100%;
-		overflow:hidden;
-		display:table;
+		display:block;
 		background-color:#1c0c0c;
-		margin-left:-50%;
-		transition: margin-left 0.3s ease;
-		-webkit-transition: margin-left 0.3s ease;
-		float:left;
+		transition: left 0.3s ease;
+		-webkit-transition: left 0.3s ease;
+		left:-260px;
+		top:0;
 		padding-top:5px;
+		overflow: scroll;
+		-webkit-overflow-scrolling: touch;
 	}
 	#mobileMenu a {
 		display:block;
@@ -143,7 +140,14 @@ html,body {
 		font-family:Georgia;
 	}
 	#mobileMenu.open {
-		margin-left:0;
+		left:0;
+	}
+	#contentContainer {
+		transition: margin-left 0.3s ease;
+		-webkit-transition: margin-left 0.3s ease;
+	}
+	#contentContainer.open {
+		margin-left:260px;
 	}
 	#mobileNavToggle {
 		color:#c69c6d;
