@@ -1,3 +1,73 @@
 .carousel {
 	margin-bottom:150px;
 }
+.carousel-indicators {
+	bottom:-45px;
+}
+.carousel-indicators li {
+	background-color:#fff;
+	-moz-box-shadow: 0 0 3px #888;
+	-webkit-box-shadow: 0 0 3px #888;
+	box-shadow: 0 0 3px #888;
+}
+.carousel-indicators .active {
+	-moz-box-shadow: inset 0 1px 2px #333, 0 0 3px #888;
+	-webkit-box-shadow: inset 0 0 2px #333, 0 0 3px #888;
+	box-shadow: inset 0 1px 2px #333, 0 0 3px #888;
+}
+.block1 {
+	padding-top:80px;
+	background-image:url(/img/wcpm_large_watermark.png);
+	background-repeat:no-repeat;
+	background-position:center top;
+	background-color:#661d1a;
+	padding-bottom:136px;
+	text-align:center;
+}
+.block1 h1 {
+	font-family: 'Open Sans Condensed', sans-serif;
+	text-transform:uppercase;
+	font-size:35px;
+	color:#dfcccc;
+	padding:0;
+	margin:0;
+	text-align:center;
+	margin-bottom:15px;
+}
+.block1 .flourish {
+	height:21px;
+	background-image:url(/img/line_flourish.png);
+	background-position:center center;
+	background-size:cover;
+	margin:0 auto;
+	margin-bottom:30px;
+	max-width:976px;
+}
+.block1 p {
+	font-family:Georgia;
+	color:#ccc;
+	font-size:18px;
+	line-height:30px;
+	font-weight:100;
+	max-width:976px;
+	margin:0 auto;
+	text-align:left;
+}
+@media (max-width:1200px) {
+	.carousel {
+		margin-bottom:75px;
+	}
+	.block1 p {
+		padding:0 15px;
+	}
+}
+@media (max-width:768px) {
+	.carousel {
+		margin-bottom:50px;
+	}
+}
+@media (max-width:479px) {
+	.carousel {
+		display:none;
+	}
+}

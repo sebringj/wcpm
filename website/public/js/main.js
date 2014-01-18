@@ -8,19 +8,16 @@ $(window).resize(function(){
 	$(window).data('iosorientationfix', setTimeout(function(){
 		var h = $(window).height();
 		$('#mobileMenu .nav').css({
-			height: 'auto'
+			height: h + 20
 		});
 	},10));
 });
 $('#mobileNavToggle').click(function(ev){
 	ev.preventDefault();
-	var $mobileMenu = $('#mobileMenu'),
-	$contentContainer = $('#contentContainer');
-	if ($mobileMenu.hasClass('open')) {
-		$mobileMenu.removeClass('open');
-		$contentContainer.removeClass('open');
+	var $body = $('body');
+	if ($body.hasClass('menuOpen')) {
+		$body.removeClass('menuOpen');
 	} else {
-		$mobileMenu.addClass('open');
-		$contentContainer.addClass('open');
+		$body.addClass('menuOpen');
 	}
 });

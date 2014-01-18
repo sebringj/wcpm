@@ -141,14 +141,14 @@ html,body {
 		padding:10px 20px;
 		font-family:Georgia;
 	}
-	#mobileMenu.open {
+	body.menuOpen #mobileMenu {
 		left:0;
 	}
 	#contentContainer {
 		transition: margin-left 0.3s ease;
 		-webkit-transition: margin-left 0.3s ease;
 	}
-	#contentContainer.open {
+	body.menuOpen #contentContainer {
 		margin-left:260px;
 	}
 	#mobileNavToggle {
@@ -171,6 +171,10 @@ html,body {
 	}
 }
 @media (min-width:768px) {
+	#desktopNav .nav a.logo span {
+		background-image:url(/img/WCPM_logo.png);
+		background	
+	}
 	.container {
 		width:100%;
 	}
