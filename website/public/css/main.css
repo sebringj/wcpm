@@ -1,17 +1,36 @@
+html,body {
+	padding:0;
+	margin:0;
+	width:100%;
+	height:100%;
+	overflow:hidden;
+}
+#bodyWrapper {
+	width:200%;
+	height:100%;
+}
+#contentContainer {
+	width:50%;
+	float:left;
+	overflow:hidden;
+}
+#mobileMenu {
+	display:none;
+}
 #top {
 	background-image:url(/img/Curved-Wooden-Backdrops.jpg);
 	background-repeat:no-repeat;
 	background-position:center top;
 	background-size:cover;
 }
-#top .nav-container {
+#desktopNav {
 	height:72px;
 	font-family:Georgia;
 	margin:90px -15px 0 -15px;
 	font-size:0;
 	position:relative;
 }
-#top .nav-container .left-under { 
+#desktopNav .leftUnder { 
 	background-image:url(/img/banner_bottom_left.png);
 	width:15px;
 	height:10px;
@@ -19,7 +38,7 @@
 	left:0;
 	bottom:-10px;
 }
-#top .nav-container .right-under { 
+#desktopNav .rightUnder { 
 	background-image:url(/img/banner_bottom_right.png);
 	width:15px;
 	height:10px;
@@ -27,7 +46,7 @@
 	bottom:-10px;
 	position:absolute;
 }
-#top .nav-container .nav {
+#desktopNav .nav {
 	position:absolute;
 	left:0;
 	top:0;
@@ -39,7 +58,7 @@
 	background-color:#421400;
 	box-shadow:0 5px 10px #333;
 }
-#top .nav a {
+#desktopNav .nav a {
 	display:inline-block;
 	font-size:14px;
 	color:#eee0bb;
@@ -49,12 +68,12 @@
 	position:relative;
 	top:17px;
 }
-#top .nav a.logo {
+#desktopNav .nav a.logo {
 	width:237px;
 	height:20px;
 	position:relative;
 }
-#top .nav a.logo span {
+#desktopNav .nav a.logo span {
 	width:237px;
 	height:166px;
 	background-image:url(/img/WCPM_logo.png);
@@ -62,4 +81,101 @@
 	left:0;
 	position:absolute;
 	display:block;
+}
+#mobileNav, #mobileTop {
+	display:none;
+}
+@media (max-width:1200px) {
+	#desktopNav .nav a {
+		font-size:12px;
+		margin:0 5px;
+		width:100px;
+		top:17px;
+	}
+	#desktopNav .nav a.logo {
+		width:237px;
+		height:20px;
+		position:relative;
+	}
+	#desktopNav .nav a.logo span {
+		width:237px;
+		height:166px;
+		background-image:url(/img/WCPM_logo.png);
+		top:-90px;
+		left:0;
+		position:absolute;
+		display:block;
+	}	
+}
+@media (max-width:992px) {
+	.container {
+		padding:0;
+	}
+	#desktopNav {
+		display:none;
+	}
+	#mobileTop {
+		display:block;
+		border-bottom:3px solid #c69c6d;
+		background-color:#421400;
+		height:150px;
+		position:relative;
+		text-align:center;
+	}
+	#mobileMenu {
+		width:260px;
+		height:100%;
+		overflow:hidden;
+		display:table;
+		background-color:#1c0c0c;
+		margin-left:-50%;
+		transition: margin-left 0.3s ease;
+		-webkit-transition: margin-left 0.3s ease;
+		float:left;
+		padding-top:5px;
+	}
+	#mobileMenu a {
+		display:block;
+		color:#f0e1c0;
+		font-size:16px;
+		border-bottom:1px solid #562d01;
+		padding:10px 20px;
+		font-family:Georgia;
+	}
+	#mobileMenu.open {
+		margin-left:0;
+	}
+	#mobileNavToggle {
+		color:#c69c6d;
+		position:absolute;
+		display:block;
+		top:3px;
+		left:20px;
+		font-size:30px;
+	}
+	#mobileTop a.logo {
+		width:237px;
+		height:166px;
+		position:relative;
+		background-image:url(/img/WCPM_logo.png);
+		background-repeat:no-repeat;
+		display:inline-block;
+		bottom:-30px;
+		z-index:5;
+	}
+}
+@media (min-width:768px) {
+	.container {
+		width:100%;
+	}
+}
+@media (min-width:992px) {
+	.container {
+		width:992px;
+	}
+}
+@media (min-width:1200px) {
+	.container {
+		width:1200px;
+	}
 }
