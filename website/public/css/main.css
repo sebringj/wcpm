@@ -115,7 +115,6 @@ html,body {
 		height:150px;
 		position:relative;
 		text-align:center;
-		
 	}
 	#mobileMenu {
 		width:260px;
@@ -128,8 +127,11 @@ html,body {
 		left:-260px;
 		top:0;
 		padding-top:5px;
-		overflow: scroll;
 		-webkit-overflow-scrolling: touch;
+		overflow: scroll;
+	}
+	#mobileMenu .nav {
+
 	}
 	#mobileMenu a {
 		display:block;
