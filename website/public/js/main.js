@@ -1,3 +1,4 @@
+// enable popout menu
 $(window).resize(function(){
 	$('#mobileMenu .nav').css({
 		height: 10000
@@ -12,6 +13,7 @@ $(window).resize(function(){
 		});
 	},10));
 });
+// 
 $('#mobileNavToggle').click(function(ev){
 	ev.preventDefault();
 	var $body = $('body');

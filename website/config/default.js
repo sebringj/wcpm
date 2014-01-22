@@ -1,4 +1,4 @@
-var kitguiAccountKey = '[ FILL IN ]';
+var kitguiAccountKey = 'a009f65654d241638cbb908f41f03f9b';
 module.exports = {
 	kitgui : {
 		host : 's3.amazonaws.com',

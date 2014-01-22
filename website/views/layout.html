@@ -7,7 +7,7 @@
 		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/css/main.css">
-		<meta name="kitgui-page-id" content="{{ kitguiPageID }}">
+		<meta name="kitgui-page-id" content="{{ pageID }}">
 		<meta name="robots" content="noindex, nofollow">
 		<!--<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">-->
 		{% block head %}
@@ -17,13 +17,12 @@
 	<body>
 		<div id="mobileMenu">
 			<div class="nav">
-				<a href="#">Home</a>
-				<a href="#">Distribution Services</a>
-				<a href="#">Restaurant Partners</a>
-				<a href="#">Wholesale Partners</a>
-				<a href="#">Industry Insights</a>
-				<a href="#">About Us</a>
-				<a href="#">Customer Resources</a>
+				<a href="#">{{ layout.items.homeNavItem1.content }}</a>
+				<a href="#">{{ layout.items.homeNavItem2.content }}</a>
+				<a href="#">{{ layout.items.homeNavItem3.content }}</a>
+				<a href="#">{{ layout.items.homeNavItem4.content }}</a>
+				<a href="#">{{ layout.items.homeNavItem5.content }}</a>
+				<a href="#">{{ layout.items.homeNavItem6.content }}</a>
 			</div>
 		</div>
 		<div id="contentContainer">
@@ -36,13 +35,13 @@
 					<div id="desktopNav">
 						<div class="leftUnder"></div>
 						<div class="nav">
-							<a href="#">Distribution Services</a>
-							<a href="#">Restaurant Partners</a>
-							<a href="#">Wholesale Partners</a>
+							<a href="#" class="{{ layout.items.homeNavItem1.classNames }}">{{ layout.items.homeNavItem1.content }}</a>
+							<a href="#" class="{{ layout.items.homeNavItem2.classNames }}">{{ layout.items.homeNavItem2.content }}</a>
+							<a href="#" class="{{ layout.items.homeNavItem3.classNames }}">{{ layout.items.homeNavItem3.content }}</a>
 							<a class="logo" href="/"><span></span></a>
-							<a href="#">Industry Insights</a>
-							<a href="#">About Us</a>
-							<a href="#">Customer Resources</a>
+							<a href="#" class="{{ layout.items.homeNavItem4.classNames }}">{{ layout.items.homeNavItem4.content }}</a>
+							<a href="#" class="{{ layout.items.homeNavItem5.classNames }}">{{ layout.items.homeNavItem5.content }}</a>
+							<a href="#" class="{{ layout.items.homeNavItem6.classNames }}">{{ layout.items.homeNavItem6.content }}</a>
 						</div>
 						<div class="rightUnder"></div>
 					</div>
@@ -63,6 +62,10 @@
 		<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
 		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 		<script src="/js/main.js"></script>
+		<script type="text/javascript">
+			var kitgui = { key: '{{ kitguiAccountKey }}', tabVisible: true };
+		</script>
+		<script src="/kitgui/js/kitgui.js"></script>
 		{% block foot %}
 
 		{% endblock %}

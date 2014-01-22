@@ -8,11 +8,10 @@ var express = require('express'),
 	path = require('path'),
 	cons = require('consolidate'),
 	swig = require('swig'),
-	cache = {},
-	//mcapi = require('mailchimp-api'),
+	middleware = require('./controllers/middleware.js'),
 	context = {
 		app : app,
-		cache : cache,
+		cache : {}
 		//mailchimp : (new mcapi.Mailchimp(config.mailchimp.apikey))
 	};
 	
@@ -23,6 +22,7 @@ app.set('views', __dirname + '/views');
 app.use(express.cookieParser());
 app.use(express.bodyParser());
 app.use(express.methodOverride());
+middleware.set(context);
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.favicon(__dirname + '/public/favicon.ico'));
