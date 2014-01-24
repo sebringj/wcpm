@@ -170,10 +170,45 @@ html,body {
 		z-index:5;
 	}
 }
+#top .top-section {
+	position:relative;
+	background-color:#f00;
+}
+#bottom .contact-us {
+	padding:90px 20px;
+	background-color:#e6bd87;
+	background-image:url(/img/cows_contactus_bg.jpg);
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center center;
+}
+#bottom .contact-us form { width:100%; }
+#bottom .contact-us input,
+#bottom .contact-us textarea {
+	display:block;
+	border:none;
+	font-size:20px;
+	font-family: 'Open Sans Condensed', sans-serif;
+	padding:20px;
+	width:100%;
+	margin-bottom:40px;
+}
+#bottom .contact-us textarea {
+	min-height:200px;
+	resize:none;
+}
+#bottom .contact-us button {
+	display:block;
+	width:100%;
+	border:none;
+	background-color:#661d1a;
+	color:#bca5a4;
+	font-size:50px;
+	font-weight:100;
+}
 @media (min-width:768px) {
 	#desktopNav .nav a.logo span {
 		background-image:url(/img/WCPM_logo.png);
-		background	
 	}
 	.container {
 		width:100%;

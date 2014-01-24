@@ -23,6 +23,7 @@
 	background-color:#661d1a;
 	padding-bottom:136px;
 	text-align:center;
+	margin-bottom:-50px;
 }
 .block1 h1 {
 	font-family: 'Open Sans Condensed', sans-serif;
@@ -53,9 +54,126 @@
 	margin:0 auto;
 	text-align:left;
 }
+.carousel-shadow {
+	background-image:url(/img/dropshadow.png);
+	position:absolute;
+	background-repeat:no-repeat;
+	background-position:center center;
+	bottom:-140px;
+	width:100%;
+	height:184px;
+}
+.learn-more {
+	display:inline-block;
+	background-color:#fff;
+	color:#663333;
+	text-align:center;
+	font-size:18px;
+	border-bottom:3px solid #e8a219;
+	font-family: 'Open Sans Condensed', sans-serif;
+	padding:10px 30px;
+	margin:50px 0;
+}
+.learn-more:hover {
+	color:#e8a219;
+	text-decoration:none;
+}
+.block2 {
+	background-color:#eeebe9;
+	text-align:center;
+	position:relative;
+}
+.block2 .round {
+	border:10px solid #eeebe9;
+	background-color:#fff;
+	-moz-border-radius: 100px;
+	border-radius: 100px;
+	background-repeat:no-repeat;
+	background-position:center center;
+	width:200px;
+	height:200px;
+	display:inline-block;
+}
+.block2 .container {
+	position:relative;
+	top:-100px;
+}
+.block2 .round.products {
+	background-image:url(/img/products_icon.png);
+}
+.block2 .round.restaurants {
+	background-image:url(/img/restaurants_icon.png);
+}
+.block2 .round.team {
+	background-image:url(/img/team_icon.png);
+}
+.circles h2 {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size:24px;
+	color:#333;
+}
+.circles p {
+	text-align:left;
+	padding:0 20px;
+	max-width:400px;
+	display:inline-block;
+	margin-bottom:40px;
+	font-family:Georgia;
+	color:#661d1a;
+}
+.circles .read-more {
+	text-align:left;
+	max-width:400px;
+	display:block;
+	color:#661d1a;
+	padding:0 20px;
+	position:relative;
+	top:-20px;
+	margin:0 auto;
+}
+.block3 {
+	min-height:200px;
+	background-color:#fff;
+	padding-top:50px;
+}
+.block3 .partner-header-row {
+	margin-top:40px;
+}
+.block3 .header {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size:35px;
+	color:#421400;
+	text-align:center;
+}
+.block3 .top-bar {
+	height:2px;
+	background-color:#c2c2c2;
+}
+.block3 .bottom-bar {
+	height:3px;
+	background-color:#959595;
+	margin-top:40px;
+}
+.block3 .partners-row {
+	text-align:center;
+	margin:0 20px;
+}
+.block3 .our-partners {
+	max-width:1075px;
+	margin-top:100px;
+	width:100%;
+	height:auto;
+}
+.block3 .bottom-flourish {
+	display:block;
+	margin:80px auto 100px auto;
+}
 @media (max-width:1200px) {
 	.carousel {
 		margin-bottom:75px;
+	}
+	.carousel-shadow {
+		display:none;
 	}
 	.block1 p {
 		padding:0 15px;

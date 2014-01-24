@@ -43,7 +43,15 @@ function home(context) {
 			host : config.kitgui.host,
 			items : [
 				{ id : 'homeSlogan', editorType : 'inline' },
-				{ id : 'homeBlurb1', editorType : 'html' }
+				{ id : 'homeBlurb1', editorType : 'html' },
+				{ id : 'homeLearnMore', editorType : 'inline' },
+				{ id : 'homeProductsHeader', editorType : 'inline' },
+				{ id : 'homeProductsText', editorType : 'inline' },
+				{ id : 'homeRestaurantsHeader', editorType : 'inline' },
+				{ id : 'homeRestaurantsText', editorType : 'inline' },
+				{ id : 'homeTeamHeader', editorType : 'inline' },
+				{ id : 'homeTeamText', editorType : 'inline' },
+				{ id : 'homePartnersHeader', editorType : 'inline' },
 			]
 		}, function(kg){
 			context.cache.home = {
