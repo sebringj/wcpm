@@ -24,6 +24,10 @@ function setLayoutCache(context) {
 				{ id : 'homeNavItem4', editorType : 'inline' },
 				{ id : 'homeNavItem5', editorType : 'inline' },
 				{ id : 'homeNavItem6', editorType : 'inline' },
+				{ id : 'layoutContactHeader', editorType : 'inline' },
+				{ id : 'layoutContactText1', editorType : 'inline' },
+				{ id : 'layoutContactRight1', editorType : 'inline' },
+				{ id : 'layoutContactRight2', editorType : 'inline' }
 			]
 		}, function(kg){
 			context.cache.layout = {

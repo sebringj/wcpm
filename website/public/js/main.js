@@ -23,3 +23,4 @@ $('#mobileNavToggle').click(function(ev){
 		$body.addClass('menuOpen');
 	}
 });
+$('#copyrightYear').text((new Date()).getFullYear());

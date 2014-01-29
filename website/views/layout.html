@@ -63,7 +63,7 @@
 					<div class="text1 {{ layout.items.layoutContactText1.classNames }}">{{ layout.items.layoutContactText1.content }}</div>
 					<div class="container">
 						<div class="row">
-							<div class="col-sm-7">
+							<div class="col-sm-8">
 								<form action="#">
 									<input type="text" name="name" placeholder="YOUR NAME:">
 									<input type="email" name="email" placeholder="YOUR EMAIL:">
@@ -71,14 +71,49 @@
 									<button type="submit">SEND</button>
 								</form>
 							</div>
-							<div class="col-sm-offset-1 col-sm-4">
-								<div>
-								
+							<div class="col-sm-4">
+								<div class="section {{ layout.items.layoutContactRight1.classNames }}">
+									{{ layout.items.layoutContactRight1.content | safe }}
 								</div>
-								<div>
-								
+								<div class="section {{ layout.items.layoutContactRight2.classNames }}">
+									{{ layout.items.layoutContactRight2.content | safe }}
 								</div>
 							</div>
+						</div>
+					</div>
+				</div>
+				<div class="bottom-nav">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-3 footer-logo">
+								<img src="/img/wcpm_footer_logo.png">
+							</div>
+							<div class="col-sm-6 footer-nav">
+								<div class="row">
+									<div class="col-xs-6">
+										<a href="#">{{ layout.items.homeNavItem1.content }}</a>
+										<a href="#">{{ layout.items.homeNavItem2.content }}</a>
+										<a href="#">{{ layout.items.homeNavItem3.content }}</a>
+									</div>
+									<div class="col-xs-6">
+										<a href="#">{{ layout.items.homeNavItem4.content }}</a>
+										<a href="#">{{ layout.items.homeNavItem5.content }}</a>
+										<a href="#">{{ layout.items.homeNavItem6.content }}</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-3 follow-us">
+								<div>Follow Us:</div>
+								<a class="fb" href="http://www.facebook.com/westcoastprimemeats" target="_blank"><img src="/img/facebook_footer_icon.png"></a>
+								<a class="tw" href="http://www.twitter.com/westcoastprimemeats" target="_blank"><img src="/img/twitter_footer_icon.png"></a>
+								<a class="gpl" href="http://www.googleplus.com/westcoastprimemeats" target="_blank"><img src="/img/google_footer_icon.png"></a>
+							</div>
+						</div>
+						<div class="row">
+							<div class="copyright">
+								Copyright &copy; <span id="copyrightYear"></span> 
+								West Coast Premium Meats. All rights reserved.
+							</div>							
 						</div>
 					</div>
 				</div>

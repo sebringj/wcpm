@@ -13,6 +13,7 @@ html,body {
 }
 #top {
 	background-image:url(/img/Curved-Wooden-Backdrops.jpg);
+	background-color:#70513f;
 	background-repeat:no-repeat;
 	background-position:center top;
 	background-size:cover;
@@ -172,15 +173,34 @@ html,body {
 }
 #top .top-section {
 	position:relative;
-	background-color:#f00;
+	background-color:#70513f;
 }
 #bottom .contact-us {
-	padding:90px 20px;
+	padding:70px 20px;
 	background-color:#e6bd87;
 	background-image:url(/img/cows_contactus_bg.jpg);
 	background-repeat:no-repeat;
 	background-size:cover;
 	background-position:center center;
+}
+#bottom .contact-us .header {
+	text-align:center;
+	font-size:60px;
+	font-weight:bold;
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+#bottom .contact-us .text1 {
+	text-align:center;
+	font-size:25px;
+	font-weight:200;
+	margin-bottom:50px;
+}
+#bottom .contact-us .section {
+	background-color:rgba(234,203,169,0.8);
+	padding:20px;
+	font-size:15px;
+	font-weight:200;
+	margin-bottom:20px;
 }
 #bottom .contact-us form { width:100%; }
 #bottom .contact-us input,
@@ -205,6 +225,48 @@ html,body {
 	color:#bca5a4;
 	font-size:50px;
 	font-weight:100;
+	margin-bottom:20px;
+}
+#bottom .contact-us form {
+	padding-bottom:20px;
+}
+#bottom .bottom-nav {
+	background-color:#000;
+	padding:40px 0;
+	font-family:Georgia;
+}
+#bottom .footer-nav .row {
+	padding:20px;
+}
+#bottom .footer-nav a {
+	display:block;
+	color:#929292;
+	margin-bottom:15px;
+	font-size:15px;
+}
+#bottom .footer-logo {
+	text-align:center;
+}
+#bottom .follow-us {
+	text-align:center;
+	color:#929292;
+	font-size:15px;
+}
+#bottom .follow-us div {
+	margin-bottom:20px;
+	margin-top:20px;
+}
+#bottom .follow-us a {
+	display:inline-block;
+	border:none;
+	text-decoration:none;
+	margin:0 4px;
+}
+#bottom .copyright {
+	color:#eacba9;
+	text-align:center;
+	margin:20px 10px 30px 10px;
+	font-size:15px;
 }
 @media (min-width:768px) {
 	#desktopNav .nav a.logo span {

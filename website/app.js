@@ -22,9 +22,9 @@ app.set('views', __dirname + '/views');
 app.use(express.cookieParser());
 app.use(express.bodyParser());
 app.use(express.methodOverride());
+app.use(express.static(path.join(__dirname, 'public')));
 middleware.set(context);
 app.use(app.router);
-app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.favicon(__dirname + '/public/favicon.ico'));
 
 controllers.set(context);
