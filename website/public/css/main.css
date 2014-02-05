@@ -13,10 +13,10 @@ html,body {
 }
 #top {
 	background-image:url(/img/Curved-Wooden-Backdrops.jpg);
-	background-color:#70513f;
+	background-color:#CFBDAF;
 	background-repeat:no-repeat;
 	background-position:center top;
-	background-size:cover;
+	background-size:100%;
 }
 #desktopNav {
 	height:72px;
