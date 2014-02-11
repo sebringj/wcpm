@@ -16,16 +16,42 @@ module.exports.set = function(context) {
 	blogRoutes.set(context);
 	aboutRoutes.set(context);
 	resourcesRoutes.set(context);
+	
+	// error pages
+	context.app.use(function(req, res, next) {
+		res.status(404);
+		if (req.accepts('html')) {
+			res.render('404', {
+				title : '404',
+				description: 'The page you requested could not be found'
+			});
+			return;
+		}
+		// respond with json
+		if (req.accepts('json')) {
+			res.send({ error: 'Not found' });
+			return;
+		}
+		// default to plain-text. send()
+		res.type('txt').send('Not found');
+	});
+	
+	context.app.use(function(err, req, res, next){
+		res.status(err.status || 500);
+		console.log(err);
+		res.render('500', { error: err });
+	});
 };
 
 function home(context) {
 	context.app.get('/', function(req, res) {
 		var cacheKey = 'home';
+		var pageID = 'home';
 		function render() {
 			res.render('index', {
 				layout : context.cache.layout,
 				kitguiAccountKey : config.kitgui.accountKey,
-				pageID : 'home',
+				pageID : pageID,
 				items : context.cache.home.items,
 				title : context.cache.home.title,
 				description : context.cache.home.description
@@ -41,6 +67,7 @@ function home(context) {
 		kitgui.getContents({
 			basePath : config.kitgui.basePath,
 			host : config.kitgui.host,
+			pageID : pageID,
 			items : [
 				{ id : 'homeSlogan', editorType : 'inline' },
 				{ id : 'homeBlurb1', editorType : 'html' },

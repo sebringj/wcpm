@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="/css/template1.css">
+{% endblock %}
+
+{% block top %}
+<div class="imageBlock {{ items.topBanner }}">
+	
+</div>
+
+<div class="block1">
+	<h1 class="{{ items.b1H1.classNames }}">{{ items.b1H1.content }}</h1>
+	<div class="flourish"></div>
+	<div class="copy {{ items.b1Copy.classNames }}">{{ items.b1Copy.content | safe }}</div>
+</div>
+
+
+
+{% endblock %}
+
+{% block middle %}
+	
+{% endblock %}
+
+{% block foot %}
+
+{% endblock %}

@@ -9,11 +9,12 @@ module.exports.set = function(context) {
 function landing(context) {
 	context.app.get('/about', function(req, res) {
 		var cacheKey = 'about';
+		var pageID = cacheKey;
 		function render() {
 			res.render('about', {
 				layout : context.cache.layout,
 				kitguiAccountKey : config.kitgui.accountKey,
-				pageID : 'about',
+				pageID : pageID,
 				items : context.cache.about.items,
 				title : context.cache.about.title,
 				description : context.cache.about.description
@@ -29,6 +30,7 @@ function landing(context) {
 		kitgui.getContents({
 			basePath : config.kitgui.basePath,
 			host : config.kitgui.host,
+			pageID : pageID,
 			items : [
 				{ id : 'aboutRotator', editorType : 'bootstrap-rotator' },
 				{ id : 'aboutB1H1', editorType : 'inline' },
@@ -59,7 +61,39 @@ function landing(context) {
 
 function contentPages(context) {
 	context.app.get('/about/:id', function(req, res) {
+		var routeOK = false;
+		var pageID = req.params.id;
 		
+		function render() {
+			res.render('template1', context.cache[pageID]);
+		}
+		if (req.cookies.kitgui === '1') {
+			routeOK = true;
+		}
+		if (context.cache[pageID]) {
+			return render();
+		}
+		kitgui.getContents({
+			basePath : config.kitgui.basePath,
+			host : config.kitgui.host,
+			pageID : pageID,
+			items : [
+				{ id : pageID + 'Rotator', editorType : 'bootstrap-rotator' }
+			]
+		}, function(kg){
+			if (!routeOK && !kg.seo.title) {
+				return res.redirect('/404');
+			}
+			context.cache[pageID] = {
+				layout : context.cache.layout,
+				kitguiAccountKey : config.kitgui.accountKey,
+				pageID : pageID,
+				items : kg.items,
+				title : kg.seo.title,
+				description : kg.seo.description
+			};
+			render();
+		});
 	});
 }
 
