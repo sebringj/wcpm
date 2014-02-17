@@ -1,0 +1,19 @@
+#top {
+	background-image:url(/img/template_bg.jpg);
+}
+#top div.top-section {
+	background-color:#E9E4E0;
+}
+h1 { color: #4D2732; margin:0; padding:0;}
+.content {
+	padding:40px 40px; font-family:Georgia;
+}
+.content p {
+	font-size:14px;
+	color:#8B8682;
+	font-family:Georgia;
+}
+.collection {
+	margin-top:40px;
+	margin-right:-50px;
+}

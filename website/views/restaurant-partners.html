@@ -1,19 +1,73 @@
 {% extends 'layout.html' %}
 
 {% block head %}
-<style>
-#top .top-section {
-	background-color:transparent;
-}
-</style>
+	<link rel="stylesheet" href="/css/partner-collection.css">
 {% endblock %}
 
 {% block top %}
-	<h1 style="text-align:center;padding:200px 0;text-shadow: 0px 1px 5px rgba(0, 0, 0, 1);color:#fff;">coming soon</h1>
+<div id="carousel-example-generic" class="carousel slide {{ items.restaurantHospitalityRotator.classNames }}" data-ride="carousel">
+	{% if items.restaurantHospitalityRotator.content %}
+		<div class="carousel-inner">
+			{% for item in items.restaurantHospitalityRotator.content %}
+				   {% if loop.first %}
+   				    <div class="item active">
+   				      <img src="{{ item.src }}" alt="{{ item.alt }}">
+   				      <div class="carousel-caption">{{ item.caption }}</div>
+   				    </div>
+				   {% else %}
+   				    <div class="item">
+   				      <img src="{{ item.src }}" alt="{{ item.alt }}">
+   				      <div class="carousel-caption">{{ item.caption }}</div>
+   				    </div>
+				   {% endif %}
+			{% endfor %}
+		</div>
+	{% endif %}
+</div>
+<div class="content">
+	<h1 class="{{ items.restaurantHospitalityTitle.classNames }}">{{ items.restaurantHospitalityTitle.content }}</h1>
+	<div class="partner-overview restaurant">
+		<div class="img"></div>
+		<div class="title">RESTAURANT PARTNERS</div>
+	</div>
+	<div class="row collection clearfix {{ items.restaurantHospitalityRestaurants.classNames }}">
+		{% if items.restaurantHospitalityRestaurants.content %}
+			{% for item in items.restaurantHospitalityRestaurants.content %}
+				<div class="col-sm-3">
+					<img src="{{ item.src }}" class="img-responsive">
+				</div>
+				<div class="col-sm-9">
+					<div class="title">{{ item.title }}</div>
+					<div class="description">{{ item.description | safe }}</div>
+					<a class="more" href="{{ item.href }}">Learn More</a>
+					<a class="website" href="{{ item.websiteURL }}">{{ item.websiteURL }}</a>
+				</div>
+			{% endfor %}
+		{% endif %}
+	</div>
+	<div class="partner-overview hospitality">
+		<div class="img"></div>
+		<div class="title">HOSPITALITY PARTNERS</div>
+	</div>
+	<div class="row collection clearfix {{ items.restaurantHospitalityHospitality.classNames }}">
+		{% if items.restaurantHospitalityHospitality.content %}
+			{% for item in items.restaurantHospitalityHospitality.content %}
+				<div class="col-sm-3">
+					<img src="{{ item.src }}" class="img-responsive">
+				</div>
+				<div class="col-sm-9">
+					<div class="title">{{ item.title }}</div>
+					<div class="description">{{ item.description | safe }}</div>
+					<a class="more" href="{{ item.href }}">Learn More</a>
+					<a class="website" href="{{ item.websiteURL }}">{{ item.websiteURL }}</a>
+				</div>
+			{% endfor %}
+		{% endif %}
+	</div>
+</div>
 {% endblock %}
 
 {% block middle %}
-	
 {% endblock %}
 
 {% block foot %}

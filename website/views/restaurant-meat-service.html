@@ -1,19 +1,54 @@
 {% extends 'layout.html' %}
 
 {% block head %}
-<style>
-#top .top-section {
-	background-color:transparent;
-}
-</style>
+	<link rel="stylesheet" href="/css/collection.css">
 {% endblock %}
 
 {% block top %}
-	<h1 style="text-align:center;padding:200px 0;text-shadow: 0px 1px 5px rgba(0, 0, 0, 1);color:#fff;">coming soon</h1>
+<div id="carousel-example-generic" class="carousel slide {{ items.meatServiceLandingRotator.classNames }}" data-ride="carousel">
+	{% if items.meatServiceLandingRotator.content %}
+		<div class="carousel-inner">
+			{% for item in items.meatServiceLandingRotator.content %}
+				   {% if loop.first %}
+   				    <div class="item active">
+   				      <img src="{{ item.src }}" alt="{{ item.alt }}">
+   				      <div class="carousel-caption">{{ item.caption }}</div>
+   				    </div>
+				   {% else %}
+   				    <div class="item">
+   				      <img src="{{ item.src }}" alt="{{ item.alt }}">
+   				      <div class="carousel-caption">{{ item.caption }}</div>
+   				    </div>
+				   {% endif %}
+			{% endfor %}
+		</div>
+	{% endif %}
+</div>
+<div class="content">
+	<h1 class="{{ items.meatServiceLandingTitle.classNames }}">{{ items.meatServiceLandingTitle.content }}</h1>
+	<p class="{{ items.meatServiceLandingTopText.classNames }}">
+		{{ items.meatServiceLandingTopText.content | safe }}
+	</p>
+	<div class="collection clearfix {{ items.meatServiceLandingCollection.classNames }}">
+		{% if items.meatServiceLandingCollection.content %}
+			{% for item in items.meatServiceLandingCollection.content %}
+				<div class="item">
+					<div class="item-inner">
+						<div class="img" style="background-image:url({{ item.src }})" title="{{ item.alt }}"></div>
+						<div class="inner">
+							<div class="title">{{ item.title }}</div>
+							<div class="description">{{ item.description | safe }}</div>
+							<a class="more" href="{{ item.href }}">More</a>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		{% endif %}
+	</div>
+</div>
 {% endblock %}
 
 {% block middle %}
-	
 {% endblock %}
 
 {% block foot %}

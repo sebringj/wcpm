@@ -23,7 +23,9 @@ module.exports.set = function(context) {
 		if (req.accepts('html')) {
 			res.render('404', {
 				title : '404',
-				description: 'The page you requested could not be found'
+				description: 'The page you requested could not be found',
+				pageID : '404',
+				kitguiAccountKey : config.kitgui.accountKey
 			});
 			return;
 		}
@@ -39,7 +41,11 @@ module.exports.set = function(context) {
 	context.app.use(function(err, req, res, next){
 		res.status(err.status || 500);
 		console.log(err);
-		res.render('500', { error: err });
+		res.render('500', { 
+			error: err,
+			pageID : '404',
+			kitguiAccountKey : config.kitgui.accountKey
+		});
 	});
 };
 
@@ -69,6 +75,7 @@ function home(context) {
 			host : config.kitgui.host,
 			pageID : pageID,
 			items : [
+				{ id : 'homeSlider', editorType : 'bootstrap-carousel-json' },
 				{ id : 'homeSlogan', editorType : 'inline' },
 				{ id : 'homeBlurb1', editorType : 'html' },
 				{ id : 'homeLearnMore', editorType : 'inline' },

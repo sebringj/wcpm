@@ -5,16 +5,27 @@
 {% endblock %}
 
 {% block top %}
-<div class="imageBlock {{ items.topBanner }}">
-	
+<div class="imageBlock {{ items[pageID + 'Banner'].classNames }}">
+	{{ items[pageID + 'Banner'].content | safe }}
 </div>
 
 <div class="block1">
-	<h1 class="{{ items.b1H1.classNames }}">{{ items.b1H1.content }}</h1>
+	<h1 class="{{ items[pageID + 'H1'].classNames }}">{{ items[pageID + 'H1'].content }}</h1>
 	<div class="flourish"></div>
-	<div class="copy {{ items.b1Copy.classNames }}">{{ items.b1Copy.content | safe }}</div>
 </div>
 
+<div class="block2">
+	
+	<div class="row">
+		<div class="col-sm-8">
+			<div class="img {{ items[pageID + 'ContentImage'].classNames }}">{{ items[pageID + 'ContentImage'].content | safe }}</div>
+			<div class="copy {{ items[pageID + 'MainContent'].classNames }}">{{ items[pageID + 'MainContent'].content | safe }}</div>
+		</div>
+		<div class="col-sm-4">
+			
+		</div>
+	</div>
+</div>
 
 
 {% endblock %}

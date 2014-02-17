@@ -94,6 +94,10 @@
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;	
 }
+#kitgui_editor iframe {
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;	
+}
 #kitgui_toolbar {
 	height:30px;
 	width:100%;

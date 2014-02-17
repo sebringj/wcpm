@@ -131,19 +131,24 @@
 				.removeClass('.kitgui-object-modified')
 				.css({ 'visibility': 'visible' });
 		    });
-		    $.getScript(contentURL + '?r=' + escape(Math.random()) + '&id=' + escape(currentID) + '&k=' + escape(k.key), function () {
-		        if (k.loggedin) {
-		            if (!k.error) {
-		                k.content = ($.trim(k.content) === '') ? '&nbsp;' : k.content;
-		                $('.kitgui.' + classIDPrefix + currentID).html(k.content + '&nbsp;');
-		            } else {
-		                // TODO handle error and error code
-		                // k.errorcode
-		            }
-		        } else {
-		            handleLoginSwitch();
-		        }
-		    });
+			var contentType = extractContentType($('.kitgui.' + classIDPrefix + currentID).get(0).className);
+			if (/-json$/i.test(contentType)) {
+				location.reload();
+			} else {
+			    $.getScript(contentURL + '?r=' + escape(Math.random()) + '&id=' + escape(currentID) + '&k=' + escape(k.key), function () {
+			        if (k.loggedin) {
+			            if (!k.error) {
+			                k.content = ($.trim(k.content) === '') ? '&nbsp;' : k.content;
+			                $('.kitgui.' + classIDPrefix + currentID).html(k.content + '&nbsp;');
+			            } else {
+			                // TODO handle error and error code
+			                // k.errorcode
+			            }
+			        } else {
+			            handleLoginSwitch();
+			        }
+			    });
+			}
 			$.ajax({cache:false,url:window.location.href}); // force recache
 		},
 		logout = function () {

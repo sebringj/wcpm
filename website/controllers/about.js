@@ -1,9 +1,10 @@
 var kitgui = require('kitgui'),
-config = require('config');
+config = require('config'),
+templateHelper = require('../lib/templateHelper.js');
 
 module.exports.set = function(context) {
 	landing(context);
-	contentPages(context);
+	templateHelper.template1(context,/\/about\/[a-z0-9_\-]+$/);
 };
 
 function landing(context) {
@@ -32,62 +33,24 @@ function landing(context) {
 			host : config.kitgui.host,
 			pageID : pageID,
 			items : [
-				{ id : 'aboutRotator', editorType : 'bootstrap-rotator' },
+				{ id : 'aboutRotator', editorType : 'bootstrap-carousel-json' },
 				{ id : 'aboutB1H1', editorType : 'inline' },
 				{ id : 'aboutB1Copy', editorType : 'html' },
 				{ id : 'aboutB2C1H2', editorType : 'inline' },
-				{ id : 'aboutB2C1Img', editorType : 'image' },
+				{ id : 'aboutB2C1Img', editorType : 'image-json' },
 				{ id : 'aboutB2C1Copy', editorType : 'html' },
 				{ id : 'aboutB2C2H2', editorType : 'inline' },
 				{ id : 'aboutB2C2Img', editorType : 'image' },
 				{ id : 'aboutB2C2Copy', editorType : 'html' },
 				{ id : 'aboutB2C3H2', editorType : 'inline' },
-				{ id : 'aboutB2C3Img', editorType : 'image' },
+				{ id : 'aboutB2C3Img', editorType : 'image-json' },
 				{ id : 'aboutB2C3Copy', editorType : 'html' },
 				{ id : 'aboutB3H2', editorType : 'inline' },
-				{ id : 'aboutB3Img', editorType : 'image' },
+				{ id : 'aboutB3Img', editorType : 'image-json' },
 				{ id : 'aboutB3Copy', editorType : 'html' }
 			]
 		}, function(kg){
 			context.cache.about = {
-				items : kg.items,
-				title : kg.seo.title,
-				description : kg.seo.description
-			};
-			render();
-		});
-	});
-}
-
-function contentPages(context) {
-	context.app.get('/about/:id', function(req, res) {
-		var routeOK = false;
-		var pageID = req.params.id;
-		
-		function render() {
-			res.render('template1', context.cache[pageID]);
-		}
-		if (req.cookies.kitgui === '1') {
-			routeOK = true;
-		}
-		if (context.cache[pageID]) {
-			return render();
-		}
-		kitgui.getContents({
-			basePath : config.kitgui.basePath,
-			host : config.kitgui.host,
-			pageID : pageID,
-			items : [
-				{ id : pageID + 'Rotator', editorType : 'bootstrap-rotator' }
-			]
-		}, function(kg){
-			if (!routeOK && !kg.seo.title) {
-				return res.redirect('/404');
-			}
-			context.cache[pageID] = {
-				layout : context.cache.layout,
-				kitguiAccountKey : config.kitgui.accountKey,
-				pageID : pageID,
 				items : kg.items,
 				title : kg.seo.title,
 				description : kg.seo.description
