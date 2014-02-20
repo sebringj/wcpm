@@ -25,23 +25,25 @@
 	{% endif %}
 </div>
 <div class="content">
-	<h1 class="{{ items.restaurantHospitalityTitle.classNames }}">{{ items.restaurantHospitalityTitle.content }}</h1>
+	<h1 class="h1-flourish {{ items.restaurantHospitalityTitle.classNames }}">{{ items.restaurantHospitalityTitle.content }}</h1>
 	<div class="partner-overview restaurant">
 		<div class="img"></div>
 		<div class="title">RESTAURANT PARTNERS</div>
 	</div>
-	<div class="row collection clearfix {{ items.restaurantHospitalityRestaurants.classNames }}">
+	<div class="collection clearfix {{ items.restaurantHospitalityRestaurants.classNames }}">
 		{% if items.restaurantHospitalityRestaurants.content %}
 			{% for item in items.restaurantHospitalityRestaurants.content %}
+			<div class="row">
 				<div class="col-sm-3">
-					<img src="{{ item.src }}" class="img-responsive">
+					<div class="img" style="background-image:url({{ item.src }})"><img src="/img/transparent_square.png" class="img-responsive"></div>
 				</div>
 				<div class="col-sm-9">
 					<div class="title">{{ item.title }}</div>
 					<div class="description">{{ item.description | safe }}</div>
-					<a class="more" href="{{ item.href }}">Learn More</a>
+					<a class="more" href="{{ item.href }}">Learn More</a><br>
 					<a class="website" href="{{ item.websiteURL }}">{{ item.websiteURL }}</a>
 				</div>
+			</div>
 			{% endfor %}
 		{% endif %}
 	</div>
@@ -49,18 +51,20 @@
 		<div class="img"></div>
 		<div class="title">HOSPITALITY PARTNERS</div>
 	</div>
-	<div class="row collection clearfix {{ items.restaurantHospitalityHospitality.classNames }}">
+	<div class="collection clearfix {{ items.restaurantHospitalityHospitality.classNames }}">
 		{% if items.restaurantHospitalityHospitality.content %}
 			{% for item in items.restaurantHospitalityHospitality.content %}
+			<div class="row">
 				<div class="col-sm-3">
-					<img src="{{ item.src }}" class="img-responsive">
+					<div class="img" style="background-image:url({{ item.src }})"><img src="/img/transparent_square.png" class="img-responsive"></div>
 				</div>
 				<div class="col-sm-9">
 					<div class="title">{{ item.title }}</div>
 					<div class="description">{{ item.description | safe }}</div>
-					<a class="more" href="{{ item.href }}">Learn More</a>
+					<a class="more" href="{{ item.href }}">Learn More</a><br>
 					<a class="website" href="{{ item.websiteURL }}">{{ item.websiteURL }}</a>
 				</div>
+			</div>
 			{% endfor %}
 		{% endif %}
 	</div>

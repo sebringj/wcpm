@@ -15,6 +15,7 @@ function template1(context, route) {
 		}
 		if (req.cookies.kitgui === '1') {
 			routeOK = true;
+			delete context.cache[pageID];
 		}
 		if (context.cache[pageID]) {
 			return render();
@@ -24,12 +25,8 @@ function template1(context, route) {
 			host : config.kitgui.host,
 			pageID : pageID,
 			items : [
-				{ id : pageID + 'Banner', editorType : 'image' },
-				{ id : pageID + 'H1', editorType : 'inline' },
-				{ id : pageID + 'ContentImage', editorType : 'image' },
-				{ id : pageID + 'MainContent', editorType : 'html' },
-				{ id : pageID + 'RightHeader', editorType : 'inline' },
-				{ id : pageID + 'RightContent', editorType : 'html' }
+				{ id : pageID + 'Rotator', editorType : 'bootstrap-carousel-json' },
+				{ id : pageID + 'Title', editorType : 'inline' }
 			]
 		}, function(kg){
 			if (!routeOK && !kg.seo.title) {

@@ -268,6 +268,17 @@ html,body {
 	margin:20px 10px 30px 10px;
 	font-size:15px;
 }
+h1.h1-flourish {
+	padding-bottom:20px;
+	border-bottom:2px solid #E2DBD3;
+	box-shadow: 0 2px 0 #F8F1EB;
+	padding-right:120px;
+	background-image:url(/img/flourish2.png);
+	background-repeat:no-repeat;
+	background-position:right center;
+	margin-bottom:40px;
+	font-family: 'Open Sans Condensed', sans-serif;
+}
 @media (min-width:768px) {
 	#desktopNav .nav a.logo span {
 		background-image:url(/img/WCPM_logo.png);

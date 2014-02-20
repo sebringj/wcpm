@@ -1,37 +1,36 @@
 {% extends 'layout.html' %}
 
 {% block head %}
-<link rel="stylesheet" href="/css/template1.css">
+	<link rel="stylesheet" href="/css/template1.css">
 {% endblock %}
 
 {% block top %}
-<div class="imageBlock {{ items[pageID + 'Banner'].classNames }}">
-	{{ items[pageID + 'Banner'].content | safe }}
+<div id="carousel-example-generic" class="carousel slide {{ items[pageID + 'Rotator'].classNames }}" data-ride="carousel">
+	{% if items[pageID + 'Rotator'].content %}
+		<div class="carousel-inner">
+			{% for item in items[pageID + 'Rotator'].content %}
+				   {% if loop.first %}
+   				    <div class="item active">
+   				      <img src="{{ item.src }}" alt="{{ item.alt }}">
+   				      <div class="carousel-caption">{{ item.caption }}</div>
+   				    </div>
+				   {% else %}
+   				    <div class="item">
+   				      <img src="{{ item.src }}" alt="{{ item.alt }}">
+   				      <div class="carousel-caption">{{ item.caption }}</div>
+   				    </div>
+				   {% endif %}
+			{% endfor %}
+		</div>
+	{% endif %}
 </div>
-
-<div class="block1">
-	<h1 class="{{ items[pageID + 'H1'].classNames }}">{{ items[pageID + 'H1'].content }}</h1>
-	<div class="flourish"></div>
-</div>
-
-<div class="block2">
+<div class="content">
+	<h1 class="h1-flourish {{ items[pageID + 'Title'].classNames }}">{{ items[pageID + 'Title'].content }}</h1>
 	
-	<div class="row">
-		<div class="col-sm-8">
-			<div class="img {{ items[pageID + 'ContentImage'].classNames }}">{{ items[pageID + 'ContentImage'].content | safe }}</div>
-			<div class="copy {{ items[pageID + 'MainContent'].classNames }}">{{ items[pageID + 'MainContent'].content | safe }}</div>
-		</div>
-		<div class="col-sm-4">
-			
-		</div>
-	</div>
 </div>
-
-
 {% endblock %}
 
 {% block middle %}
-	
 {% endblock %}
 
 {% block foot %}

@@ -15,5 +15,61 @@ h1 { color: #4D2732; margin:0; padding:0;}
 }
 .collection {
 	margin-top:40px;
-	margin-right:-50px;
+}
+.partner-overview.restaurant .img,
+.partner-overview.hospitality .img {
+	width:77px;
+	height:77px;
+	background-image:url(/img/restaurantpartners_icon.png);
+	margin:0 auto;
+	margin-top:40px;
+}
+.partner-overview.hospitality .img {
+	background-image:url(/img/hospitalitypartners_icon.png);
+}
+.partner-overview.restaurant .title,
+.partner-overview.hospitality .title {
+	color:#584631;
+	text-align:center;
+	font-size:16px;
+	font-family: 'Open Sans Condensed', sans-serif;
+	letter-spacing:2px;
+	margin-top:10px;
+}
+.collection .row {
+	margin-bottom:40px;
+}
+.collection .img {
+	background-color:#000;
+	background-repeat:no-repeat;
+	background-size:contain;
+	background-position:center center;
+	margin-bottom:20px;
+	padding:20px;
+}
+.collection .img img {
+	
+}
+.collection .title {
+	color:#882C13;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size:20px;
+}
+.collection .more {
+	color:#fff;
+	background-color:#973201;
+	padding:10px 10px;
+	border:none;
+	text-decoration:none;
+	font-size:12px;
+	margin-top:15px;
+	display:inline-block;
+}
+.collection .website {
+	display:inline-block;
+	color:#882C13;
+	margin-bottom:20px;
+	font-family:Georgia;
+	font-size:16px;
+	margin-top:20px;
 }
