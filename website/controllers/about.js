@@ -25,8 +25,7 @@ function landing(context) {
 			delete context.cache.about;
 		}
 		if (context.cache.about) {
-			render();
-			return;
+			return render();
 		}
 		kitgui.getContents({
 			basePath : config.kitgui.basePath,

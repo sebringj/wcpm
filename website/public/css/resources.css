@@ -1,0 +1,22 @@
+.categories .col-sm-6 {
+	text-align:center;
+}
+.categories a {
+	border:none;
+	text-decoration:none;
+}
+.bottom-flourish {
+
+}
+h2 {
+	margin-top:10px;
+}
+.line {
+	border-bottom:2px solid #E2DBD3;
+	box-shadow: 0 2px 0 #F8F1EB;
+	margin-top:20px;
+	margin-bottom:40px;
+}
+.categories .col-sm-6  .main-content {
+	text-align:left;
+}

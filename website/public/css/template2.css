@@ -27,6 +27,7 @@ h2 { font-size:25px;}
 }
 .right-header {
 	text-transform:uppercase;
+	margin-bottom:40px;
 }
 .right-content {
 	font-family:Georgia;
@@ -38,4 +39,34 @@ h2 { font-size:25px;}
 	list-style-type: square;
 	font-family:Georgia;
 	font-size:16px;
+}
+.line {
+	border-bottom:2px solid #E2DBD3;
+	box-shadow: 0 2px 0 #F8F1EB;
+}
+.top-line {
+	margin-top:40px;
+	margin-bottom:20px;
+}
+.line.bottom-line {
+	margin-top:10px;
+	margin-bottom:40px;
+}
+#links {
+	
+}
+#links a {
+	overflow:hidden;
+	height:50px;
+	display:inline-block;
+	margin-right:5px;
+	margin-bottom:5px;
+	border:3px solid #fff;
+}
+#links a img {
+	width:100px;
+	height:auto;
+}
+.modal img {
+	width:100%;height:auto;
 }

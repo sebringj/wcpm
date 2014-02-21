@@ -132,9 +132,9 @@
 				.css({ 'visibility': 'visible' });
 		    });
 			var contentType = extractContentType($('.kitgui.' + classIDPrefix + currentID).get(0).className);
-			if (/-json$/i.test(contentType)) {
+			//if (/-json$/i.test(contentType)) {
 				location.reload();
-			} else {
+				/*} else {
 			    $.getScript(contentURL + '?r=' + escape(Math.random()) + '&id=' + escape(currentID) + '&k=' + escape(k.key), function () {
 			        if (k.loggedin) {
 			            if (!k.error) {
@@ -148,7 +148,7 @@
 			            handleLoginSwitch();
 			        }
 			    });
-			}
+			}*/
 			$.ajax({cache:false,url:window.location.href}); // force recache
 		},
 		logout = function () {

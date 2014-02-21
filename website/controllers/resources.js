@@ -1,11 +1,7 @@
-module.exports.set = function(context) {
-	landing(context);
-};
+var templateHelper = require('../lib/templateHelper.js');
 
-function landing(context) {
-	context.app.get('/resources', function(req, res){
-		res.render('resources', {
-			layout : context.cache.layout
-		});	
-	})
-}
+module.exports.set = function(context) {
+	templateHelper.resourceLanding(context,'/resources');
+	templateHelper.contact(context,'/resources/contact');
+	templateHelper.faq(context,'/resources/frequently-asked-questions');
+};

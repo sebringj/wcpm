@@ -4,7 +4,7 @@ templateHelper = require('../lib/templateHelper.js');
 
 module.exports.set = function(context) {
 	landing(context);
-	templateHelper.template1(context,/(-supplier|premium-speciality-meats)$/);
+	templateHelper.template1(context,/(-supplier|premium-specialty-meats)$/);
 };
 
 function landing(context) {

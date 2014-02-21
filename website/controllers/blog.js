@@ -1,11 +1,4 @@
+var templateHelper = require('../lib/templateHelper.js');
 module.exports.set = function(context) {
-	landing(context);
+	templateHelper.blog(context,'/blog');
 };
-
-function landing(context) {
-	context.app.get('/blog', function(req, res){
-		res.render('blog', {
-			layout : context.cache.layout
-		});	
-	})
-}

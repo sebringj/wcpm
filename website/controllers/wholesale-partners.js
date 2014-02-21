@@ -1,13 +1,10 @@
 var config = require('config'),
-kitgui = require('kitgui');
+kitgui = require('kitgui'),
+templateHelper = require('../lib/templateHelper.js');
 
 module.exports.set = function(context) {
 	landing(context);
-};
-
-
-module.exports.set = function(context) {
-	landing(context);
+	templateHelper.template2(context,/-distributer$/);
 };
 
 function landing(context) {
