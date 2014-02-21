@@ -29,9 +29,9 @@
 	<div class="row">
 		<div class="col-sm-8">
 			<div class="carousel slide {{ items[pageID + 'Image'].classNames }}" id="{{ items[pageID + 'Image'].classNames }}" data-ride="carousel">
-				{% if items[pageID + 'Rotator'].content %}
+				{% if items[pageID + 'Image'].content %}
 					<div class="carousel-inner">
-						{% for item in items[pageID + 'Rotator'].content %}
+						{% for item in items[pageID + 'Image'].content %}
 							   {% if loop.first %}
 			   				    <div class="item active">
 			   				      <img src="{{ item.src }}" alt="{{ item.alt }}">

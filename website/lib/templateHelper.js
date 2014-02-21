@@ -70,7 +70,12 @@ function template2(context, route) {
 			pageID : pageID,
 			items : [
 				{ id : pageID + 'Rotator', editorType : 'bootstrap-carousel-json' },
-				{ id : pageID + 'Title', editorType : 'inline' }
+				{ id : pageID + 'Title', editorType : 'inline' },
+				{ id : pageID + 'Image', editorType : 'bootstrap-carousel-json' },
+				{ id : pageID + 'Gallery', editorType : 'bootstrap-carousel-json' },
+				{ id : pageID + 'Content', editorType : 'html' },
+				{ id : pageID + 'RightHeader', editorType : 'inline' },
+				{ id : pageID + 'RightContent', editorType : 'html' }
 			]
 		}, function(kg){
 			if (!routeOK && !kg.seo.title) {
@@ -88,7 +93,6 @@ function template2(context, route) {
 		});
 	});
 }
-
 
 function cleanURL(str) {
 	return str.replace(/[^a-z0-9_\-]/gi,'-').replace(/_+/gi,'-');
