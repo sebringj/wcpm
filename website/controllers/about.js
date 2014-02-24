@@ -15,6 +15,7 @@ function landing(context) {
 			res.render('about', {
 				layout : context.cache.layout,
 				kitguiAccountKey : config.kitgui.accountKey,
+				url : 'http://' + config.domain + req.path,
 				pageID : pageID,
 				items : context.cache.about.items,
 				title : context.cache.about.title,

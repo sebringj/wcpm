@@ -1,0 +1,49 @@
+#map {
+	height:300px;
+}
+.contact-us {
+	display:none;
+}
+.contact-us2 {
+	display:block;
+	background-color:#fff;
+}
+.contact-us2 .row {
+	margin:40px;
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+.contact-us2 input, .contact-us2 textarea {
+	width:100%;
+	font-size:15px;
+	padding:10px 10px 30px 10px;
+	text-spacing:1px;
+	border:1px solid #C69C6C;
+	margin-bottom:20px;
+}
+.contact-us2 textarea {
+	height:150px;
+	resize:none;
+}
+.main-content {
+	margin-top:-20px;
+	margin-bottom:40px;
+}
+.contact-us2 .stripes {
+	height:8px;
+	background-image:url(/img/envelope_stripes.png);
+}
+.contact-us2 .section {
+	font-size:16px;
+	margin-bottom:40px;
+}
+.contact-us2 button {
+	display:block;
+	width:100%;
+	border:none;
+	background-color:#661d1a;
+	color:#bca5a4;
+	font-size:50px;
+	font-weight:100;
+	margin-bottom:20px;
+	font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+}

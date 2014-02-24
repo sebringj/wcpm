@@ -25,6 +25,7 @@ module.exports.set = function(context) {
 				title : '404',
 				description: 'The page you requested could not be found',
 				pageID : '404',
+				url : 'http://' + config.domain + req.path,
 				kitguiAccountKey : config.kitgui.accountKey
 			});
 			return;
@@ -74,6 +75,7 @@ function home(context) {
 			basePath : config.kitgui.basePath,
 			host : config.kitgui.host,
 			pageID : pageID,
+			url : 'http://' + config.domain + req.path,
 			items : [
 				{ id : 'homeSlider', editorType : 'bootstrap-carousel-json' },
 				{ id : 'homeSlogan', editorType : 'inline' },

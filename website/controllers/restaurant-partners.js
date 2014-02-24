@@ -32,6 +32,7 @@ function landing(context) {
 			basePath : config.kitgui.basePath,
 			host : config.kitgui.host,
 			pageID : pageID,
+			url : 'http://' + config.domain + req.path,
 			items : [
 				{ id : 'restaurantHospitalityRotator', editorType : 'bootstrap-carousel-json' },
 				{ id : 'restaurantHospitalityTitle', editorType : 'inline' },

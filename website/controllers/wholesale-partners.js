@@ -32,6 +32,7 @@ function landing(context) {
 			basePath : config.kitgui.basePath,
 			host : config.kitgui.host,
 			pageID : pageID,
+			url : 'http://' + config.domain + req.path,
 			items : [
 				{ id : pageID + 'Rotator', editorType : 'bootstrap-carousel-json' },
 				{ id : pageID + 'Title', editorType : 'inline' },

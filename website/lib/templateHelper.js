@@ -31,6 +31,7 @@ function template1(context, route) {
 			basePath : config.kitgui.basePath,
 			host : config.kitgui.host,
 			pageID : pageID,
+			url : 'http://' + config.domain + req.path,
 			items : [
 				{ id : pageID + 'Rotator', editorType : 'bootstrap-carousel-json' },
 				{ id : pageID + 'Title', editorType : 'inline' },
@@ -75,6 +76,7 @@ function template2(context, route) {
 			basePath : config.kitgui.basePath,
 			host : config.kitgui.host,
 			pageID : pageID,
+			url : 'http://' + config.domain + req.path,
 			items : [
 				{ id : pageID + 'Rotator', editorType : 'bootstrap-carousel-json' },
 				{ id : pageID + 'Title', editorType : 'inline' },
@@ -135,6 +137,7 @@ function blog(context, route) {
 					basePath : config.kitgui.basePath,
 					host : config.kitgui.host,
 					pageID : pageID,
+					url : 'http://' + config.domain + req.path,
 					items : [
 						{ id : pageID + 'Rotator', editorType : 'bootstrap-carousel-json' },
 						{ id : pageID + 'Title', editorType : 'inline' }
@@ -174,6 +177,7 @@ function resourceLanding(context, route) {
 			basePath : config.kitgui.basePath,
 			host : config.kitgui.host,
 			pageID : pageID,
+			url : 'http://' + config.domain + req.path,
 			items : [
 				{ id : pageID + 'Rotator', editorType : 'bootstrap-carousel-json' },
 				{ id : pageID + 'Title', editorType : 'inline' },
@@ -206,7 +210,7 @@ function faq(context, route) {
 		var pageID = cleanURL(req.path);
 		
 		function render() {
-			res.render('template1', context.cache[pageID]);
+			res.render('faq', context.cache[pageID]);
 		}
 		if (req.cookies.kitgui === '1' || req.query.refresh) {
 			routeOK = true;
@@ -218,7 +222,8 @@ function faq(context, route) {
 		context.cache[pageID] = {
 			layout : context.cache.layout,
 			kitguiAccountKey : config.kitgui.accountKey,
-			pageID : pageID
+			pageID : pageID,
+			url : 'http://' + config.domain + req.path
 		};
 		async.parallel([
 			function(callback) {
@@ -236,7 +241,9 @@ function faq(context, route) {
 					pageID : pageID,
 					items : [
 						{ id : pageID + 'Rotator', editorType : 'bootstrap-carousel-json' },
-						{ id : pageID + 'Title', editorType : 'inline' }
+						{ id : pageID + 'Title', editorType : 'inline' },
+						{ id : pageID + 'Content', editorType : 'html' },
+						{ id : pageID + 'FAQ', editorType : 'faq-json' }
 					]
 				}, function(kg){
 					if (!routeOK && !kg.seo.title) {
@@ -260,7 +267,7 @@ function contact(context, route) {
 		var pageID = cleanURL(req.path);
 		
 		function render() {
-			res.render('template1', context.cache[pageID]);
+			res.render('contact', context.cache[pageID]);
 		}
 		if (req.cookies.kitgui === '1' || req.query.refresh) {
 			routeOK = true;
@@ -272,7 +279,8 @@ function contact(context, route) {
 		context.cache[pageID] = {
 			layout : context.cache.layout,
 			kitguiAccountKey : config.kitgui.accountKey,
-			pageID : pageID
+			pageID : pageID,
+			url : 'http://' + config.domain + req.path
 		};
 		async.parallel([
 			function(callback) {
@@ -289,8 +297,8 @@ function contact(context, route) {
 					host : config.kitgui.host,
 					pageID : pageID,
 					items : [
-						{ id : pageID + 'Rotator', editorType : 'bootstrap-carousel-json' },
-						{ id : pageID + 'Title', editorType : 'inline' }
+						{ id : pageID + 'Title', editorType : 'inline' },
+						{ id : pageID + 'MainContent', editorType : 'html' },
 					]
 				}, function(kg){
 					if (!routeOK && !kg.seo.title) {
