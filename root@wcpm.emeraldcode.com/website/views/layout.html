@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{ title }}</title>
+		<meta name="description" content="{{ description }}">
+		<meta property="og:title" content="{{ title }}" />
+		<meta property="og:description" content="{{ description }}" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="{{ url }}" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700' rel='stylesheet'>
+		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/main.css">
+		<meta name="kitgui-page-id" content="{{ pageID }}">
+		<meta name="robots" content="noindex, nofollow">
+	    <!--
+	    designed, programmed, hosted and maintained by
+	     _____                   _   _    _____       _
+	    |   __|_____ ___ ___ ___| |_| |  |     |___ _| |___         ___ ___ _____
+	    |   __|     | -_|  _| .'| | . |  |   --| . | . | -_|   _   |  _| . |     |
+	    |_____|_|_|_|___|_| |__,|_|___|  |_____|___|___|___|  |_|  |___|___|_|_|_|
+	    
+		since 2014
+		-->
+		{% block head %}
+
+		{% endblock %}
+	</head>
+	<body>
+		<div id="mobileMenu">
+			<div class="nav">
+				<a href="/restaurant-hospitality-meat-service">{{ layout.items.homeNavItem1.content }}</a>
+				<a href="/restaurant-hospitality-partners">{{ layout.items.homeNavItem2.content }}</a>
+				<a href="/wholesale-partners">{{ layout.items.homeNavItem3.content }}</a>
+				<a href="/blog">{{ layout.items.homeNavItem4.content }}</a>
+				<a href="/about">{{ layout.items.homeNavItem5.content }}</a>
+				<a href="/resources">{{ layout.items.homeNavItem6.content }}</a>
+			</div>
+		</div>
+		<div id="contentContainer">
+			<div id="top">
+				<div class="container-bg">
+					<div class="container">
+					<div id="mobileTop">
+						<a id="mobileNavToggle" href="#"><i class="fa fa-bars"></i></a>
+						<a class="logo" href="/"></a>
+					</div>
+					<div id="desktopNav">
+						<div class="leftUnder"></div>
+						<div class="nav">
+							<a href="/restaurant-hospitality-meat-service" class="{{ layout.items.homeNavItem1.classNames }}">{{ layout.items.homeNavItem1.content }}</a>
+							<a href="/restaurant-hospitality-partners" class="{{ layout.items.homeNavItem2.classNames }}">{{ layout.items.homeNavItem2.content }}</a>
+							<a href="/wholesale-partners" class="{{ layout.items.homeNavItem3.classNames }}">{{ layout.items.homeNavItem3.content }}</a>
+							<a class="logo" href="/"><span></span></a>
+							<a href="/blog" class="{{ layout.items.homeNavItem4.classNames }}">{{ layout.items.homeNavItem4.content }}</a>
+							<a href="/about" class="{{ layout.items.homeNavItem5.classNames }}">{{ layout.items.homeNavItem5.content }}</a>
+							<a href="/resources" class="{{ layout.items.homeNavItem6.classNames }}">{{ layout.items.homeNavItem6.content }}</a>
+						</div>
+						<div class="rightUnder"></div>
+					</div>
+					<div class="top-section">
+					{% block top %}
+
+					{% endblock %}
+					</div>
+				</div>
+				</div>
+			</div>
+			<div id="middle">
+				{% block middle %}
+
+				{% endblock %}
+			</div>
+			<div id="bottom">
+				<div class="contact-us">
+					<div class="header {{ layout.items.layoutContactHeader.classNames }}">{{ layout.items.layoutContactHeader.content }}</div>
+					<div class="text1 {{ layout.items.layoutContactText1.classNames }}">{{ layout.items.layoutContactText1.content }}</div>
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-8">
+								<form action="#">
+									<input type="text" name="name" placeholder="YOUR NAME:">
+									<input type="email" name="email" placeholder="YOUR EMAIL:">
+									<textarea name="message" placeholder="YOUR MESSAGE:"></textarea>
+									<button type="submit">SEND</button>
+								</form>
+							</div>
+							<div class="col-sm-4">
+								<div class="section {{ layout.items.layoutContactRight1.classNames }}">
+									{{ layout.items.layoutContactRight1.content | safe }}
+								</div>
+								<div class="section {{ layout.items.layoutContactRight2.classNames }}">
+									{{ layout.items.layoutContactRight2.content | safe }}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="bottom-nav">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-3 footer-logo">
+								<img src="/img/wcpm_footer_logo.png">
+							</div>
+							<div class="col-sm-6 footer-nav">
+								<div class="row">
+									<div class="col-xs-6">
+										<a href="/restaurant-hospitality-meat-service">{{ layout.items.homeNavItem1.content }}</a>
+										<a href="/restaurant-partners">{{ layout.items.homeNavItem2.content }}</a>
+										<a href="/wholesale-partners">{{ layout.items.homeNavItem3.content }}</a>
+									</div>
+									<div class="col-xs-6">
+										<a href="/blog">{{ layout.items.homeNavItem4.content }}</a>
+										<a href="/about">{{ layout.items.homeNavItem5.content }}</a>
+										<a href="/resources">{{ layout.items.homeNavItem6.content }}</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-3 follow-us">
+								<div>Follow Us:</div>
+								<a class="fb" href="http://www.facebook.com/westcoastprimemeats" target="_blank"><img src="/img/facebook_footer_icon.png"></a>
+								<a class="tw" href="http://www.twitter.com/westcoastprimemeats" target="_blank"><img src="/img/twitter_footer_icon.png"></a>
+								<a class="gpl" href="http://www.googleplus.com/westcoastprimemeats" target="_blank"><img src="/img/google_footer_icon.png"></a>
+							</div>
+						</div>
+						<div class="row">
+							<div class="copyright">
+								Copyright &copy; <span id="copyrightYear"></span> 
+								West Coast Premium Meats. All rights reserved.
+							</div>							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+		<script src="/js/main.js"></script>
+		<script> var kitgui = { key: '{{ kitguiAccountKey }}', tabVisible: true }; </script>
+		<script src="/kitgui/js/kitgui.js"></script>
+		{% block foot %}
+
+		{% endblock %}
+	</body>
+</html>

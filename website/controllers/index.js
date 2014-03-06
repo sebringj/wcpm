@@ -26,7 +26,8 @@ module.exports.set = function(context) {
 				description: 'The page you requested could not be found',
 				pageID : '404',
 				url : 'http://' + config.domain + req.path,
-				kitguiAccountKey : config.kitgui.accountKey
+				kitguiAccountKey : config.kitgui.accountKey,
+				layout : context.cache.layout
 			});
 			return;
 		}
@@ -45,7 +46,8 @@ module.exports.set = function(context) {
 		res.render('500', { 
 			error: err,
 			pageID : '404',
-			kitguiAccountKey : config.kitgui.accountKey
+			kitguiAccountKey : config.kitgui.accountKey,
+			layout : context.cache.layout
 		});
 	});
 };

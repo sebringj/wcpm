@@ -168,6 +168,9 @@
 	display:block;
 	margin:80px auto 100px auto;
 }
+#bottom .contact-us { 
+	display:block;
+}
 @media (max-width:1200px) {
 	.carousel {
 		margin-bottom:75px;

@@ -1,0 +1,277 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'forever', '-g' ]
+2 info using npm@1.3.5
+3 info using node@v0.10.15
+4 verbose cache add [ 'forever', null ]
+5 verbose cache add name=undefined spec="forever" args=["forever",null]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: 'forever',
+6 verbose parsed url   path: 'forever',
+6 verbose parsed url   href: 'forever' }
+7 silly lockFile e07f8c4a-forever forever
+8 verbose lock forever /Users/JasonSebring/.npm/e07f8c4a-forever.lock
+9 silly lockFile e07f8c4a-forever forever
+10 silly lockFile e07f8c4a-forever forever
+11 verbose addNamed [ 'forever', '' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile 28ef027b-forever forever@
+14 verbose lock forever@ /Users/JasonSebring/.npm/28ef027b-forever.lock
+15 silly addNameRange { name: 'forever', range: '*', hasData: false }
+16 verbose url raw forever
+17 verbose url resolving [ 'https://registry.npmjs.org/', './forever' ]
+18 verbose url resolved https://registry.npmjs.org/forever
+19 info trying registry request attempt 1 at 09:17:50
+20 http GET https://registry.npmjs.org/forever
+21 http 200 https://registry.npmjs.org/forever
+22 silly registry.get cb [ 200,
+22 silly registry.get   { date: 'Mon, 03 Mar 2014 17:17:51 GMT',
+22 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B)',
+22 silly registry.get     etag: '"WLZ0TMDEMHUHKANNNBMRF9GZ"',
+22 silly registry.get     'content-type': 'application/json',
+22 silly registry.get     'accept-ranges': 'bytes',
+22 silly registry.get     via: '1.1 varnish',
+22 silly registry.get     'cache-control': 'max-age=1',
+22 silly registry.get     'content-length': '157766',
+22 silly registry.get     'x-served-by': 'cache-v44-ASH, cache-sv61-SJC3',
+22 silly registry.get     'x-cache': 'MISS, MISS',
+22 silly registry.get     'x-cache-hits': '0, 0',
+22 silly registry.get     'x-timer': 'S1393867071.046909809,VS0,VS-488,VE-441,VE120',
+22 silly registry.get     vary: 'Accept',
+22 silly registry.get     'keep-alive': 'timeout=10, max=50',
+22 silly registry.get     connection: 'Keep-Alive' } ]
+23 silly addNameRange number 2 { name: 'forever', range: '*', hasData: true }
+24 silly addNameRange versions [ 'forever',
+24 silly addNameRange   [ '0.6.0',
+24 silly addNameRange     '0.6.1',
+24 silly addNameRange     '0.6.2',
+24 silly addNameRange     '0.6.3',
+24 silly addNameRange     '0.6.4',
+24 silly addNameRange     '0.6.5',
+24 silly addNameRange     '0.6.6',
+24 silly addNameRange     '0.6.7',
+24 silly addNameRange     '0.6.8',
+24 silly addNameRange     '0.6.9',
+24 silly addNameRange     '0.7.0',
+24 silly addNameRange     '0.7.1',
+24 silly addNameRange     '0.7.2',
+24 silly addNameRange     '0.7.3',
+24 silly addNameRange     '0.7.4',
+24 silly addNameRange     '0.7.5',
+24 silly addNameRange     '0.8.0',
+24 silly addNameRange     '0.8.1',
+24 silly addNameRange     '0.8.2',
+24 silly addNameRange     '0.8.3',
+24 silly addNameRange     '0.8.4',
+24 silly addNameRange     '0.8.5',
+24 silly addNameRange     '0.9.0',
+24 silly addNameRange     '0.9.1',
+24 silly addNameRange     '0.9.2',
+24 silly addNameRange     '0.10.0',
+24 silly addNameRange     '0.10.5',
+24 silly addNameRange     '0.10.6',
+24 silly addNameRange     '0.10.7',
+24 silly addNameRange     '0.10.8',
+24 silly addNameRange     '0.10.9',
+24 silly addNameRange     '0.10.10',
+24 silly addNameRange     '0.10.11' ] ]
+25 verbose addNamed [ 'forever', '0.10.11' ]
+26 verbose addNamed [ '0.10.11', '0.10.11' ]
+27 silly lockFile 298f13d4-forever-0-10-11 forever@0.10.11
+28 verbose lock forever@0.10.11 /Users/JasonSebring/.npm/298f13d4-forever-0-10-11.lock
+29 silly lockFile 7a27c78f--org-forever-forever-0-10-11-tgz https://registry.npmjs.org/forever/-/forever-0.10.11.tgz
+30 verbose lock https://registry.npmjs.org/forever/-/forever-0.10.11.tgz /Users/JasonSebring/.npm/7a27c78f--org-forever-forever-0-10-11-tgz.lock
+31 verbose addRemoteTarball [ 'https://registry.npmjs.org/forever/-/forever-0.10.11.tgz',
+31 verbose addRemoteTarball   '925cae528c074a29c0119809ca08e382ef194ad0' ]
+32 info retry fetch attempt 1 at 09:17:51
+33 verbose fetch to= /var/folders/cs/m6ccblf51vjcmsn0vpz15pb40000gn/T/npm-867-i_kx4sWR/1393867071832-0.041756527964025736/tmp.tgz
+34 http GET https://registry.npmjs.org/forever/-/forever-0.10.11.tgz
+35 http 200 https://registry.npmjs.org/forever/-/forever-0.10.11.tgz
+36 verbose tar unpack /var/folders/cs/m6ccblf51vjcmsn0vpz15pb40000gn/T/npm-867-i_kx4sWR/1393867071832-0.041756527964025736/tmp.tgz
+37 silly lockFile d26d4b41-832-0-041756527964025736-package tar:///var/folders/cs/m6ccblf51vjcmsn0vpz15pb40000gn/T/npm-867-i_kx4sWR/1393867071832-0.041756527964025736/package
+38 verbose lock tar:///var/folders/cs/m6ccblf51vjcmsn0vpz15pb40000gn/T/npm-867-i_kx4sWR/1393867071832-0.041756527964025736/package /Users/JasonSebring/.npm/d26d4b41-832-0-041756527964025736-package.lock
+39 silly lockFile 048f738b-832-0-041756527964025736-tmp-tgz tar:///var/folders/cs/m6ccblf51vjcmsn0vpz15pb40000gn/T/npm-867-i_kx4sWR/1393867071832-0.041756527964025736/tmp.tgz
+40 verbose lock tar:///var/folders/cs/m6ccblf51vjcmsn0vpz15pb40000gn/T/npm-867-i_kx4sWR/1393867071832-0.041756527964025736/tmp.tgz /Users/JasonSebring/.npm/048f738b-832-0-041756527964025736-tmp-tgz.lock
+41 silly gunzTarPerm modes [ '755', '644' ]
+42 silly gunzTarPerm extractEntry package.json
+43 silly gunzTarPerm extractEntry .npmignore
+44 silly gunzTarPerm extractEntry README.md
+45 silly gunzTarPerm extractEntry LICENSE
+46 silly gunzTarPerm extractEntry .travis.yml
+47 silly gunzTarPerm extractEntry CHANGELOG.md
+48 silly gunzTarPerm extractEntry bin/forever
+49 silly gunzTarPerm extractEntry bin/foreverd
+50 silly gunzTarPerm extractEntry bin/monitor
+51 silly gunzTarPerm extractEntry lib/forever.js
+52 silly gunzTarPerm extractEntry lib/forever/cli.js
+53 silly gunzTarPerm extractEntry lib/forever/worker.js
+54 silly gunzTarPerm extractEntry lib/forever/service/cli.js
+55 silly gunzTarPerm extractEntry lib/forever/service/index.js
+56 silly gunzTarPerm extractEntry lib/forever/service/service.js
+57 silly gunzTarPerm extractEntry lib/forever/service/adapters/adapter.js
+58 silly gunzTarPerm extractEntry lib/forever/service/adapters/initd/index.js
+59 silly gunzTarPerm extractEntry lib/forever/service/adapters/systemv/index.js
+60 silly gunzTarPerm extractEntry lib/forever/service/adapters/systemv/foreverd
+61 silly gunzTarPerm extractEntry test/cli-test
+62 silly gunzTarPerm extractEntry test/core/tail-stopall-test.js
+63 silly gunzTarPerm extractEntry test/fixtures/log-on-interval.js
+64 silly gunzTarPerm extractEntry test/fixtures/server.js
+65 silly gunzTarPerm extractEntry test/fixtures/start-daemon.js
+66 silly gunzTarPerm extractEntry test/helpers/macros.js
+67 silly gunzTarPerm extractEntry test/helpers/mocks/child-process.js
+68 silly gunzTarPerm extractEntry test/helpers/mocks/monitor.js
+69 silly gunzTarPerm extractEntry test/helpers/mocks/stream.js
+70 silly gunzTarPerm extractEntry test/service/simple-test.js
+71 silly gunzTarPerm extractEntry test/worker/multiple-workers-test.js
+72 silly gunzTarPerm extractEntry test/worker/simple-test.js
+73 silly lockFile d26d4b41-832-0-041756527964025736-package tar:///var/folders/cs/m6ccblf51vjcmsn0vpz15pb40000gn/T/npm-867-i_kx4sWR/1393867071832-0.041756527964025736/package
+74 silly lockFile d26d4b41-832-0-041756527964025736-package tar:///var/folders/cs/m6ccblf51vjcmsn0vpz15pb40000gn/T/npm-867-i_kx4sWR/1393867071832-0.041756527964025736/package
+75 silly lockFile 048f738b-832-0-041756527964025736-tmp-tgz tar:///var/folders/cs/m6ccblf51vjcmsn0vpz15pb40000gn/T/npm-867-i_kx4sWR/1393867071832-0.041756527964025736/tmp.tgz
+76 silly lockFile 048f738b-832-0-041756527964025736-tmp-tgz tar:///var/folders/cs/m6ccblf51vjcmsn0vpz15pb40000gn/T/npm-867-i_kx4sWR/1393867071832-0.041756527964025736/tmp.tgz
+77 verbose tar pack [ '/Users/JasonSebring/.npm/forever/0.10.11/package.tgz',
+77 verbose tar pack   '/var/folders/cs/m6ccblf51vjcmsn0vpz15pb40000gn/T/npm-867-i_kx4sWR/1393867071832-0.041756527964025736/package' ]
+78 verbose tarball /Users/JasonSebring/.npm/forever/0.10.11/package.tgz
+79 verbose folder /var/folders/cs/m6ccblf51vjcmsn0vpz15pb40000gn/T/npm-867-i_kx4sWR/1393867071832-0.041756527964025736/package
+80 silly lockFile d26d4b41-832-0-041756527964025736-package tar:///var/folders/cs/m6ccblf51vjcmsn0vpz15pb40000gn/T/npm-867-i_kx4sWR/1393867071832-0.041756527964025736/package
+81 verbose lock tar:///var/folders/cs/m6ccblf51vjcmsn0vpz15pb40000gn/T/npm-867-i_kx4sWR/1393867071832-0.041756527964025736/package /Users/JasonSebring/.npm/d26d4b41-832-0-041756527964025736-package.lock
+82 silly lockFile c55f5a7d--npm-forever-0-10-11-package-tgz tar:///Users/JasonSebring/.npm/forever/0.10.11/package.tgz
+83 verbose lock tar:///Users/JasonSebring/.npm/forever/0.10.11/package.tgz /Users/JasonSebring/.npm/c55f5a7d--npm-forever-0-10-11-package-tgz.lock
+84 silly lockFile d26d4b41-832-0-041756527964025736-package tar:///var/folders/cs/m6ccblf51vjcmsn0vpz15pb40000gn/T/npm-867-i_kx4sWR/1393867071832-0.041756527964025736/package
+85 silly lockFile d26d4b41-832-0-041756527964025736-package tar:///var/folders/cs/m6ccblf51vjcmsn0vpz15pb40000gn/T/npm-867-i_kx4sWR/1393867071832-0.041756527964025736/package
+86 silly lockFile c55f5a7d--npm-forever-0-10-11-package-tgz tar:///Users/JasonSebring/.npm/forever/0.10.11/package.tgz
+87 silly lockFile c55f5a7d--npm-forever-0-10-11-package-tgz tar:///Users/JasonSebring/.npm/forever/0.10.11/package.tgz
+88 silly lockFile 091b232e-ring-npm-forever-0-10-11-package /Users/JasonSebring/.npm/forever/0.10.11/package
+89 verbose lock /Users/JasonSebring/.npm/forever/0.10.11/package /Users/JasonSebring/.npm/091b232e-ring-npm-forever-0-10-11-package.lock
+90 silly lockFile 091b232e-ring-npm-forever-0-10-11-package /Users/JasonSebring/.npm/forever/0.10.11/package
+91 silly lockFile 091b232e-ring-npm-forever-0-10-11-package /Users/JasonSebring/.npm/forever/0.10.11/package
+92 verbose tar unpack /Users/JasonSebring/.npm/forever/0.10.11/package.tgz
+93 silly lockFile 91c49c7b-ring-npm-forever-0-10-11-package tar:///Users/JasonSebring/.npm/forever/0.10.11/package
+94 verbose lock tar:///Users/JasonSebring/.npm/forever/0.10.11/package /Users/JasonSebring/.npm/91c49c7b-ring-npm-forever-0-10-11-package.lock
+95 silly lockFile c55f5a7d--npm-forever-0-10-11-package-tgz tar:///Users/JasonSebring/.npm/forever/0.10.11/package.tgz
+96 verbose lock tar:///Users/JasonSebring/.npm/forever/0.10.11/package.tgz /Users/JasonSebring/.npm/c55f5a7d--npm-forever-0-10-11-package-tgz.lock
+97 silly gunzTarPerm modes [ '755', '644' ]
+98 silly gunzTarPerm extractEntry package.json
+99 silly gunzTarPerm extractEntry .npmignore
+100 silly gunzTarPerm extractEntry README.md
+101 silly gunzTarPerm extractEntry LICENSE
+102 silly gunzTarPerm extractEntry .travis.yml
+103 silly gunzTarPerm extractEntry CHANGELOG.md
+104 silly gunzTarPerm extractEntry bin/forever
+105 silly gunzTarPerm extractEntry bin/foreverd
+106 silly gunzTarPerm extractEntry bin/monitor
+107 silly gunzTarPerm extractEntry lib/forever.js
+108 silly gunzTarPerm extractEntry lib/forever/cli.js
+109 silly gunzTarPerm extractEntry lib/forever/worker.js
+110 silly gunzTarPerm extractEntry lib/forever/service/cli.js
+111 silly gunzTarPerm extractEntry lib/forever/service/index.js
+112 silly gunzTarPerm extractEntry lib/forever/service/service.js
+113 silly gunzTarPerm extractEntry lib/forever/service/adapters/adapter.js
+114 silly gunzTarPerm extractEntry lib/forever/service/adapters/initd/index.js
+115 silly gunzTarPerm extractEntry lib/forever/service/adapters/systemv/index.js
+116 silly gunzTarPerm extractEntry lib/forever/service/adapters/systemv/foreverd
+117 silly gunzTarPerm extractEntry test/cli-test
+118 silly gunzTarPerm extractEntry test/core/tail-stopall-test.js
+119 silly gunzTarPerm extractEntry test/fixtures/log-on-interval.js
+120 silly gunzTarPerm extractEntry test/fixtures/server.js
+121 silly gunzTarPerm extractEntry test/fixtures/start-daemon.js
+122 silly gunzTarPerm extractEntry test/helpers/macros.js
+123 silly gunzTarPerm extractEntry test/helpers/mocks/child-process.js
+124 silly gunzTarPerm extractEntry test/helpers/mocks/monitor.js
+125 silly gunzTarPerm extractEntry test/helpers/mocks/stream.js
+126 silly gunzTarPerm extractEntry test/service/simple-test.js
+127 silly gunzTarPerm extractEntry test/worker/multiple-workers-test.js
+128 silly gunzTarPerm extractEntry test/worker/simple-test.js
+129 silly lockFile 91c49c7b-ring-npm-forever-0-10-11-package tar:///Users/JasonSebring/.npm/forever/0.10.11/package
+130 silly lockFile 91c49c7b-ring-npm-forever-0-10-11-package tar:///Users/JasonSebring/.npm/forever/0.10.11/package
+131 silly lockFile c55f5a7d--npm-forever-0-10-11-package-tgz tar:///Users/JasonSebring/.npm/forever/0.10.11/package.tgz
+132 silly lockFile c55f5a7d--npm-forever-0-10-11-package-tgz tar:///Users/JasonSebring/.npm/forever/0.10.11/package.tgz
+133 verbose chmod /Users/JasonSebring/.npm/forever/0.10.11/package.tgz 644
+134 verbose chown /Users/JasonSebring/.npm/forever/0.10.11/package.tgz [ 501, 20 ]
+135 silly lockFile 7a27c78f--org-forever-forever-0-10-11-tgz https://registry.npmjs.org/forever/-/forever-0.10.11.tgz
+136 silly lockFile 7a27c78f--org-forever-forever-0-10-11-tgz https://registry.npmjs.org/forever/-/forever-0.10.11.tgz
+137 silly lockFile 298f13d4-forever-0-10-11 forever@0.10.11
+138 silly lockFile 298f13d4-forever-0-10-11 forever@0.10.11
+139 silly lockFile 28ef027b-forever forever@
+140 silly lockFile 28ef027b-forever forever@
+141 silly resolved [ { name: 'forever',
+141 silly resolved     preferGlobal: 'true',
+141 silly resolved     description: 'A simple CLI tool for ensuring that a given node script runs continuously (i.e. forever)',
+141 silly resolved     version: '0.10.11',
+141 silly resolved     author: { name: 'Nodejitsu Inc.', email: 'info@nodejitsu.com' },
+141 silly resolved     maintainers: [ [Object], [Object], [Object] ],
+141 silly resolved     repository: { type: 'git', url: 'http://github.com/nodejitsu/forever.git' },
+141 silly resolved     keywords: [ 'cli', 'fault tolerant', 'sysadmin', 'tools' ],
+141 silly resolved     dependencies:
+141 silly resolved      { colors: '~0.6.2',
+141 silly resolved        cliff: '0.1.8',
+141 silly resolved        flatiron: '~0.3.11',
+141 silly resolved        'forever-monitor': '1.2.3',
+141 silly resolved        nconf: '~0.6.9',
+141 silly resolved        nssocket: '~0.5.1',
+141 silly resolved        optimist: '~0.6.0',
+141 silly resolved        pkginfo: '0.3.0',
+141 silly resolved        timespan: '~2.3.0',
+141 silly resolved        watch: '~0.8.0',
+141 silly resolved        utile: '~0.2.1',
+141 silly resolved        winston: '~0.7.2' },
+141 silly resolved     devDependencies:
+141 silly resolved      { broadway: '0.2.x',
+141 silly resolved        eventemitter2: '0.4.x',
+141 silly resolved        request: '2.x.x',
+141 silly resolved        vows: '0.7.x' },
+141 silly resolved     bin: { forever: './bin/forever', foreverd: './bin/foreverd' },
+141 silly resolved     main: './lib/forever',
+141 silly resolved     scripts: { test: 'vows test/**/*-test.js --spec -i' },
+141 silly resolved     engines: { node: '>= 0.8.x' },
+141 silly resolved     readme: '# forever [![Build Status](https://secure.travis-ci.org/nodejitsu/forever.png)](http://travis-ci.org/nodejitsu/forever)\n\nA simple CLI tool for ensuring that a given script runs continuously (i.e. forever).\n\n## Installation\n\n``` bash\n  $ [sudo] npm install forever -g\n```\n\n**Note:** If you are using forever _programatically_ you should install [forever-monitor][0].\n\n``` bash\n  $ cd /path/to/your/project\n  $ [sudo] npm install forever-monitor\n```\n\n## Usage\nThere are two distinct ways to use forever: through the command line interface, or by requiring the forever module in your own code. **Note:** If you are using forever _programatically_ you should install [forever-monitor][0].\n\n### Using forever from the command line\nYou can use forever to run any kind of script continuously (whether it is written in node.js or not). The usage options are simple:\n\n```\n  $ forever --help\n  usage: forever [action] [options] SCRIPT [script-options]\n\n  Monitors the script specified in the current process or as a daemon\n\n  actions:\n    start               Start SCRIPT as a daemon\n    stop                Stop the daemon SCRIPT\n    stopall             Stop all running forever scripts\n    restart             Restart the daemon SCRIPT\n    restartall          Restart all running forever scripts\n    list                List all running forever scripts\n    config              Lists all forever user configuration\n    set <key> <val>     Sets the specified forever config <key>\n    clear <key>         Clears the specified forever config <key>\n    logs                Lists log files for all forever processes\n    logs <script|index> Tails the logs for <script|index>\n    columns add <col>   Adds the specified column to the output in `forever list`\n    columns rm <col>    Removed the specified column from the output in `forever list`\n    columns set <cols>  Set all columns for the output in `forever list`\n    cleanlogs           [CAREFUL] Deletes all historical forever log files\n\n  options:\n    -m  MAX          Only run the specified script MAX times\n    -l  LOGFILE      Logs the forever output to LOGFILE\n    -o  OUTFILE      Logs stdout from child script to OUTFILE\n    -e  ERRFILE      Logs stderr from child script to ERRFILE\n    -p  PATH         Base path for all forever related files (pid files, etc.)\n    -c  COMMAND      COMMAND to execute (defaults to node)\n    -a, --append     Append logs\n    -f, --fifo       Stream logs to stdout\n    -n, --number     Number of log lines to print\n    --pidFile        The pid file\n    --sourceDir      The source directory for which SCRIPT is relative to\n    --minUptime      Minimum uptime (millis) for a script to not be considered "spinning"\n    --spinSleepTime  Time to wait (millis) between launches of a spinning script.\n    --colors         --no-colors will disable output coloring\n    --plain          Disable command line colors\n    -d, --debug      Forces forever to log debug output\n    -v, --verbose    Turns on the verbose messages from Forever\n    -s, --silent     Run the child script silencing stdout and stderr\n    -w, --watch      Watch for file changes\n    --watchDirectory Top-level directory to watch from\n    --watchIgnore    To ignore pattern when watch is enabled (multiple option is allowed)\n    --killSignal     Support exit signal customization (default is SIGKILL), \n                     used for restarting script gracefully eg. --killSignal=SIGTERM\n    -h, --help       You\'re staring at it\n\n  [Long Running Process]\n    The forever process will continue to run outputting log messages to the console.\n    ex. forever -o out.log -e err.log my-script.js\n\n  [Daemon]\n    The forever process will run as a daemon which will make the target process start\n    in the background. This is extremely useful for remote starting simple node.js scripts\n    without using nohup. It is recommended to run start with -o -l, & -e.\n    ex. forever start -l forever.log -o out.log -e err.log my-daemon.js\n        forever stop my-daemon.js\n```\n\nThere are [several examples][1] designed to test the fault tolerance of forever. Here\'s a simple usage example:\n\n``` bash\n  $ forever -m 5 examples/error-on-timer.js\n```\n\n## Using forever module from node.js\nIn addition to using a Forever object, the forever module also exposes some useful methods. Each method returns an instance of an EventEmitter which emits when complete. See the [forever cli commands][2] for sample usage.\n\n**Remark:** As of `forever@0.6.0` processes will not automatically be available in `forever.list()`. In order to get your processes into `forever.list()` or `forever list` you must instantiate the `forever` socket server:\n\n``` js\n  forever.startServer(child);\n```\n\n### forever.load (config)\n_Synchronously_ sets the specified configuration (config) for the forever module. There are two important options:\n\n* root:    Directory to put all default forever log files\n* pidPath: Directory to put all forever *.pid files\n\n### forever.start (file, options)\nStarts a script with forever.\n\n### forever.startDaemon (file, options)\nStarts a script with forever as a daemon. WARNING: Will daemonize the current process.\n\n### forever.stop (index)\nStops the forever daemon script at the specified index. These indices are the same as those returned by forever.list(). This method returns an EventEmitter that raises the \'stop\' event when complete.\n\n### forever.stopAll (format)\nStops all forever scripts currently running. This method returns an EventEmitter that raises the \'stopAll\' event when complete.\n\n### forever.list (format, callback)\nReturns a list of metadata objects about each process that is being run using forever. This method is synchronous and will return the list of metadata as such. Only processes which have invoked `forever.startServer()` will be available from `forever.list()`\n\n### forever.tail (target, options, callback)\nResponds with the logs from the target script(s) from `tail`. There are two important options:\n\n* `length` (numeric): is is used as the `-n` parameter to `tail`.\n* `stream` (boolean): is is used as the `-f` parameter to `tail`.\n\n### forever.cleanUp ()\nCleans up any extraneous forever *.pid files that are on the target system. This method returns an EventEmitter that raises the \'cleanUp\' event when complete.\n\n### forever.cleanLogsSync (processes)\nRemoves all log files from the root forever directory that do not belong to current running forever processes.\n\n## Run Tests\n\n``` bash\n  $ npm test\n```\n\n#### License: MIT\n#### Author: [Charlie Robbins](http://github.com/indexzero)\n#### Contributors: [Fedor Indutny](http://github.com/indutny), [James Halliday](http://substack.net/), [Charlie McConnell](http://github.com/avianflu), [Maciej Malecki](http://github.com/mmalecki), [John Lancaster](http://jlank.com)\n\n[0]: http://github.com/nodejitsu/forever-monitor\n[1]: http://github.com/nodejitsu/forever-monitor/tree/master/examples\n[2]: https://github.com/nodejitsu/forever/blob/master/lib/forever/cli.js\n',
+141 silly resolved     readmeFilename: 'README.md',
+141 silly resolved     bugs: { url: 'https://github.com/nodejitsu/forever/issues' },
+141 silly resolved     _id: 'forever@0.10.11',
+141 silly resolved     dist: { shasum: 'b1f36a55517cb122e845165d5e4c6f6c37952bf0' },
+141 silly resolved     _from: 'forever@',
+141 silly resolved     _resolved: 'https://registry.npmjs.org/forever/-/forever-0.10.11.tgz' } ]
+142 info install forever@0.10.11 into /usr/local/lib
+143 info installOne forever@0.10.11
+144 info /usr/local/lib/node_modules/forever unbuild
+145 verbose tar unpack /Users/JasonSebring/.npm/forever/0.10.11/package.tgz
+146 silly lockFile 5fd21e72-r-local-lib-node-modules-forever tar:///usr/local/lib/node_modules/forever
+147 verbose lock tar:///usr/local/lib/node_modules/forever /Users/JasonSebring/.npm/5fd21e72-r-local-lib-node-modules-forever.lock
+148 silly lockFile c55f5a7d--npm-forever-0-10-11-package-tgz tar:///Users/JasonSebring/.npm/forever/0.10.11/package.tgz
+149 verbose lock tar:///Users/JasonSebring/.npm/forever/0.10.11/package.tgz /Users/JasonSebring/.npm/c55f5a7d--npm-forever-0-10-11-package-tgz.lock
+150 silly gunzTarPerm modes [ '755', '644' ]
+151 error Error: EACCES, mkdir '/usr/local/lib/node_modules/forever'
+151 error  { [Error: EACCES, mkdir '/usr/local/lib/node_modules/forever']
+151 error   errno: 3,
+151 error   code: 'EACCES',
+151 error   path: '/usr/local/lib/node_modules/forever',
+151 error   fstream_type: 'Directory',
+151 error   fstream_path: '/usr/local/lib/node_modules/forever',
+151 error   fstream_class: 'DirWriter',
+151 error   fstream_stack:
+151 error    [ '/usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23',
+151 error      '/usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:37:53',
+151 error      'Object.oncomplete (fs.js:107:15)' ] }
+152 error Please try running this command again as root/Administrator.
+153 error System Darwin 13.1.0
+154 error command "node" "/usr/local/bin/npm" "install" "forever" "-g"
+155 error cwd /Users/JasonSebring/Documents/Projects/wcpm
+156 error node -v v0.10.15
+157 error npm -v 1.3.5
+158 error path /usr/local/lib/node_modules/forever
+159 error fstream_path /usr/local/lib/node_modules/forever
+160 error fstream_type Directory
+161 error fstream_class DirWriter
+162 error code EACCES
+163 error errno 3
+164 error stack Error: EACCES, mkdir '/usr/local/lib/node_modules/forever'
+165 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23
+165 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:37:53
+165 error fstream_stack Object.oncomplete (fs.js:107:15)
+166 verbose exit [ 3, true ]

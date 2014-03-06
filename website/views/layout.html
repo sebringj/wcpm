@@ -109,6 +109,7 @@
 										<a href="/restaurant-hospitality-meat-service">{{ layout.items.homeNavItem1.content }}</a>
 										<a href="/restaurant-partners">{{ layout.items.homeNavItem2.content }}</a>
 										<a href="/wholesale-partners">{{ layout.items.homeNavItem3.content }}</a>
+										<a class="{{ layout.items.homeNavItem7.classNames }}" href="/jobs">{{ layout.items.homeNavItem7.content }}</a>
 									</div>
 									<div class="col-xs-6">
 										<a href="/blog">{{ layout.items.homeNavItem4.content }}</a>
@@ -137,9 +138,7 @@
 		<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
 		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 		<script src="/js/main.js"></script>
-		<script type="text/javascript">
-			var kitgui = { key: '{{ kitguiAccountKey }}', tabVisible: true };
-		</script>
+		<script> var kitgui = { key: '{{ kitguiAccountKey }}', tabVisible: true }; </script>
 		<script src="/kitgui/js/kitgui.js"></script>
 		{% block foot %}
 

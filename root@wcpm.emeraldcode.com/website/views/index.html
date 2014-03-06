@@ -1,0 +1,98 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+	<link rel="stylesheet" href="/css/home.css">
+{% endblock %}
+
+{% block top %}
+	<div id="carousel-example-generic" class="carousel slide {{ items.homeSlider.classNames }}" data-ride="carousel">
+		{% if items.homeSlider.content %}
+			<ol class="carousel-indicators">
+				{% for item in items.homeSlider.content %}
+				   {% if loop.first %}
+					<li data-target="#carousel-example-generic" class="active"></li>
+				   {% else %}
+				   	<li data-target="#carousel-example-generic"></li>
+				   {% endif %}
+				{% endfor %}
+			</ol>
+			<div class="carousel-inner">
+				{% for item in items.homeSlider.content %}
+					   {% if loop.first %}
+	   				    <div class="item active">
+	   				      <img src="{{ item.src }}" alt="{{ item.alt }}">
+	   				      <div class="carousel-caption">{{ item.caption }}</div>
+	   				    </div>
+					   {% else %}
+	   				    <div class="item">
+	   				      <img src="{{ item.src }}" alt="{{ item.alt }}">
+	   				      <div class="carousel-caption">{{ item.caption }}</div>
+	   				    </div>
+					   {% endif %}
+				{% endfor %}
+			</div>
+			<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+			</a>
+			<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+			</a>
+		{% endif %}
+	</div>
+	<div class="carousel-shadow"></div>
+{% endblock %}
+
+{% block middle %}
+	<div class="block1">
+		<div class="container">
+			<h1 class="{{ items.homeSlogan.classNames }}">{{ items.homeSlogan.content }}</h1>
+			<div class="flourish"></div>
+			<p class="{{ items.homeBlurb1.classNames }}">{{ items.homeBlurb1.content | safe }}</p>
+			<a href="/about" class="learn-more {{ items.homeLearnMore.classNames }}">{{ items.homeLearnMore.content }}</a>
+		</div>
+	</div>
+	<div class="block2">
+		<div class="container">
+			<div class="row circles">
+				<div class="col-sm-4 section">
+					<div class="round products"></div>
+					<h2 class="{{ items.homeProductsHeader.classNames }}">{{ items.homeProductsHeader.content }}</h2>
+					<p class="{{ items.homeProductsText.classNames }}">{{ items.homeProductsText.content }}</p>
+					<div></div>
+					<a href="/restaurant-meat-service" class="read-more">Read More</a>
+				</div>
+				<div class="col-sm-4 section">
+					<div class="round restaurants"></div>
+					<h2 class="{{ items.homeRestaurantsHeader.classNames }}">{{ items.homeRestaurantsHeader.content }}</h2>
+					<p class="{{ items.homeRestaurantsText.classNames }}">{{ items.homeRestaurantsText.content }}</p>
+					<div></div>
+					<a href="/restaurant-partners" class="read-more">Read More</a>
+				</div>
+				<div class="col-sm-4 section">
+					<div class="round team"></div>
+					<h2 class="{{ items.homeTeamHeader.classNames }}">{{ items.homeTeamHeader.content }}</h2>
+					<p class="{{ items.homeTeamText.classNames }}">{{ items.homeTeamText.content }}</p>
+					<div></div>
+					<a href="/about" class="read-more">Read More</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="block3">
+		<div class="container">
+			<div class="row partner-header-row">
+				<div class="col-xs-4"><div class="top-bar"></div><div class="bottom-bar"></div></div>
+				<div class="col-xs-4"><div class="header {{ items.homePartnersHeader.classNames }}">{{ items.homePartnersHeader.content }}</div></div>
+				<div class="col-xs-4"><div class="top-bar"></div><div class="bottom-bar"></div></div>
+			</div>
+			<div class="row partners-row">
+				<img src="/img/our_partners.png" class="our-partners">
+				<img src="/img/flourish.png" class="bottom-flourish">
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+{% block foot %}
+
+{% endblock %}

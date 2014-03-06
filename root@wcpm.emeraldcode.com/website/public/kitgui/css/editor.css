@@ -1,0 +1,199 @@
+.kitgui_edit {
+	position:absolute;
+	z-index:2147483500;
+	cursor:pointer;
+	background-image:url(//s3.amazonaws.com/kitgui/img/editBG.png);
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	display:none;
+}
+.kitgui_edit_icon {
+	position:absolute;
+	top:0;
+	left:0;
+	width:16px;
+	height:16px;
+	background-image:url(//s3.amazonaws.com/kitgui/img/gear.png);
+	font-size:0;
+	/*display:none;*/
+}
+.kitgui_edit_loader {
+	position:absolute;
+	right:10px;
+	top:10px;
+	background-image:url(//s3.amazonaws.com/kitgui/img/editLoader.gif);
+	width:16px;
+	height:16px;
+	display:none;
+	font-size:0;
+}
+.kitgui_hover {
+	background-image:url(//s3.amazonaws.com/kitgui/img/editBG_hover.png);
+	cursor:pointer;
+}
+/*.kitgui-404 {
+	padding:20px;
+	font-family:Arial,Verdana;
+	color:#f00;
+	font-weight:bold;
+}*/
+#kitgui_modal {
+	display:none;
+	position: absolute;
+	left:0;
+	top:0;
+	text-align:center;
+	background-image:url(//s3.amazonaws.com/kitgui/img/modalBG.png);
+	z-index:2147483610;
+}
+#kitgui_editor {
+	display:none;
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:2147483611;
+	border:5px solid #000;
+	background-color:#fff;
+	width:600px;
+	height:300px;
+	overflow:hidden;
+}
+#kitgui_editor_bar {
+	height:23px;
+	width:100%;
+	background-color:#000;
+	position:relative;
+}
+#kitgui_editor_close {
+	display:block;
+	position:absolute;
+	border:none;
+	width:20px;
+	height:20px;
+	background-image:url(//s3.amazonaws.com/kitgui/img/close.jpg);
+	right:0;
+	top:0;
+	font-size:0;
+}
+#kitgui_editor_close:hover {
+
+}
+#kitgui_editor_minmax {
+		
+}
+#kitgui_editor_minmax:hover {
+
+}
+.kitgui_font {
+	font-family:Arial,Verdana,Helvetica;
+	font-size:12px;
+	color:#fff;
+	padding:0;
+}
+#kitgui_editor, #kitgui_editor iframe, #kitgui_toolbar .kitgui_btn {
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;	
+}
+#kitgui_editor iframe {
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;	
+}
+#kitgui_toolbar {
+	height:30px;
+	width:100%;
+	border:none;
+	position:fixed;
+	background-color:#000;
+	z-index:2147483610;
+	bottom:0;
+	left:0;
+	background-repeat:repeat-x;
+	border-top:1px solid #fff;
+	overflow:hidden;
+}
+#kitgui_toolbar .kitgui_btn {
+	display:block;
+	float:right;
+	margin-left:10px;
+	margin-right:10px;
+	margin-top:5px;
+	top:6px;
+	background-color:#fff;
+	color:#000;
+	border:2px solid #ccc;
+}
+#kitgui_toolbar .kitgui_logout_btn {
+
+}
+#kitgui_toolbar .kitgui_toggle_edit {
+    display:block;
+    position:absolute;
+    left:10px;
+    top:7px;
+}
+#kitgui_tab {
+	display:block;
+	position:fixed;
+	left:20px;
+	bottom:30px;
+	width:65px;
+	height:15px;
+	background-repeat:no-repeat;
+	background-image:url(//s3.amazonaws.com/kitgui/img/tab.png);
+	cursor:pointer;
+	font-size:0;
+	z-index:2147483611;
+}
+.kitgui_tab_stealth {
+	background-position:0 -30px;
+}
+.kitgui_tab_on {
+	background-position:0 0;
+}
+.kitgui_tab_off {
+	background-position:0 -15px;
+}
+.kitgui-save-icon
+{
+    width:14px;
+    height:14px;
+    background-image:url(//s3.amazonaws.com/kitgui/img/save_icon.gif);
+    position:absolute;
+    z-index:100;
+    display:none;
+    cursor:pointer;
+    z-index:2147483700;
+}
+.kitgui-cancel-icon
+{
+    width:12px;
+    height:15px;
+    background-image:url(//s3.amazonaws.com/kitgui/img/icon_cancel.gif);
+    position:absolute;
+    z-index:100;
+    display:none;
+    cursor:pointer;
+    z-index:2147483700;
+}
+.kitgui-loader-icon
+{
+    width:16px;
+    height:16px;
+    background-image:url(//s3.amazonaws.com/kitgui/img/loader.gif);
+    background-repeat:no-repeat;
+    position:absolute;
+    z-index:100;
+    display:none;
+    z-index:2147483700;
+}
+.kitgui-checkbox-icon
+{
+    width:16px;
+    height:16px;
+    background-image:url(//s3.amazonaws.com/kitgui/img/checkbox.png);
+    background-repeat:no-repeat;
+    position:absolute;
+    z-index:100;
+    display:none;
+    z-index:2147483700;
+}

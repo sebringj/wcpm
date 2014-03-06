@@ -182,10 +182,11 @@ html,body {
 	background-repeat:no-repeat;
 	background-size:cover;
 	background-position:center center;
+	display:none;
 }
 #bottom .contact-us .header {
 	text-align:center;
-	font-size:60px;
+	font-size:40px;
 	font-weight:bold;
 	font-family: 'Open Sans Condensed', sans-serif;
 }
@@ -209,9 +210,9 @@ html,body {
 	border:none;
 	font-size:20px;
 	font-family: 'Open Sans Condensed', sans-serif;
-	padding:20px;
+	padding:10px;
 	width:100%;
-	margin-bottom:40px;
+	margin-bottom:20px;
 }
 #bottom .contact-us textarea {
 	min-height:200px;
@@ -219,11 +220,12 @@ html,body {
 }
 #bottom .contact-us button {
 	display:block;
-	width:100%;
+	margin:0 auto;
+	width:50%;
 	border:none;
 	background-color:#661d1a;
 	color:#bca5a4;
-	font-size:50px;
+	font-size:30px;
 	font-weight:100;
 	margin-bottom:20px;
 }
@@ -290,6 +292,7 @@ h1.h1-flourish {
 	position:relative;
 	text-align:center;
 	margin-top:40px;
+	display:none;
 }
 .newsletter div {
 	position:absolute;

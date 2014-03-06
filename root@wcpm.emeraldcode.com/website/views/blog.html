@@ -1,0 +1,61 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="/css/blog.css">
+{% endblock %}
+
+{% block top %}
+<div class="carousel slide {{ items[pageID + 'Rotator'].classNames }}" id="{{ items[pageID + 'Rotator'].classNames }}" data-ride="carousel">
+	{% if items[pageID + 'Rotator'].content %}
+		<div class="carousel-inner">
+			{% for item in items[pageID + 'Rotator'].content %}
+				   {% if loop.first %}
+   				    <div class="item active">
+   				      <img src="{{ item.src }}" alt="{{ item.alt }}">
+   				      <div class="carousel-caption">{{ item.caption }}</div>
+   				    </div>
+				   {% else %}
+   				    <div class="item">
+   				      <img src="{{ item.src }}" alt="{{ item.alt }}">
+   				      <div class="carousel-caption">{{ item.caption }}</div>
+   				    </div>
+				   {% endif %}
+			{% endfor %}
+		</div>
+	{% endif %}
+</div>
+<div class="content">
+	<h1 class="h1-flourish {{ items[pageID + 'Title'].classNames }}">{{ items[pageID + 'Title'].content }}</h1>
+	<div class="row">
+		<div class="col-sm-8">
+			{% if rss & rss.items %}
+				{% for item in rss.items %}
+					<h2>{{ item.title | safe }}</h2>
+					<p>{{ item.summary | safe }}</p>
+					<div class="line"></div>
+				{% endfor %}
+			{% endif %}
+		</div>
+		<div class="col-sm-4">
+			<h2 class="right-header"></h2>
+			<div class="right-content"></div>
+			<h2 class="right-header"></h2>
+			<div class="right-content"></div>
+			<div class="newsletter">
+				<div>
+					<input type="text" name="name" placeholder="your name">
+					<input type="email" name="email" placeholder="your email">
+					<button>SUBMIT</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block middle %}
+{% endblock %}
+
+{% block foot %}
+
+{% endblock %}

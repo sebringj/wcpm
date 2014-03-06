@@ -13,11 +13,13 @@
 	font-family: 'Open Sans Condensed', sans-serif;
 }
 .contact-us2 input, .contact-us2 textarea {
-	width:100%;
-	font-size:15px;
-	padding:10px 10px 30px 10px;
 	text-spacing:1px;
 	border:1px solid #C69C6C;
+	display:block;
+	font-size:15px;
+	font-family: 'Open Sans Condensed', sans-serif;
+	padding:10px;
+	width:100%;
 	margin-bottom:20px;
 }
 .contact-us2 textarea {
@@ -29,7 +31,7 @@
 	margin-bottom:40px;
 }
 .contact-us2 .stripes {
-	height:8px;
+	height:6px;
 	background-image:url(/img/envelope_stripes.png);
 }
 .contact-us2 .section {
@@ -38,11 +40,12 @@
 }
 .contact-us2 button {
 	display:block;
-	width:100%;
+	margin:0 auto;
+	width:50%;
 	border:none;
 	background-color:#661d1a;
 	color:#bca5a4;
-	font-size:50px;
+	font-size:30px;
 	font-weight:100;
 	margin-bottom:20px;
 	font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;

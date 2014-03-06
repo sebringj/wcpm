@@ -1,0 +1,3 @@
+#!/bin/bash
+rsync -r website root@swcpm.emeraldcode.com:~/
+ssh root@wcpm.emeraldcode.com "cd website; forever stopall; npm rebuild; PORT=80 forever start app.js;"
