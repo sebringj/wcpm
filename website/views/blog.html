@@ -28,13 +28,18 @@
 	<h1 class="h1-flourish {{ items[pageID + 'Title'].classNames }}">{{ items[pageID + 'Title'].content }}</h1>
 	<div class="row">
 		<div class="col-sm-8">
-			{% if rss & rss.items %}
-				{% for item in rss.items %}
-					<h2>{{ item.title | safe }}</h2>
-					<p>{{ item.summary | safe }}</p>
-					<div class="line"></div>
-				{% endfor %}
-			{% endif %}
+			<div class="blog-entries {{ items[pageID + 'Blog'].classNames }}">
+				{% if items[pageID + 'Blog'].content %}
+					{% for item in items[pageID + 'Blog'].content %}
+						{% if item.mode == 'live' %}
+							<h2>{{ item.title | safe }}</h2>
+							<div class="date-published">{{ item.date | date('Y-m-d') }}</div>
+							<p>{{ item.summary | safe }}</p>
+							<div class="line"></div>
+						{% endif %}
+					{% endfor %}
+				{% endif %}
+			</div>
 		</div>
 		<div class="col-sm-4">
 			<h2 class="right-header"></h2>

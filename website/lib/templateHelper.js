@@ -123,36 +123,23 @@ function blog(context, route) {
 			kitguiAccountKey : config.kitgui.accountKey,
 			pageID : pageID
 		};
-		async.parallel([
-			function(callback) {
-				parser.parseURL('http://wcpm-blog.emeraldcode.com/rss/', {}, function(err, out){
-					if (err) { return callback(); }
-					context.cache[pageID].rss = out;
-					console.log(out);
-					callback();
-				});
-			},
-			function(callback) {
-				kitgui.getContents({
-					basePath : config.kitgui.basePath,
-					host : config.kitgui.host,
-					pageID : pageID,
-					url : 'http://' + config.domain + req.path,
-					items : [
-						{ id : pageID + 'Rotator', editorType : 'bootstrap-carousel-json' },
-						{ id : pageID + 'Title', editorType : 'inline' }
-					]
-				}, function(kg){
-					if (!routeOK && !kg.seo.title) {
-						return res.redirect('/404');
-					}
-					context.cache[pageID].items = kg.items;
-					context.cache[pageID].title = kg.seo.title;
-					context.cache[pageID].description = kg.seo.description;
-					callback();
-				});
+		kitgui.getContents({
+			basePath: config.kitgui.basePath,
+			host: config.kitgui.host,
+			pageID: pageID,
+			url: 'http://' + config.domain + req.path,
+			items: [
+				{ id: pageID + 'Rotator', editorType: 'bootstrap-carousel-json' },
+				{ id: pageID + 'Title', editorType: 'inline' },
+				{ id: pageID + 'Blog', editorType: 'blog-json' }
+			]
+		}, function(kg) {
+			if (!routeOK && !kg.seo.title) {
+				return res.redirect('/404');
 			}
-		], function(){
+			context.cache[pageID].items = kg.items;
+			context.cache[pageID].title = kg.seo.title;
+			context.cache[pageID].description = kg.seo.description;
 			render();
 		});
 	});
