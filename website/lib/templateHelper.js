@@ -3,6 +3,11 @@ config = require('config'),
 async = require('async'),
 parser = require('rssparser');
 
+var monthNameLookup = [
+	'January', 'February', 'March', 'April', 'May', 'June', 
+	'July', 'August', 'September', 'October', 'November', 'December'
+];
+
 module.exports = {
 	template1 : template1,
 	template2 : template2,
@@ -106,10 +111,77 @@ function template2(context, route) {
 function blog(context, route) {
 	context.app.get(route, function(req, res){
 		var routeOK = false;
-		var pageID = cleanURL(req.path);
-		
+		var pageID = '-blog'
+			
 		function render() {
-			res.render('blog', context.cache[pageID]);
+			
+			var json;
+			var months = [];
+			var content;
+			var urlParts = req.url.substr(1).split('/');
+			var dateParts, urlMonth, urlYear;
+			var obj, newObj, i, date, month, year, 
+			contentList = [], leastLength, blogItemKey = pageID + 'Blog';
+			
+			if (urlParts.length === 2) {
+				dateParts = urlParts[1].split('-');
+				urlMonth = dateParts[0];
+				urlYear = dateParts[1];
+			}
+			
+			obj = context.cache[pageID];
+			newObj = obj;
+			
+			// get month objects for archive output
+			if (obj.items && obj.items[blogItemKey] && obj.items[blogItemKey].content) {
+				json = obj.items[blogItemKey].content;
+				if (obj.months) {
+					months = obj.months;
+				} else {
+					months = getArchiveMonths(json);
+					obj.months = months;
+				}
+
+
+				// if we have a filter defined then remove out entries that are not in the filter
+				if (urlMonth) {
+					for(i = 0; i < json.length; i++) {
+						date = new Date(json[i].date);
+						month = monthNameLookup[date.getMonth()];
+						year = date.getFullYear()+'';
+						if (urlMonth === month && urlYear === year) {
+							contentList.push(json[i]);
+						}
+					}
+				} else { // otherwise we limit the results to 20
+					leastLength = (json.length < 20) ? json.length : 20;
+					for(i = 0; i < leastLength; i++) {
+						contentList.push(json[i]);
+					}
+				}
+
+				// create new object but do not copy items
+				newObj = {};
+				for (i in obj) {
+					if (i !== 'items') {
+						newObj[i] = obj[i];
+					}
+				}
+				
+				newObj.items = {};
+				// now only copy items that are not in blogItemKey
+				for(i in obj.items) {
+					if (i !== blogItemKey) {
+						newObj.items[i] = obj.items[i];
+					}
+				}
+				newObj.items[blogItemKey] = {
+					classNames : obj.items[blogItemKey].classNames,
+					content: contentList
+				};
+			}
+			
+			res.render('blog', newObj);
 		}
 		if (req.cookies.kitgui === '1' || req.query.refresh) {
 			routeOK = true;
@@ -123,6 +195,13 @@ function blog(context, route) {
 			kitguiAccountKey : config.kitgui.accountKey,
 			pageID : pageID
 		};
+		if (pageID) {
+			context.cache[pageID] = {
+				layout : context.cache.layout,
+				kitguiAccountKey : config.kitgui.accountKey,
+				pageID : pageID
+			};	
+		}
 		kitgui.getContents({
 			basePath: config.kitgui.basePath,
 			host: config.kitgui.host,
@@ -139,7 +218,7 @@ function blog(context, route) {
 			}
 			context.cache[pageID].items = kg.items;
 			context.cache[pageID].title = kg.seo.title;
-			context.cache[pageID].description = kg.seo.description;
+			context.cache[pageID].description = kg.seo.description;			
 			render();
 		});
 	});
@@ -178,6 +257,7 @@ function resourceLanding(context, route) {
 			if (!routeOK && !kg.seo.title) {
 				return res.redirect('/404');
 			}
+			if (kg.items)
 			context.cache[pageID] = {
 				layout : context.cache.layout,
 				kitguiAccountKey : config.kitgui.accountKey,
@@ -345,4 +425,20 @@ function template(context, route, kitguiItems) {
 
 function cleanURL(str) {
 	return str.replace(/[^a-z0-9_\-]/gi,'-').replace(/_+/gi,'-');
+}
+
+function getArchiveMonths(arr) {
+	var date, month, year, key, monthsLookup = {};
+	var months = [];
+	for(var i = 0; i < arr.length; i++) {
+		date = new Date(arr[i].date);
+		month = monthNameLookup[date.getMonth()];
+		year = date.getFullYear()+'';
+		key = month + '-' + year;
+		if (!monthsLookup[key]) {
+			monthsLookup[key] = true;
+			months.push({ month: month, year: year});
+		}
+	}
+	return months;
 }

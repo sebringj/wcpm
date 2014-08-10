@@ -44,3 +44,9 @@ h2 { font-size:25px;}
 	box-shadow: 0 2px 0 #F8F1EB;
 	margin-bottom:40px;
 }
+.archive-entry {
+	display:block;
+	margin-top:10px;
+	color:#973A11;
+	font-size:16px;
+}

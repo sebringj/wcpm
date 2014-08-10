@@ -42,8 +42,14 @@
 			</div>
 		</div>
 		<div class="col-sm-4">
-			<h2 class="right-header"></h2>
-			<div class="right-content"></div>
+			<h2 class="right-header">Archive</h2>
+			<div class="right-content">
+				{% if months %}
+					{% for month in months %}
+						<a class="archive-entry" href="/blog/{{ month.month }}-{{ month.year }}">{{ month.month }} {{ month.year }}</a>
+					{% endfor %}
+				{% endif %}
+			</div>
 			<h2 class="right-header"></h2>
 			<div class="right-content"></div>
 			<div class="newsletter">
