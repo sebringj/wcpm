@@ -59,14 +59,14 @@
 					<h2 class="{{ items.homeProductsHeader.classNames }}">{{ items.homeProductsHeader.content }}</h2>
 					<p class="{{ items.homeProductsText.classNames }}">{{ items.homeProductsText.content }}</p>
 					<div></div>
-					<a href="/restaurant-meat-service" class="read-more">Read More</a>
+					<a href="/restaurant-hospitality-meat-service" class="read-more">Read More</a>
 				</div>
 				<div class="col-sm-4 section">
 					<div class="round restaurants"></div>
 					<h2 class="{{ items.homeRestaurantsHeader.classNames }}">{{ items.homeRestaurantsHeader.content }}</h2>
 					<p class="{{ items.homeRestaurantsText.classNames }}">{{ items.homeRestaurantsText.content }}</p>
 					<div></div>
-					<a href="/restaurant-partners" class="read-more">Read More</a>
+					<a href="/restaurant-hospitality-partners" class="read-more">Read More</a>
 				</div>
 				<div class="col-sm-4 section">
 					<div class="round team"></div>
@@ -86,7 +86,19 @@
 				<div class="col-xs-4"><div class="top-bar"></div><div class="bottom-bar"></div></div>
 			</div>
 			<div class="row partners-row">
-				<img src="/img/our_partners.png" class="our-partners">
+			<div class="clearfix {{ items.homePartners.classNames }}">
+				<div class="row">
+				{% if items.homePartners.content %}
+					{% for item in items.homePartners.content %}
+						<div class="col-sm-3 home-partners">
+							<a class="partner-icon-link" alt="{{ item.title }}" href="{{ item.websiteURL }}">
+								<img class="img-responsive" src="{{ item.src }}">
+							</a>
+						</div>
+					{% endfor %}
+				{% endif %}
+				</div>
+			</div>
 				<img src="/img/flourish.png" class="bottom-flourish">
 			</div>
 		</div>

@@ -263,6 +263,8 @@ html,body {
 	border:none;
 	text-decoration:none;
 	margin:0 4px;
+	color:rgb(146, 146, 146);
+	font-size:40px;
 }
 #bottom .copyright {
 	color:#eacba9;

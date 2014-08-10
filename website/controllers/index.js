@@ -90,6 +90,7 @@ function home(context) {
 				{ id : 'homeTeamHeader', editorType : 'inline' },
 				{ id : 'homeTeamText', editorType : 'inline' },
 				{ id : 'homePartnersHeader', editorType : 'inline' },
+				{ id : 'homePartners', editorType : 'collection-json' }
 			]
 		}, function(kg){
 			context.cache.home = {
