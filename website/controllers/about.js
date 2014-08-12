@@ -37,16 +37,16 @@ function landing(context) {
 				{ id : 'aboutB1H1', editorType : 'inline' },
 				{ id : 'aboutB1Copy', editorType : 'html' },
 				{ id : 'aboutB2C1H2', editorType : 'inline' },
-				{ id : 'aboutB2C1Img', editorType : 'image-json' },
+				{ id : 'aboutB2C1Image', editorType : 'image' },
 				{ id : 'aboutB2C1Copy', editorType : 'html' },
 				{ id : 'aboutB2C2H2', editorType : 'inline' },
 				{ id : 'aboutB2C2Img', editorType : 'image' },
 				{ id : 'aboutB2C2Copy', editorType : 'html' },
 				{ id : 'aboutB2C3H2', editorType : 'inline' },
-				{ id : 'aboutB2C3Img', editorType : 'image-json' },
+				{ id : 'aboutB2C3Img', editorType : 'image' },
 				{ id : 'aboutB2C3Copy', editorType : 'html' },
 				{ id : 'aboutB3H2', editorType : 'inline' },
-				{ id : 'aboutB3Img', editorType : 'image-json' },
+				{ id : 'aboutB3Img', editorType : 'image' },
 				{ id : 'aboutB3Copy', editorType : 'html' }
 			]
 		}, function(kg){

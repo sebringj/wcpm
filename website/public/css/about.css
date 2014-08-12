@@ -45,6 +45,11 @@
 	height:200px;
 	margin-bottom:30px;
 	background-color:#000;
+	overflow:hidden;
+}
+#top .block2 .img img {
+	width:100%;
+	height:auto;
 }
 #top .block2 p {
 	font-family:Georgia;
