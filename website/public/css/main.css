@@ -245,6 +245,7 @@ html,body {
 	color:#929292;
 	margin-bottom:15px;
 	font-size:15px;
+	font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 #bottom .footer-logo {
 	text-align:center;
@@ -253,6 +254,7 @@ html,body {
 	text-align:center;
 	color:#929292;
 	font-size:15px;
+	font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 #bottom .follow-us div {
 	margin-bottom:20px;
@@ -271,6 +273,7 @@ html,body {
 	text-align:center;
 	margin:20px 10px 30px 10px;
 	font-size:15px;
+	font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 h1.h1-flourish {
 	padding-bottom:20px;

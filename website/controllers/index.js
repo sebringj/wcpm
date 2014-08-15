@@ -6,7 +6,8 @@ restaurantPartnersRoutes = require('./restaurant-partners.js'),
 wholesalePartnersRoutes = require('./wholesale-partners.js'),
 blogRoutes = require('./blog.js'),
 aboutRoutes = require('./about.js'),
-resourcesRoutes = require('./resources.js');
+resourcesRoutes = require('./resources.js'),
+jobRoutes = require('./jobs.js');
 
 module.exports.set = function(context) {
 	home(context);
@@ -16,6 +17,7 @@ module.exports.set = function(context) {
 	blogRoutes.set(context);
 	aboutRoutes.set(context);
 	resourcesRoutes.set(context);
+	jobRoutes.set(context);
 	
 	// error pages
 	context.app.use(function(req, res, next) {

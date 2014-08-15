@@ -88,6 +88,10 @@
 	min-height:300px;
 	margin-bottom:30px;
 }
+#top .block3 .img img {
+	width:100%;
+	height:auto;
+}
 #top .block3 p {
 	font-family:Georgia;
 	color:#333;
