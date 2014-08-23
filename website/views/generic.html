@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="/css/about.css">
+{% endblock %}
+
+{% block top %}
+
+<div class="block1">
+	<h1 class="{{ items[pageID + 'Title'].classNames }}">{{ items[pageID + 'Title'].content }}</h1>
+	<div class="flourish"></div>
+	<div class="copy {{ items[pageID + 'HTML'].classNames }}">{{ items[pageID + 'HTML'].content | safe }}</div>
+</div>
+
+{% endblock %}
+
+{% block middle %}
+	
+{% endblock %}
+
+{% block foot %}
+
+{% endblock %}

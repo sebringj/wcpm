@@ -12,7 +12,7 @@ function landing(context) {
 		var cacheKey = 'job';
 		var pageID = cacheKey;
 		function render() {
-			res.render('jobs', {
+			res.render('generic', {
 				layout : context.cache.layout,
 				kitguiAccountKey : config.kitgui.accountKey,
 				pageID : pageID,
@@ -34,9 +34,8 @@ function landing(context) {
 			pageID : pageID,
 			url : 'http://' + config.domain + req.path,
 			items : [
-				{ id : pageID + 'Rotator', editorType : 'bootstrap-carousel-json' },
 				{ id : pageID + 'Title', editorType : 'inline' },
-				{ id : pageID + 'Partners', editorType : 'collection-json' }
+				{ id : pageID + 'HTML', editorType : 'html' }
 			]
 		}, function(kg){
 			context.cache[cacheKey] = {
