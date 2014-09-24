@@ -34,7 +34,7 @@
 						{% if item.mode == 'live' %}
 							<h2>{{ item.title | safe }}</h2>
 							<div class="date-published">{{ item.date | date('Y-m-d') }}</div>
-							<p>{{ item.summary | safe }}</p>
+							<p>{{ item.description | safe }}</p>
 							<div class="line"></div>
 						{% endif %}
 					{% endfor %}
