@@ -6,12 +6,18 @@ module.exports.set = function(context){
 };
 
 function setLayoutCache(context) {
+	context.app.use(function(req, res, next) {
+		console.log(req.get('host'));
+		if (req.get('host').indexOf(config.domain) !== 0) {  
+			return res.redirect(301,'http://' + config.domain + req.originalUrl);
+		}
+		next();
+	});
 	context.app.use(function(req, res, next){
 		if (req.cookies.kitgui) {
 			delete context.cache.layout;
 		}
 		if (context.cache.layout) {
-			console.log('layout cached');
 			return next();
 		}		
 		kitgui.getContents({

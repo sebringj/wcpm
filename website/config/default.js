@@ -6,9 +6,10 @@ module.exports = {
 		basePath : '/kitgui/clients/' + kitguiAccountKey,
 		accountKey : kitguiAccountKey
 	},
-	mailchimp : {
-		apikey : '[ FILL IN ]-us3',
-		url : 'https://us3.api.mailchimp.com/2.0/',
-		listID : '[ FILL IN ]'
-	}
-};
+	email : {
+	    user: 'noreply@emeraldcode.com',
+		to: 'webinfo@westcoastprimemeats.com',
+	    pass: 'Abc123!~!',
+		from: 'noreply@emeraldcode.com'
+	},
+}; // 216.31.162.187

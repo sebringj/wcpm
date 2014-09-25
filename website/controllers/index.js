@@ -7,9 +7,28 @@ wholesalePartnersRoutes = require('./wholesale-partners.js'),
 blogRoutes = require('./blog.js'),
 aboutRoutes = require('./about.js'),
 resourcesRoutes = require('./resources.js'),
-jobRoutes = require('./jobs.js');
+jobRoutes = require('./jobs.js'),
+emailRoutes = require('./emails.js');
+
+var redirects = [
+	{match: '/our-team.htm', redirect: '/about/our-cutting-team'},
+	{match: '/Cut_of_the_week.htm', redirect: '/restaurant-hospitality-meat-service'},
+	{match: '/our_products.htm', redirect: '/restaurant-hospitality-meat-service'},
+	{match: '/dry_aging.htm', redirect: '/dry-aged-beef-supplier'},
+	{match: '/what_sets_us_apart.htm', redirect: '/about'},
+	{match: '/contact_us.htm', redirect: '/resources/contact'}
+];
 
 module.exports.set = function(context) {
+	// redirects
+	var app = context.app;
+	
+	redirects.forEach(function(item){
+		app.get(item.match, function(req, res){
+			res.redirect(301, item.redirect);
+		});
+	});
+	
 	home(context);
 	restaurantMeatServiceRoutes.set(context);
 	restaurantPartnersRoutes.set(context);
@@ -18,6 +37,7 @@ module.exports.set = function(context) {
 	aboutRoutes.set(context);
 	resourcesRoutes.set(context);
 	jobRoutes.set(context);
+	emailRoutes.set(context.app);
 	
 	// error pages
 	context.app.use(function(req, res, next) {
@@ -44,7 +64,6 @@ module.exports.set = function(context) {
 	
 	context.app.use(function(err, req, res, next){
 		res.status(err.status || 500);
-		console.log(err);
 		res.render('500', { 
 			error: err,
 			pageID : '404',

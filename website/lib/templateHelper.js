@@ -297,7 +297,6 @@ function faq(context, route) {
 				parser.parseURL('http://wcpm-blog.emeraldcode.com/rss/', {}, function(err, out){
 					if (err) { return callback(); }
 					context.cache[pageID].rss = out;
-					console.log(out);
 					callback();
 				});
 			},
@@ -354,7 +353,6 @@ function contact(context, route) {
 				parser.parseURL('http://wcpm-blog.emeraldcode.com/rss/', {}, function(err, out){
 					if (err) { return callback(); }
 					context.cache[pageID].rss = out;
-					console.log(out);
 					callback();
 				});
 			},

@@ -341,3 +341,8 @@ h1.h1-flourish {
 		width:1200px;
 	}
 }
+form input.error,
+form textarea.error {
+	background-color:#fcc;
+	color:#f00;
+} 
