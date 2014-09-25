@@ -11,12 +11,12 @@ jobRoutes = require('./jobs.js'),
 emailRoutes = require('./emails.js');
 
 var redirects = [
-	{match: '/our-team.htm', redirect: '/about/our-cutting-team'},
-	{match: '/Cut_of_the_week.htm', redirect: '/restaurant-hospitality-meat-service'},
-	{match: '/our_products.htm', redirect: '/restaurant-hospitality-meat-service'},
-	{match: '/dry_aging.htm', redirect: '/dry-aged-beef-supplier'},
-	{match: '/what_sets_us_apart.htm', redirect: '/about'},
-	{match: '/contact_us.htm', redirect: '/resources/contact'}
+	{match: /^\/our_team\.htm$/i, redirect: '/about/our-cutting-team'},
+	{match: /^\/Cut_of_the_week.htm$/i, redirect: '/restaurant-hospitality-meat-service'},
+	{match: /^\/our_products.htm$/i, redirect: '/restaurant-hospitality-meat-service'},
+	{match: /^\/dry_aging.htm$/i, redirect: '/dry-aged-beef-supplier'},
+	{match: /^\/what_sets_us_apart.htm$/i, redirect: '/about'},
+	{match: /^\/contact_us.htm$/i, redirect: '/resources/contact'}
 ];
 
 module.exports.set = function(context) {
