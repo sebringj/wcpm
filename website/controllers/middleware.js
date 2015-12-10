@@ -7,8 +7,8 @@ module.exports.set = function(context){
 
 function setLayoutCache(context) {
 	context.app.use(function(req, res, next) {
-		console.log(req.get('host'));
-		if (req.get('host').indexOf(config.domain) !== 0) {  
+		var host = req.get('host');
+		if (host.indexOf('localhost') === -1 && host.indexOf(config.domain) !== 0) {
 			return res.redirect(301,'http://' + config.domain + req.originalUrl);
 		}
 		next();
@@ -19,7 +19,7 @@ function setLayoutCache(context) {
 		}
 		if (context.cache.layout) {
 			return next();
-		}		
+		}
 		kitgui.getContents({
 			basePath : config.kitgui.basePath,
 			host : config.kitgui.host,
@@ -40,7 +40,6 @@ function setLayoutCache(context) {
 			context.cache.layout = {
 				items : kg.items
 			};
-			console.log(kg.items);
 			next();
 		});
 	});

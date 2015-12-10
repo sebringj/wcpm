@@ -20,12 +20,12 @@
 				{% for item in items.homeSlider.content %}
 					   {% if loop.first %}
 	   				    <div class="item active">
-	   				      <img src="{{ item.src }}" alt="{{ item.alt }}">
+	   				      <a href="{{ item.href }}"><img src="{{ item.src }}" alt="{{ item.alt }}"></a>
 	   				      <div class="carousel-caption">{{ item.caption }}</div>
 	   				    </div>
 					   {% else %}
 	   				    <div class="item">
-	   				      <img src="{{ item.src }}" alt="{{ item.alt }}">
+	   				      <a href="{{ item.href }}"><img src="{{ item.src }}" alt="{{ item.alt }}"></a>
 	   				      <div class="carousel-caption">{{ item.caption }}</div>
 	   				    </div>
 					   {% endif %}
@@ -106,5 +106,5 @@
 {% endblock %}
 
 {% block foot %}
-
+	
 {% endblock %}

@@ -1,0 +1,78 @@
+#top {
+	background-image:url(/img/template_bg.jpg);
+}
+#top .block1 a { color:#6F2910; }
+#top .block1 {
+	background-color:#E9E4E0;
+	min-height:500px;
+	padding:30px 60px;
+}
+#top h1 {
+	color:#3E1D13;
+	font-family: 'Open Sans Condensed', sans-serif;
+	margin:0;padding:0;
+	margin-bottom:20px;
+	text-transform:uppercase;
+}
+#top .block1 .flourish {
+	height:50px;
+	background-image:url(/img/line_flourish.png);
+	background-position:center center;
+	background-repeat:no-repeat;
+}
+#top .block1 .copy {
+	font-family:Georgia;
+	color:#333;
+	line-height:30px;
+}
+#top .cart-item {
+	border-bottom: 1px solid #ccc;
+}
+#top .cart-controls {
+	display:inline-block;
+	white-space: nowrap;
+}
+#top .cart-controls .qty {
+	display:inline-block;
+	position:relative;
+	top: -7px;
+}
+#top .cart-controls .qtyInput {
+	width: 25px;
+	font-size: 14px;
+	display:inline-block;
+	margin-right: 30px;
+}
+#top .cart-controls .trash {
+	font-size: 20px;
+	display:inline-block;
+	text-decoration: none;
+	color: #000;
+	cursor: pointer;
+	position:relative;
+	top: -5px;
+}
+#top .sub-total .sub-total-item {
+	padding: 10px 0;
+	font-weight: 700;
+}
+#top .checkout-button-container {
+	padding: 10px 0;
+}
+#top .block1 .button {
+	background-color:#661d1a;
+	color:#bca5a4;
+	font-size:30px;
+	font-weight:100;
+	display:inline-block;
+	padding:0 20px;
+	margin-bottom:20px;
+	font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+	border: none;
+	text-decoration:none;
+}
+#top .no-items {
+	font-size:20px;
+	text-align:center;
+	padding: 20px 0;
+}

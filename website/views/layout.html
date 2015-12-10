@@ -9,7 +9,7 @@
 		<meta property="og:url" content="{{ url }}" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700' rel='stylesheet'>
-		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/css/main.css">
 		<meta name="kitgui-page-id" content="{{ pageID }}">
@@ -19,7 +19,7 @@
 	    |   __|_____ ___ ___ ___| |_| |  |     |___ _| |___         ___ ___ _____
 	    |   __|     | -_|  _| .'| | . |  |   --| . | . | -_|   _   |  _| . |     |
 	    |_____|_|_|_|___|_| |__,|_|___|  |_____|___|___|___|  |_|  |___|___|_|_|_|
-	    
+
 		since 2014
 		-->
 		{% block head %}
@@ -27,6 +27,7 @@
 		{% endblock %}
 	</head>
 	<body>
+		<a id="promoCookbook" href="/blog"></a>
 		<div id="mobileMenu">
 			<div class="nav">
 				<a href="/restaurant-hospitality-meat-service">{{ layout.items.homeNavItem1.content }}</a>
@@ -40,12 +41,13 @@
 		<div id="contentContainer">
 			<div id="top">
 				<div class="container-bg">
-					<div class="container">
-					<div id="mobileTop">
-						<a id="mobileNavToggle" href="#"><i class="fa fa-bars"></i></a>
-						<a class="logo" href="/"></a>
-					</div>
-					<div id="desktopNav">
+					<div class="container" id="mainContainer">
+						<a href="/cart" id="cartIndicator"><i class="fa fa-shopping-cart"></i> <span class="qty"></span></a>
+						<div id="mobileTop">
+							<a id="mobileNavToggle" href="#"><i class="fa fa-bars"></i></a>
+							<a class="logo" href="/"></a>
+						</div>
+						<div id="desktopNav">
 						<div class="leftUnder"></div>
 						<div class="nav">
 							<a href="/restaurant-hospitality-meat-service" class="{{ layout.items.homeNavItem1.classNames }}">{{ layout.items.homeNavItem1.content }}</a>
@@ -127,9 +129,9 @@
 						</div>
 						<div class="row">
 							<div class="copyright">
-								Copyright &copy; <span id="copyrightYear"></span> 
+								Copyright &copy; <span id="copyrightYear"></span>
 								West Coast Prime Meats LLC. All rights reserved.
-							</div>							
+							</div>
 						</div>
 					</div>
 				</div>
@@ -137,6 +139,7 @@
 		</div>
 		<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
 		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+		<script src="http://localhost:8080/glut.js"></script>
 		<script src="/js/main.js"></script>
 		<script> var kitgui = { key: '{{ kitguiAccountKey }}', tabVisible: true }; </script>
 		<script src="/kitgui/js/kitgui.js"></script>

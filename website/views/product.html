@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="/css/product.css">
+{% endblock %}
+
+{% block top %}
+
+<div class="block1">
+	<h1 class="{{ items[pageID + 'Title'].classNames }}">{{ items[pageID + 'Title'].content }}</h1>
+	<div class="flourish"></div>
+	<div class="content" data-upc="{{ vars.upc }}">
+		<div class="row">
+			<div class="col-md-6 {{ items[pageID + 'Image'].classNames }}">
+				{% if items[pageID + 'Image'].content %}
+				<img src="{{ items[pageID + 'Image'].content.src }}"
+					alt="{{ items[pageID + 'Image'].content.alt }}" class="img-responsive">
+				{% endif %}
+			</div>
+			<div class="col-md-6">
+				<p class="{{ items[pageID + 'Description'].classNames }}">{{ items[pageID + 'Description'].content | safe }}</p>
+				{% if product %}
+					<div class="inline-emphasis">x<input maxlength="2" id="qtyInput" type="text" value="1">
+					@ ${{ product.msrp }} each
+					</div>
+					<button id="buyButton">Buy Now</button>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
+
+{% block middle %}
+
+{% endblock %}
+
+{% block foot %}
+	<script src="/js/product.js"></script>
+{% endblock %}

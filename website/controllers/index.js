@@ -1,14 +1,16 @@
-var config = require('config'),
-utils = require('../lib/utils.js'),
-kitgui = require('kitgui'),
-restaurantMeatServiceRoutes = require('./restaurant-meat-service.js'),
-restaurantPartnersRoutes = require('./restaurant-partners.js'),
-wholesalePartnersRoutes = require('./wholesale-partners.js'),
-blogRoutes = require('./blog.js'),
-aboutRoutes = require('./about.js'),
-resourcesRoutes = require('./resources.js'),
-jobRoutes = require('./jobs.js'),
-emailRoutes = require('./emails.js');
+var config = require('config');
+var utils = require('../lib/utils');
+var kitgui = require('kitgui');
+var restaurantMeatServiceRoutes = require('./restaurant-meat-service');
+var restaurantPartnersRoutes = require('./restaurant-partners');
+var wholesalePartnersRoutes = require('./wholesale-partners');
+var blogRoutes = require('./blog');
+var aboutRoutes = require('./about');
+var resourcesRoutes = require('./resources');
+var jobRoutes = require('./jobs');
+var emailRoutes = require('./emails');
+var productRoutes = require('./product');
+var cartRoute = require('./cart');
 
 var redirects = [
 	{match: /^\/our_team\.htm$/i, redirect: '/about/our-cutting-team'},
@@ -22,13 +24,13 @@ var redirects = [
 module.exports.set = function(context) {
 	// redirects
 	var app = context.app;
-	
+
 	redirects.forEach(function(item){
 		app.get(item.match, function(req, res){
 			res.redirect(301, item.redirect);
 		});
 	});
-	
+
 	home(context);
 	restaurantMeatServiceRoutes.set(context);
 	restaurantPartnersRoutes.set(context);
@@ -38,7 +40,9 @@ module.exports.set = function(context) {
 	resourcesRoutes.set(context);
 	jobRoutes.set(context);
 	emailRoutes.set(context.app);
-	
+	productRoutes.set(context);
+	cartRoute.set(context);
+
 	// error pages
 	context.app.use(function(req, res, next) {
 		res.status(404);
@@ -61,10 +65,10 @@ module.exports.set = function(context) {
 		// default to plain-text. send()
 		res.type('txt').send('Not found');
 	});
-	
+
 	context.app.use(function(err, req, res, next){
 		res.status(err.status || 500);
-		res.render('500', { 
+		res.render('500', {
 			error: err,
 			pageID : '404',
 			kitguiAccountKey : config.kitgui.accountKey,

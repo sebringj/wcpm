@@ -13,7 +13,7 @@ $(window).resize(function(){
 		});
 	},10));
 });
-// 
+//
 $('#mobileNavToggle').click(function(ev){
 	ev.preventDefault();
 	var $body = $('body');
@@ -27,12 +27,12 @@ $('#copyrightYear').text((new Date()).getFullYear());
 
 $('form').on('submit', function(ev) {
 	ev.preventDefault();
-	
+
 	var emailRe = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
 	var blankRe = /^\s*$/;
 	var $form = $(this);
 	var isError = false;
-	
+
 	$form.find('input,textarea').each(function(){
 		var $this = $(this);
 		if (blankRe.test($this.val())) {
@@ -44,9 +44,9 @@ $('form').on('submit', function(ev) {
 			isError = true;
 		}
 	});
-	
+
 	if (isError) { return; }
-	
+
 	$.post('/data/send-email',$form.serialize())
 	.always(function(){
 		$form.find('input,textarea').each(function(){
@@ -60,4 +60,14 @@ $('form').on('submit', function(ev) {
 	$(this).attr('autocomplete','off').on('focus',function(){
 		$(this).removeClass('error');
 	});
+});
+
+glut.config.api = 'http://api.glut.io/api';
+
+glut.cart.on('change', function handleCartChange() {
+	var totalQuantity = glut.cart.totalQuantity();
+	if (totalQuantity > 0)
+		$('#cartIndicator').find('.qty').text(totalQuantity + '').end().css({ display: 'block' });
+	else
+		$('#cartIndicator').hide();
 });

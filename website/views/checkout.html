@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="/css/checkout.css">
+{% endblock %}
+
+{% block top %}
+
+<div class="block1">
+	<h1 class="{{ items[pageID + 'Title'].classNames }}">{{ items[pageID + 'Title'].content }}</h1>
+	<div class="flourish"></div>
+	<div class="content" id="cartContents"></div>
+</div>
+
+{% endblock %}
+
+{% block middle %}
+
+{% endblock %}
+
+{% block foot %}
+
+<script type="text/html" id="cartEmptyTemplate">
+	<div class="row">
+		<div class="col-md-12">No items in your cart.</div>
+	</div>
+</script>
+
+<script type="text/html" id="cartItemTemplate">
+	<div class="row">
+		<div class="col-md-9">
+			<img src="%src%">
+			<span>%name%</span>
+		</div>
+		<div class="col-md-3">
+			qty: <input type="text">
+			<button><i class="fa fa-times-circle"></i></button>
+		</div>
+	</div>
+</script>
+
+<script type="text/html" id="cartTemplate">
+	%cartItems%
+	<div class="row">
+		<div class="col-md-12">
+			<div class="pull-right">subtotal: $%subtotal%</div>
+		</div>
+	</div>
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+<script src="/js/checkout.js"></script>
+{% endblock %}
