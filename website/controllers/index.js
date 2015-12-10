@@ -11,6 +11,7 @@ var jobRoutes = require('./jobs');
 var emailRoutes = require('./emails');
 var productRoutes = require('./product');
 var cartRoute = require('./cart');
+var checkoutRoute = require('./checkout');
 
 var redirects = [
 	{match: /^\/our_team\.htm$/i, redirect: '/about/our-cutting-team'},
@@ -42,6 +43,7 @@ module.exports.set = function(context) {
 	emailRoutes.set(context.app);
 	productRoutes.set(context);
 	cartRoute.set(context);
+	checkoutRoute.set(context);
 
 	// error pages
 	context.app.use(function(req, res, next) {

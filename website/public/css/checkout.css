@@ -1,0 +1,27 @@
+#top {
+	background-image:url(/img/template_bg.jpg);
+}
+#top .block1 a { color:#6F2910; }
+#top .block1 {
+	background-color:#E9E4E0;
+	min-height:500px;
+	padding:30px 60px;
+}
+#top h1 {
+	color:#3E1D13;
+	font-family: 'Open Sans Condensed', sans-serif;
+	margin:0;padding:0;
+	margin-bottom:20px;
+	text-transform:uppercase;
+}
+#top .block1 .flourish {
+	height:50px;
+	background-image:url(/img/line_flourish.png);
+	background-position:center center;
+	background-repeat:no-repeat;
+}
+#top .block1 .copy {
+	font-family:Georgia;
+	color:#333;
+	line-height:30px;
+}
