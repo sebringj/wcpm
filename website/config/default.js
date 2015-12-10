@@ -12,4 +12,7 @@ module.exports = {
     pass: process.env.EMAIL_PASSWORD,
     from: 'noreply@emeraldcode.com'
   },
+	glut: {
+		url: 'http://api.glut.io/api'
+	}
 }; // 216.31.162.187
