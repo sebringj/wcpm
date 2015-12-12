@@ -55,14 +55,14 @@ $('form').on('submit', function(ev) {
 		alert('Thank you! We\'ll get back to you as soon as possible.');
 	});
 })
-.attr('novalidate','novalidate')
-.find('textarea,input,select').each(function(){
+.attr('novalidate', 'novalidate')
+.find('textarea,input,select').each(function() {
 	$(this).attr('autocomplete','off').on('focus',function(){
 		$(this).removeClass('error');
 	});
 });
 
-glut.config.api = 'http://api.glut.io/api';
+glut.config.api = 'http://localhost:3001/api';
 
 glut.cart.on('change', function handleCartChange() {
 	var totalQuantity = glut.cart.totalQuantity();

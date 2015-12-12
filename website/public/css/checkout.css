@@ -25,3 +25,13 @@
 	color:#333;
 	line-height:30px;
 }
+#top .block1 .row .col-sm-3,
+#top .block1 .row .col-sm-4,
+#top .block1 .row .col-sm-6,
+#top .block1 .row .col-sm-8,
+#top .block1 .row .col-sm-12 {
+	padding-bottom: 10px;
+}
+#top .block1 legend {
+	margin:0; padding: 0;
+}

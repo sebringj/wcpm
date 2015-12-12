@@ -44,7 +44,7 @@ $(function() {
   });
 
   // handle quantity input change
-  cartContents.on('keyup', '.qtyInput', _.debounce(function(ev) {
+  cartContents.on('keyup change', '.qtyInput', _.debounce(function(ev) {
     if (isReturnKey(ev))
       return;
     var input = $(this);

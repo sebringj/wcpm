@@ -1,27 +1,226 @@
 {% extends 'layout.html' %}
-
+{% import "./macros/checkout.html" as checkout %}
 {% block head %}
 <link rel="stylesheet" href="/css/checkout.css">
 {% endblock %}
 
 {% block top %}
-
 <div class="block1">
 	<h1 class="{{ items[pageID + 'Title'].classNames }}">{{ items[pageID + 'Title'].content }}</h1>
 	<div class="flourish"></div>
-	<div class="content">
-
-	</div>
+	<form class="content checkout" action="#" novalidate>
+		<div class="row shipping-group">
+			<div class="col-sm-6">
+				<div class="row">
+					<div class="col-sm-12">
+						<legend>Ship To Contact</legend>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6">
+						<input class="form-control" type="text" maxlength="25" required name="shipping-firstname" placeholder="first name" />
+					</div>
+					<div class="col-sm-6">
+						<input class="form-control" type="text" maxlength="25" required name="shipping-lastname" placeholder="last name" />
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6">
+						<input class="form-control" type="email" maxlength="50" required name="shipping-email" placeholder="email address" />
+					</div>
+					<div class="col-sm-6">
+						<input class="form-control" type="tel" maxlength="50" name="shipping-phone" placeholder="phone number" />
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<legend>Shipping Method</legend>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6">
+						<select class="form-control" name="shipping-method" required>
+							<option value="">choose shipping method</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6" data-address-group>
+				<div class="row">
+					<div class="col-sm-12">
+						<legend>Ship To Address</legend>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<input class="form-control" type="text" maxlength="200" required name="shipping-address" placeholder="street 1" class="span12" />
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<input class="form-control" type="text" maxlength="200" name="shipping-address2" placeholder="street 2 (optional)" class="span12" />
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6">
+						<input class="form-control" type="text" required maxlength="50" name="shipping-city" placeholder="city" />
+					</div>
+					<div class="col-sm-6">
+						<select class="form-control state" name="shipping-state" class="" required></select>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6">
+						{{ checkout.Countries('shipping-country') }}
+					</div>
+					<div class="col-sm-4">
+						<input class="form-control zipcode" type="text" maxlength="10" required name="shipping-zipcode" placeholder="zipcode" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="row">
+					<div class="col-sm-12">
+						<legend>Payment Contact</legend>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="checkbox">
+							<label>same as shipping
+								<input type="checkbox" data-toggle=".payment-contact" name="same-contact" checked />
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="row payment-contact">
+					<div class="col-sm-6">
+						<input class="form-control" type="text" maxlength="25" required name="payment-firstname" placeholder="first name" />
+					</div>
+					<div class="col-sm-6">
+						<input class="form-control" type="text" maxlength="25" required name="payment-lastname" placeholder="last name" />
+					</div>
+				</div>
+				<div class="row payment-contact">
+					<div class="col-sm-6">
+						<input class="form-control" type="email" maxlength="50" required name="payment-email" placeholder="email address" />
+					</div>
+					<div class="col-sm-6">
+						<input class="form-control" type="tel" maxlength="50" name="payment-phone" placeholder="phone number" />
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6" data-address-group>
+				<div class="row">
+					<div class="col-sm-12">
+						<legend>Payment Address</legend>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="checkbox">
+							<label>same as shipping
+								<input type="checkbox" data-toggle=".payment-address" name="same-address" checked />
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="row payment-address">
+					<div class="col-sm-6">
+						<input type="text" maxlength="200" required name="payment-address" placeholder="street 1" class="form-control" />
+					</div>
+					<div class="col-sm-6">
+						<input type="text" maxlength="200" name="payment-address2" placeholder="street 2 (optional)" class="form-control" />
+					</div>
+				</div>
+				<div class="row payment-address">
+					<div class="col-sm-6">
+						<input type="text" required maxlength="50" name="payment-city" placeholder="city" class="form-control" />
+					</div>
+					<div class="col-sm-6">
+						<select name="payment-state" class="form-control state" required></select>
+					</div>
+				</div>
+				<div class="row payment-address">
+					<div class="col-sm-6">
+						<input type="text" maxlength="10" required name="payment-zipcode" class="zipcode form-control" placeholder="zipcode" />
+					</div>
+				</div>
+				<div class="row payment-address">
+					<div class="col-sm-6">
+						{{ checkout.Countries('payment-country') }}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="row">
+					<div class="col-sm-12">
+						<legend>Credit Card</legend>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-4">
+						<select name="payment-cardtype" required class="form-control">
+							<option value="">card type</option>
+						</select>
+					</div>
+					<div class="col-sm-8">
+						<input type="text" data-type="credit-card" class="form-control" maxlength="20" required name="payment-number" placeholder="card number" />
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-4">
+						<select name="month" required class="form-control">
+							<option value="">month</option>
+							<option value="1">Jan (1)</option>
+							<option value="2">Feb (2)</option>
+							<option value="3">Mar (3)</option>
+							<option value="4">Apr (4)</option>
+							<option value="5">May (5)</option>
+							<option value="6">Jun (6)</option>
+							<option value="7">Jul (7)</option>
+							<option value="8">Aug (8)</option>
+							<option value="9">Sep (9)</option>
+							<option value="10">Oct (10)</option>
+							<option value="11">Nov (11)</option>
+							<option value="12">Dec (12)</option>
+						</select>
+					</div>
+					<div class="col-sm-4">
+						<select name="year" required class="form-control">
+							<option value="">year</option>
+							{% for year in years %}
+							<option value="{{ year }}">{{ year }}</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div class="col-sm-3">
+						<input type="text" data-type="integer" maxlength="4" required name="security-code" placeholder="code" class="form-control" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
 </div>
-
 {% endblock %}
 
 {% block middle %}
-
 {% endblock %}
 
 {% block foot %}
-
+<script type="text/html" id="us-states">
+	{{ checkout.USStates('Choose State') }}
+</script>
+<script type="text/html" id="canada-states">
+	{{ checkout.CanadaProvinces('Choose Province') }}
+</script>
+<script type="text/html" id="international-states">
+	{{ checkout.InternationalStates('state, territory or province code') }}
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
 <script src="/js/checkout.js"></script>
 {% endblock %}
