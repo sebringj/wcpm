@@ -35,3 +35,46 @@
 #top .block1 legend {
 	margin:0; padding: 0;
 }
+#top .block1 button {
+	background-color:#661d1a;
+	color:#bca5a4;
+	font-size:30px;
+	font-weight:100;
+	display:inline-block;
+	padding:0 20px;
+	margin-bottom:20px;
+	font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+	border: none;
+	text-decoration:none;
+}
+#top .item,
+#top .total {
+	font-weight: 700;
+	padding-bottom:5px;
+}
+#top .big-total {
+	font-size:25px;
+	padding-bottom:20px;
+}
+#top .error {
+	border-color: #f00;
+	color: #f00;
+	background-color: #fee;
+}
+#top #errorMessageContainer {
+	display: none;
+}
+#top .show-for-receipt {
+	display:none;
+}
+.centered {
+	text-align: center;
+}
+small {
+	font-size: 12px;
+	white-space: nowrap;
+}
+#shippingCalculation {
+	position:relative;
+	top:5px;
+}

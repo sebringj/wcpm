@@ -1,6 +1,4 @@
 $(function() {
-  _.templateSettings.interpolate = /\{\{(.+?)\}\}/g;
-
   var cartContents = $('#cartContents');
   var cartItemTemplate = _.template($('#cartItemTemplate').html());
   var cartEmptyTemplate = _.template($('#cartEmptyTemplate').html());

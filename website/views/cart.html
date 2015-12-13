@@ -31,7 +31,7 @@
 <script type="text/html" id="cartItemTemplate">
 	<div class="row cart-item" data-upc="{{upc}}">
 		<div class="col-xs-4">
-			<span class="cart-item-name">{{name}}</span>
+			<a href="{{href}}" class="cart-item-name">{{name}}</a>
 		</div>
 		<div class="col-xs-4">
 			<div class="cart-item-price pull-right">${{msrp}}</div>
@@ -58,7 +58,6 @@
 	</div>
 </script>
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
 <script src="/js/cart.js"></script>
 {% endraw %}
 {% endblock %}

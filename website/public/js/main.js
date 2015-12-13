@@ -1,3 +1,5 @@
+  _.templateSettings.interpolate = /\{\{(.+?)\}\}/g;
+
 // enable popout menu
 $(window).resize(function(){
 	$('#mobileMenu .nav').css({

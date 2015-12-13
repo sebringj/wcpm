@@ -16,7 +16,8 @@ module.exports.set = function(context) {
 				pageID: cacheKey,
 				items: context.cache[cacheKey].items,
 				title: context.cache[cacheKey].title,
-				vars: context.cache[cacheKey].vars || {}
+				vars: context.cache[cacheKey].vars || {},
+				years: context.cache[cacheKey].years
 			});
 		}
 
@@ -36,10 +37,15 @@ module.exports.set = function(context) {
 				{ id: pageID + 'Title', editorType: 'inline' }
 			]
 		}, function(kg) {
+			var years = []; var year = (new Date()).getFullYear();
+			for(var i = 0; i < 10; i++) {
+				years.push(year+i);
+			}
 			context.cache[cacheKey] = {
 				items: kg.items,
 				title: kg.seo.title,
-				vars: kg.vars
+				vars: kg.vars,
+				years: years
 			};
 			render();
 		});

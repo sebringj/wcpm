@@ -6,7 +6,7 @@ $(function() {
 	if (!upc)
 		return;
 
-	glut.products.list(upc)
+	glut.products.list({ upc: upc })
 	.then(function(products) {
 		if (products.length)
 			product = products[0];
@@ -21,6 +21,7 @@ $(function() {
 			qty = 1;
 			$('#qtyInput').val(qty);
 		}
+		product.href = location.pathname;
 		glut.cart.set(product, qty);
 		location = '/cart';
 	});
