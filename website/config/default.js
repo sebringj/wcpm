@@ -1,18 +1,20 @@
-var kitguiAccountKey = 'a009f65654d241638cbb908f41f03f9b';
+var kitguiAccountKey = process.env.KITGUI_ACCOUNT_KEY;
 module.exports = {
-  domain: 'www.westcoastprimemeats.com',
+  domain: process.env.DOMAIN,
+  port: process.env.PORT,
+  sslPort: process.env.SSL_PORT,
   kitgui: {
     host: 's3.amazonaws.com',
     basePath: '/kitgui/clients/' + kitguiAccountKey,
     accountKey: kitguiAccountKey
   },
   email: {
-    user: 'noreply@emeraldcode.com',
-    to: 'webinfo@westcoastprimemeats.com',
-    pass: 'Abc123!~!',
-    from: 'noreply@emeraldcode.com'
+    user: process.env.EMAIL_USER,
+    to: process.env.EMAIL_TO,
+    pass: process.env.EMAIL_PASSWORD,
+    from: process.env.EMAIL_FROM
   },
 	glut: {
-		url: 'http://api.glut.io/api'
+		api: process.env.GLUT_API
 	}
 }; // 216.31.162.187

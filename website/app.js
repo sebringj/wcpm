@@ -28,9 +28,9 @@ app.use(express.favicon(__dirname + '/public/favicon.ico'));
 
 controllers.set(context);
 
-http.createServer(app).listen(process.env.PORT);
-if (process.env.SSL_PORT)
+http.createServer(app).listen(config.port);
+if (config.sslPort)
   https.createServer({
-    key: fs.readFileSync(process.env.SSL_KEY),
-    cert: fs.readFileSync(process.env.SSL_CERT)
-  }, app).listen(process.env.SSL_PORT);
+    key: fs.readFileSync(config.sslKey),
+    cert: fs.readFileSync(config.sslCert)
+  }, app).listen(config.sslPort);

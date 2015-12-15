@@ -39,8 +39,8 @@ function setLayoutCache(context) {
 		}, function(kg){
 			context.cache.layout = {
 				items: kg.items,
-				sslEnabled: (!!process.env.SSL_PORT).toString(),
-				api: process.env.API
+				sslEnabled: (!!config.sslPort).toString(),
+				glutApi: config.glut.api
 			};
 			next();
 		});
