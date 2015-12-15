@@ -101,12 +101,13 @@ $('form').on('submit', function(ev) {
 	});
 });
 
-glut.config.api = wcpm.api;
-
-glut.cart.on('change', function handleCartChange() {
-	var totalQuantity = glut.cart.totalQuantity();
-	if (totalQuantity > 0)
-		$('#cartIndicator').find('.qty').text(totalQuantity + '').end().css({ display: 'block' });
-	else
-		$('#cartIndicator').hide();
-});
+if (window.glut) {
+  glut.config.api = wcpm.api;
+  glut.cart.on('change', function handleCartChange() {
+  	var totalQuantity = glut.cart.totalQuantity();
+  	if (totalQuantity > 0)
+  		$('#cartIndicator').find('.qty').text(totalQuantity + '').end().css({ display: 'block' });
+  	else
+  		$('#cartIndicator').hide();
+  });  
+}
