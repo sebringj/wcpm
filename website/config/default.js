@@ -3,6 +3,8 @@ module.exports = {
   domain: process.env.DOMAIN,
   port: process.env.PORT,
   sslPort: process.env.SSL_PORT,
+  sslKey: process.env.SSL_KEY,
+  sslCert: process.env.SSL_CERT
   kitgui: {
     host: 's3.amazonaws.com',
     basePath: '/kitgui/clients/' + kitguiAccountKey,

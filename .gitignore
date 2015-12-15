@@ -1,5 +1,7 @@
 */config/*
 *.pem
+*.key
+*.crt
 *.txt
 .DS_Store
 node_modules
