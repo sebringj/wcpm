@@ -1,4 +1,41 @@
-  _.templateSettings.interpolate = /\{\{(.+?)\}\}/g;
+window.wcpm = window.wcpm || {};
+
+wcpm.forceSsl = function() {
+  if (wcpm.sslEnabled && location.protocol !== 'https:') {
+    location = 'https://' + location.host + location.pathname + location.hash;
+  }
+};
+
+wcpm.parseUrl = function(url) {
+  var parser = document.createElement('a');
+  parser.href = url;
+  return parser;
+};
+
+if (wcpm.sslEnabled)
+  $(document).on('click', 'a[href]', function(ev) {
+    var parsedUrl = wcpm.parseUrl($(this).attr('href'));
+
+    if (parsedUrl.host !== location.host)
+      return;
+
+    var withoutProtocol = '//' + parsedUrl.host + parsedUrl.pathname + parsedUrl.search + parsedUrl.hash;
+    var newLocation;
+    if (/^\/(cart|checkout|products)\//.test(parsedUrl.pathname)) {
+      if (location.protocol !== 'https:')
+        newLocation = 'https:' + withoutProtocol;
+    } else {
+      if (location.protocol !== 'http:')
+        newLocation = 'http:' + withoutProtocol;
+    }
+
+    if (newLocation) {
+      ev.preventDefault();
+      location = newLocation;
+    }
+  });
+
+_.templateSettings.interpolate = /\{\{(.+?)\}\}/g;
 
 // enable popout menu
 $(window).resize(function(){
@@ -64,7 +101,7 @@ $('form').on('submit', function(ev) {
 	});
 });
 
-glut.config.api = 'http://localhost:3001/api';
+glut.config.api = wcpm.api;
 
 glut.cart.on('change', function handleCartChange() {
 	var totalQuantity = glut.cart.totalQuantity();

@@ -38,7 +38,9 @@ function setLayoutCache(context) {
 			]
 		}, function(kg){
 			context.cache.layout = {
-				items : kg.items
+				items: kg.items,
+				sslEnabled: (!!process.env.SSL_PORT).toString(),
+				api: process.env.API
 			};
 			next();
 		});

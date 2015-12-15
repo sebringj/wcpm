@@ -1,20 +1,19 @@
-var express = require('express'),
-	config = require('config'),
-	app = express(),
-	port = (process.env.PORT || 3999),
-	server = app.listen(port),
-	controllers = require('./controllers'),
-	http = require('http'),
-	path = require('path'),
-	cons = require('consolidate'),
-	swig = require('swig'),
-	middleware = require('./controllers/middleware.js'),
-	context = {
-		app : app,
-		cache : {}
-		//mailchimp : (new mcapi.Mailchimp(config.mailchimp.apikey))
-	};
-	
+var express = require('express');
+var config = require('config');
+var app = express();
+var controllers = require('./controllers');
+var path = require('path');
+var	cons = require('consolidate');
+var swig = require('swig');
+var middleware = require('./controllers/middleware.js');
+var context = {
+	app: app,
+	cache: {}
+};
+var http = require('http');
+var https = require('https');
+var fs = require('fs');
+
 app.engine('.html', cons.swig);
 app.set('view engine', 'html');
 app.set('view cache', false);
@@ -28,4 +27,10 @@ app.use(app.router);
 app.use(express.favicon(__dirname + '/public/favicon.ico'));
 
 controllers.set(context);
-console.log('running on port ' + port);
+
+http.createServer(app).listen(process.env.PORT);
+if (process.env.SSL_PORT)
+  https.createServer({
+    key: fs.readFileSync(process.env.SSL_KEY),
+    cert: fs.readFileSync(process.env.SSL_CERT)
+  }, app).listen(process.env.SSL_PORT);

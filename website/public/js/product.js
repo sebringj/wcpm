@@ -1,3 +1,5 @@
+wcpm.forceSsl();
+
 $(function() {
 	var product;
 

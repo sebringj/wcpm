@@ -9,7 +9,7 @@ module.exports = {
   email: {
     user: 'noreply@emeraldcode.com',
     to: 'webinfo@westcoastprimemeats.com',
-    pass: process.env.EMAIL_PASSWORD,
+    pass: 'Abc123!~!',
     from: 'noreply@emeraldcode.com'
   },
 	glut: {

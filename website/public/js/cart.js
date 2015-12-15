@@ -1,3 +1,5 @@
+wcpm.forceSsl();
+
 $(function() {
   var cartContents = $('#cartContents');
   var cartItemTemplate = _.template($('#cartItemTemplate').html());

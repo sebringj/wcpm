@@ -1,3 +1,5 @@
+wcpm.forceSsl();
+
 $(function() {
 
 	if (glut.cart.list().length < 1) {
@@ -7,6 +9,17 @@ $(function() {
 
 	var shippingMethods;
 	var products;
+	var salesTaxLookup = {};
+
+	function getSalesTax() {
+		var sameAddress = !!$('[name=same-address]:checked').length;
+		var addressPrefix = sameAddress ? 'shipping' : 'payment';
+		var countryCode = $('[name=' + addressPrefix + '-country]').val();
+		var state = $('[name=' + addressPrefix + '-state]').val();
+		if (countryCode === 'US' && salesTaxLookup[state])
+			return salesTaxLookup[state];
+		return 0;
+	}
 
 	function getOptions(options, label) {
 		var div = $('<div>');
@@ -37,7 +50,8 @@ $(function() {
 				href: item.href
 			}));
 		});
-		var tax = 0.08 * subtotal;
+		var salesTax = getSalesTax();
+		var tax = getSalesTax() * subtotal;
 		html.push(totalsTemplate({
 			subtotal: subtotal.toFixed(2),
 			tax: tax.toFixed(2),
@@ -60,6 +74,16 @@ $(function() {
 		$('[name=payment-cardtype]').html(getOptions(methods, 'Choose Card'));
 	})
 	.catch(function(err) {
+		$('#errorModal').find('.message').text('An error occurred while loading this page.').end().modal({ show: true });
+	});
+
+	glut.taxes.applicableSalesTax()
+	.then(function(lookup) {
+		console.log('sales tax');
+		console.log(lookup);
+		salesTaxLookup = lookup;
+	})
+	.catch(function() {
 		$('#errorModal').find('.message').text('An error occurred while loading this page.').end().modal({ show: true });
 	});
 
