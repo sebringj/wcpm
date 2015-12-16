@@ -14,6 +14,7 @@ $(function() {
       html.push(cartEmptyTemplate());
     else {
       glut.cart.list().forEach(function(item) {
+        item.msrp = item.msrp.toFixed(2);
         html.push(cartItemTemplate(item));
       });
       html.push(cartSubtotalTemplate({ subtotal: glut.cart.subtotal().toFixed(2) }));
