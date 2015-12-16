@@ -247,7 +247,7 @@ $(function() {
 		else {
 			paymentStreets = [$('[name=payment-address]').val()];
 			if ($('[name=payment-address2]').val().trim() !== '')
-				shippingStreets.push($('[name=payment-address2]').val());
+				paymentStreets.push($('[name=payment-address2]').val());
 		}
 
 		function getActor(contactPrefix, addressPrefix) {

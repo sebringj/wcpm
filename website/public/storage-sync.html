@@ -1,0 +1,13 @@
+<html>
+	<head></head>
+	<body>
+		<script>
+			if (sessionStorage.glutCart) {
+				try {
+					var obj = { glutCart: JSON.parse(sessionStorage.glutCart) };
+					parent.postMessage(JSON.stringify(obj), '*');
+				} catch(ex) { console.log(ex); }
+			}
+		</script>
+	</body>
+</html>

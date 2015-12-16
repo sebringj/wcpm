@@ -11,10 +11,11 @@
 	<div class="content show-for-receipt">
 		<div class="row">
 			<div class="col-sm-12 centered">
-				<h2>Thank you for your purchase!</h2>
-				<p>You will receive an email receipt shortly.</p>
-				<p>Please allow 1-2 business days for your order to ship.</p>
-				<p><a href="/resources/contact">Contact Customer Service</a> if you have any questions.</p>
+				<h2>Thank you for your purchase! You will receive an email receipt shortly.</h2>
+				<p>Orders placed before 2:00 PM Pacific Monday – Friday will ship the same day. Orders after 2:00 PM
+					will ship the next business day. Once your product ships, our customer service team will email your tracking number.
+				</p>
+				<p>Please <a href="/resources/contact">Contact Customer Service</a> if you have any questions.</p>
 			</div>
 		</div>
 	</div>
@@ -96,7 +97,7 @@
 			<div class="col-sm-6">
 				<div class="row">
 					<div class="col-sm-12">
-						<legend>Payment Contact</legend>
+						<legend>Billing Contact</legend>
 					</div>
 				</div>
 				<div class="row">
@@ -110,25 +111,25 @@
 				</div>
 				<div class="row payment-contact">
 					<div class="col-sm-6">
-						<input data-label="Payment First Name" class="form-control" type="text" maxlength="25" required name="payment-firstname" placeholder="first name" />
+						<input data-label="Billing First Name" class="form-control" type="text" maxlength="25" required name="payment-firstname" placeholder="first name" />
 					</div>
 					<div class="col-sm-6">
-						<input data-label="Payment Last Name" class="form-control" type="text" maxlength="25" required name="payment-lastname" placeholder="last name" />
+						<input data-label="Billing Last Name" class="form-control" type="text" maxlength="25" required name="payment-lastname" placeholder="last name" />
 					</div>
 				</div>
 				<div class="row payment-contact">
 					<div class="col-sm-6">
-						<input data-label="Payment Email" class="form-control" type="email" maxlength="50" required name="payment-email" placeholder="email address" />
+						<input data-label="Billing Email" class="form-control" type="email" maxlength="50" required name="payment-email" placeholder="email address" />
 					</div>
 					<div class="col-sm-6">
-						<input data-label="Payment Phone Number" class="form-control" type="tel" maxlength="50" name="payment-phone" placeholder="phone number" />
+						<input data-label="Billing Phone Number" class="form-control" type="tel" maxlength="50" name="payment-phone" placeholder="phone number" />
 					</div>
 				</div>
 			</div>
 			<div class="col-sm-6" data-address-group>
 				<div class="row">
 					<div class="col-sm-12">
-						<legend>Payment Address</legend>
+						<legend>Billing Address</legend>
 					</div>
 				</div>
 				<div class="row">
@@ -142,7 +143,7 @@
 				</div>
 				<div class="row payment-address">
 					<div class="col-sm-12">
-						<input data-label="Payment Street 1" type="text" maxlength="200" required name="payment-address" placeholder="street 1" class="form-control" />
+						<input data-label="Billing Street 1" type="text" maxlength="200" required name="payment-address" placeholder="street 1" class="form-control" />
 					</div>
 				</div>
 				<div class="row payment-address">
@@ -152,18 +153,18 @@
 				</div>
 				<div class="row payment-address">
 					<div class="col-sm-6">
-						<input data-label="Payment City" type="text" required maxlength="50" name="payment-city" placeholder="city" class="form-control" />
+						<input data-label="Billing City" type="text" required maxlength="50" name="payment-city" placeholder="city" class="form-control" />
 					</div>
 					<div class="col-sm-6">
-						<select data-label="Payment State" name="payment-state" class="form-control state" required></select>
+						<select data-label="Billing State" name="payment-state" class="form-control state" required></select>
 					</div>
 				</div>
 				<div class="row payment-address">
 					<div class="col-sm-6">
-						{{ checkout.Countries('Payment Country', 'Choose Country', 'payment-country') }}
+						{{ checkout.Countries('Billing Country', 'Choose Country', 'payment-country') }}
 					</div>
 					<div class="col-sm-6">
-						<input data-label="Payment Postal Code" type="text" maxlength="10" required name="payment-zipcode" class="zipcode form-control" placeholder="postal code" />
+						<input data-label="Billing Postal Code" type="text" maxlength="10" required name="payment-zipcode" class="zipcode form-control" placeholder="postal code" />
 					</div>
 				</div>
 			</div>
@@ -281,12 +282,12 @@
 <script type="text/html" id="totalsTemplate">
 	<div class="row totals">
 		<div class="col-sm-10">
-			<div class="pull-right total">subtotal: ${{subtotal}}</div>
+			<div class="pull-right total">Subtotal: ${{subtotal}}</div>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-sm-10">
-			<div class="pull-right total">sales tax: ${{tax}}</div>
+			<div class="pull-right total">Sales tax: ${{tax}}</div>
 		</div>
 	</div>
 	<div class="row">
@@ -296,7 +297,7 @@
 	</div>
 	<div class="row">
 		<div class="col-sm-10">
-			<div class="pull-right total big-total">total: ${{total}}</div>
+			<div class="pull-right total big-total">Total: ${{total}}</div>
 		</div>
 	</div>
 </script>

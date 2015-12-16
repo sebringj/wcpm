@@ -21,7 +21,7 @@ if (wcpm.sslEnabled)
 
     var withoutProtocol = '//' + parsedUrl.host + parsedUrl.pathname + parsedUrl.search + parsedUrl.hash;
     var newLocation;
-    if (/^\/(cart|checkout|products)\//.test(parsedUrl.pathname)) {
+    if (/^\/(cart|checkout|products)/.test(parsedUrl.pathname)) {
       if (location.protocol !== 'https:')
         newLocation = 'https:' + withoutProtocol;
     } else {
@@ -109,5 +109,17 @@ if (window.glut) {
   		$('#cartIndicator').find('.qty').text(totalQuantity + '').end().css({ display: 'block' });
   	else
   		$('#cartIndicator').hide();
-  });  
+  });
 }
+
+window.addEventListener('message', function(ev) {
+  if (ev.origin !== 'https://www.westcoastprimemeats.com')
+    return;
+  try {
+    var obj = JSON.parse(ev.data);
+    sessionStorage.glutCart = JSON.stringify(obj.glutCart);
+    glut.cart.reload();
+  } catch(ex) {};
+});
+
+$('body').append('<iframe style="display:none" src="https://www.westcoastprimemeats.com/storage-sync.html?r=' + Math.random().toString() + '"></iframe>');

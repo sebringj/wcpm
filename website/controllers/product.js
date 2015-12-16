@@ -3,7 +3,7 @@ var kitgui = require('kitgui');
 var request = require('request');
 
 function getProduct(productId, callback) {
-	request(config.glut.url + '/products?upc=' + productId, function(err, res, body) {
+	request(config.glut.api + '/products?upc=' + productId, function(err, res, body) {
 		if (err)
 			return callback({ err: err });
 		if (res.statusCode !== 200)
