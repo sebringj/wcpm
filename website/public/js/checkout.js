@@ -259,7 +259,7 @@ $(function() {
 					phone: $('[name=' + contactPrefix + '-phone]').val()
 				},
 				address: {
-					streets: paymentStreets,
+					streets: (addressPrefix === 'payment') ? paymentStreets : shippingStreets,
 					city: $('[name=' + addressPrefix + '-city]').val(),
 					stateOrProvince: $('[name=' + addressPrefix + '-state]').val(),
 					countryCode: $('[name=' + addressPrefix + '-country]').val(),
