@@ -23,7 +23,7 @@
 	    link.rel = 'stylesheet';
 	    link.href = a + 'css/' + _ + '.css';
 	    link.media = 'screen';
-	    d.getElementsByTagName('head')[0].appendChild(link);
+	    d.getElementsByTagName('body')[0].appendChild(link);
 	};
     k.loggedin = (d.cookie.indexOf('kitgui=1') > -1);
     k.showTab = function () { };

@@ -1,6 +1,6 @@
 wcpm.forceSsl();
 
-$(function() {
+(function() {
 	var product;
 
 	var upc = $('[data-upc]').data('upc');
@@ -27,4 +27,4 @@ $(function() {
 		glut.cart.set(product, qty);
 		location = '/cart';
 	});
-});
+})();

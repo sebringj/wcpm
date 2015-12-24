@@ -1,6 +1,6 @@
 wcpm.forceSsl();
 
-$(function() {
+(function() {
   var cartContents = $('#cartContents');
   var cartItemTemplate = _.template($('#cartItemTemplate').html());
   var cartEmptyTemplate = _.template($('#cartEmptyTemplate').html());
@@ -63,4 +63,4 @@ $(function() {
 
   glut.cart.on('change', renderCart);
 
-});
+})();

@@ -1,6 +1,6 @@
 wcpm.forceSsl();
 
-$(function() {
+(function() {
 
 	if (glut.cart.list().length < 1) {
 		location = '/cart';
@@ -302,4 +302,4 @@ $(function() {
 		$('form.checkout').trigger('submit');
 	});
 
-});
+})();
