@@ -7,7 +7,7 @@
 	    var s = d.createElement('script');
 	    s.type = 'text/javascript';
 	    s.src = _ + '.js';
-	    s.async = false;
+	    s.async = true;
 	    s.onreadystatechange = s.onload = function() {
 	        var state = s.readyState;
 	        if (loaded.done || (!state || /loaded|complete/.test(state))) {
@@ -15,7 +15,7 @@
 	            loaded();
 	        }
 	    };
-		d.getElementsByTagName('head')[0].appendChild(s);	
+		d.getElementsByTagName('head')[0].appendChild(s);
 	},
 	c = function (_) {
 	    var link = d.createElement('link');
