@@ -4,6 +4,7 @@ var kitgui = require('kitgui');
 var restaurantMeatServiceRoutes = require('./restaurant-meat-service');
 var restaurantPartnersRoutes = require('./restaurant-partners');
 var wholesalePartnersRoutes = require('./wholesale-partners');
+var recipes = require('./recipes');
 var blogRoutes = require('./blog');
 var aboutRoutes = require('./about');
 var resourcesRoutes = require('./resources');
@@ -36,6 +37,7 @@ module.exports.set = function(context) {
 	restaurantMeatServiceRoutes.set(context);
 	restaurantPartnersRoutes.set(context);
 	wholesalePartnersRoutes.set(context);
+	recipes.set(context);
 	blogRoutes.set(context);
 	aboutRoutes.set(context);
 	resourcesRoutes.set(context);

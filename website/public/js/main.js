@@ -1,3 +1,9 @@
+if (!window.console)
+  window.console = {
+    log: function() {},
+    error: function() {}
+  };
+
 window.wcpm = window.wcpm || {};
 
 wcpm.forceSsl = function() {

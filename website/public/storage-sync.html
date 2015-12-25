@@ -2,6 +2,11 @@
 	<head></head>
 	<body>
 		<script>
+			if (!window.console)
+			  window.console = {
+			    log: function() {},
+			    error: function() {}
+			  };
 			if (sessionStorage.glutCart) {
 				try {
 					var obj = { glutCart: JSON.parse(sessionStorage.glutCart) };
