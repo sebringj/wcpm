@@ -4,7 +4,7 @@ templateHelper = require('../lib/templateHelper.js');
 
 module.exports.set = function(context) {
 	landing(context);
-	templateHelper.template2(context,/-recipe$/);
+	templateHelper.template3(context,/-recipe$/);
 };
 
 function landing(context) {
@@ -13,12 +13,12 @@ function landing(context) {
 		var pageID = cacheKey;
 		function render() {
 			res.render('recipes', {
-				layout : context.cache.layout,
-				kitguiAccountKey : config.kitgui.accountKey,
-				pageID : pageID,
-				items : context.cache[cacheKey].items,
-				title : context.cache[cacheKey].title,
-				description : context.cache[cacheKey].description
+				layout: context.cache.layout,
+				kitguiAccountKey: config.kitgui.accountKey,
+				pageID: pageID,
+				items: context.cache[cacheKey].items,
+				title: context.cache[cacheKey].title,
+				description: context.cache[cacheKey].description
 			});
 		}
 		if (req.cookies.kitgui) {
@@ -34,15 +34,15 @@ function landing(context) {
 			pageID : pageID,
 			url : 'http://' + config.domain + req.path,
 			items : [
-				{ id : 'recipesTitle', editorType : 'inline' },
-				{ id : 'recipesSubTitle', editorType : 'inline' },
-				{ id : 'recipesList', editorType : 'collection-json' }
+				{ id: 'recipesRotator', editorType: 'bootstrap-carousel-json' },
+				{ id: 'recipesTitle', editorType: 'inline' },
+				{ id: 'recipesList', editorType: 'collection-json' }
 			]
 		}, function(kg){
 			context.cache[cacheKey] = {
-				items : kg.items,
-				title : kg.seo.title,
-				description : kg.seo.description
+				items: kg.items,
+				title: kg.seo.title,
+				description: kg.seo.description
 			};
 			render();
 		});

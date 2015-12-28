@@ -4,24 +4,25 @@ async = require('async'),
 parser = require('rssparser');
 
 var monthNameLookup = [
-	'January', 'February', 'March', 'April', 'May', 'June', 
+	'January', 'February', 'March', 'April', 'May', 'June',
 	'July', 'August', 'September', 'October', 'November', 'December'
 ];
 
 module.exports = {
-	template1 : template1,
-	template2 : template2,
+	template1: template1,
+	template2: template2,
+	template3: template3,
 	blog: blog,
-	contact : contact,
-	faq : faq,
-	resourceLanding : resourceLanding
+	contact: contact,
+	faq: faq,
+	resourceLanding: resourceLanding
 };
 
 function template1(context, route) {
 	context.app.get(route, function(req, res){
 		var routeOK = false;
 		var pageID = cleanURL(req.path);
-		
+
 		function render() {
 			res.render('template1', context.cache[pageID]);
 		}
@@ -66,7 +67,7 @@ function template2(context, route) {
 	context.app.get(route, function(req, res){
 		var routeOK = false;
 		var pageID = cleanURL(req.path);
-		
+
 		function render() {
 			res.render('template2', context.cache[pageID]);
 		}
@@ -108,30 +109,74 @@ function template2(context, route) {
 	});
 }
 
+function template3(context, route) {
+	context.app.get(route, function(req, res){
+		var routeOK = false;
+		var pageID = cleanURL(req.path);
+
+		function render() {
+			res.render('template3', context.cache[pageID]);
+		}
+		if (req.cookies.kitgui === '1' || req.query.refresh) {
+			routeOK = true;
+			delete context.cache[pageID];
+		}
+		if (context.cache[pageID]) {
+			return render();
+		}
+		kitgui.getContents({
+			basePath : config.kitgui.basePath,
+			host : config.kitgui.host,
+			pageID : pageID,
+			url : 'http://' + config.domain + req.path,
+			items : [
+				{ id: pageID + 'Title', editorType: 'inline' },
+				{ id: pageID + 'SubTitle', editorType: 'inline' },
+				{ id: pageID + 'Content', editorType: 'html' },
+				{ id: pageID + 'RightHeader', editorType: 'inline' },
+				{ id: pageID + 'RightContent', editorType: 'html' }
+			]
+		}, function(kg){
+			if (!routeOK && !kg.seo.title) {
+				return res.redirect('/404');
+			}
+			context.cache[pageID] = {
+				layout: context.cache.layout,
+				kitguiAccountKey: config.kitgui.accountKey,
+				pageID: pageID,
+				items: kg.items,
+				title: kg.seo.title,
+				description: kg.seo.description
+			};
+			render();
+		});
+	});
+}
+
 function blog(context, route) {
 	context.app.get(route, function(req, res){
 		var routeOK = false;
 		var pageID = '-blog'
-			
+
 		function render() {
-			
+
 			var json;
 			var months = [];
 			var content;
 			var urlParts = req.url.substr(1).split('/');
 			var dateParts, urlMonth, urlYear;
-			var obj, newObj, i, date, month, year, 
+			var obj, newObj, i, date, month, year,
 			contentList = [], leastLength, blogItemKey = pageID + 'Blog';
-			
+
 			if (urlParts.length === 2) {
 				dateParts = urlParts[1].split('-');
 				urlMonth = dateParts[0];
 				urlYear = dateParts[1];
 			}
-			
+
 			obj = context.cache[pageID];
 			newObj = obj;
-			
+
 			// get month objects for archive output
 			if (obj.items && obj.items[blogItemKey] && obj.items[blogItemKey].content) {
 				json = obj.items[blogItemKey].content;
@@ -167,7 +212,7 @@ function blog(context, route) {
 						newObj[i] = obj[i];
 					}
 				}
-				
+
 				newObj.items = {};
 				// now only copy items that are not in blogItemKey
 				for(i in obj.items) {
@@ -180,7 +225,7 @@ function blog(context, route) {
 					content: contentList
 				};
 			}
-			
+
 			res.render('blog', newObj);
 		}
 		if (req.cookies.kitgui === '1' || req.query.refresh) {
@@ -200,7 +245,7 @@ function blog(context, route) {
 				layout : context.cache.layout,
 				kitguiAccountKey : config.kitgui.accountKey,
 				pageID : pageID
-			};	
+			};
 		}
 		kitgui.getContents({
 			basePath: config.kitgui.basePath,
@@ -218,7 +263,7 @@ function blog(context, route) {
 			}
 			context.cache[pageID].items = kg.items;
 			context.cache[pageID].title = kg.seo.title;
-			context.cache[pageID].description = kg.seo.description;			
+			context.cache[pageID].description = kg.seo.description;
 			render();
 		});
 	});
@@ -228,7 +273,7 @@ function resourceLanding(context, route) {
 	context.app.get(route, function(req, res){
 		var routeOK = false;
 		var pageID = cleanURL(req.path);
-		
+
 		function render() {
 			res.render('resources', context.cache[pageID]);
 		}
@@ -275,7 +320,7 @@ function faq(context, route) {
 	context.app.get(route, function(req, res){
 		var routeOK = false;
 		var pageID = cleanURL(req.path);
-		
+
 		function render() {
 			res.render('faq', context.cache[pageID]);
 		}
@@ -331,7 +376,7 @@ function contact(context, route) {
 	context.app.get(route, function(req, res){
 		var routeOK = false;
 		var pageID = cleanURL(req.path);
-		
+
 		function render() {
 			res.render('contact', context.cache[pageID]);
 		}
@@ -385,7 +430,7 @@ function template(context, route, kitguiItems) {
 	context.app.get(route, function(req, res){
 		var routeOK = false;
 		var pageID = cleanURL(req.path);
-		
+
 		function render() {
 			res.render('template2', context.cache[pageID]);
 		}

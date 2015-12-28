@@ -5,12 +5,27 @@
 {% endblock %}
 
 {% block top %}
+<div id="carousel-example-generic" class="carousel slide {{ items.recipesRotator.classNames }}" data-ride="carousel">
+	{% if items.recipesRotator.content %}
+		<div class="carousel-inner">
+			{% for item in items.recipesRotator.content %}
+				   {% if loop.first %}
+   				    <div class="item active">
+   				      <img src="{{ item.src }}" alt="{{ item.alt }}">
+   				      <div class="carousel-caption">{{ item.caption }}</div>
+   				    </div>
+				   {% else %}
+   				    <div class="item">
+   				      <img src="{{ item.src }}" alt="{{ item.alt }}">
+   				      <div class="carousel-caption">{{ item.caption }}</div>
+   				    </div>
+				   {% endif %}
+			{% endfor %}
+		</div>
+	{% endif %}
+</div>
 <div class="content">
 	<h1 class="h1-flourish {{ items.recipesTitle.classNames }}">{{ items.recipesTitle.content }}</h1>
-	<div class="partner-overview restaurant">
-		<div class="img"></div>
-		<div class="title {{ items.recipesSubTitle.classNames }}">{{ items.recipesSubTitle.content }}</div>
-	</div>
 	<div class="collection clearfix {{ items.recipesList.classNames }}">
 		{% if items.recipesList.content %}
 			{% for item in items.recipesList.content %}

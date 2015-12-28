@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+	<link rel="stylesheet" href="/css/template3.css">
+{% endblock %}
+
+{% block top %}
+<div class="content">
+	<h1 class="h1-flourish {{ items[pageID + 'Title'].classNames }}">{{ items[pageID + 'Title'].content }}</h1>
+	<div class="subtitle {{ items[pageID + 'SubTitle'].classNames }}">{{ items[pageID + 'SubTitle'].content }}</div>
+	<div class="row">
+		<div class="col-sm-8">
+			<div class="main-content {{ items[pageID + 'Content'].classNames }}">
+				{{ items[pageID + 'Content'].content | safe }}
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<h2 class="right-header {{ items[pageID + 'RightHeader'].classNames }}">
+				{{ items[pageID + 'RightHeader'].content }}
+			</h2>
+			<div class="right-content {{ items[pageID + 'RightContent'].classNames }}">
+				{{ items[pageID + 'RightContent'].content | safe }}
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block middle %}
+{% endblock %}
+
+{% block foot %}
+
+{% endblock %}
