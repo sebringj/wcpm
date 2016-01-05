@@ -299,7 +299,7 @@ html,body {
 	font-size:15px;
 	font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
-h1.h1-flourish {
+h1, h2, h1.h1-flourish {
 	padding-bottom:20px;
 	border-bottom:2px solid #E2DBD3;
 	box-shadow: 0 2px 0 #F8F1EB;
@@ -309,6 +309,21 @@ h1.h1-flourish {
 	background-position:right center;
 	margin-bottom:40px;
 	font-family: 'Open Sans Condensed', sans-serif;
+}
+h1 {
+	padding-bottom:20px;
+	margin-bottom:0;
+	border:none;
+	background-image:none;
+	border-top:none;
+	border-color:none;
+	box-shadow: none;
+}
+h2.h2-fourish {
+	font-size: 16px;
+	color: #8B8682;
+	font-style: italic;
+	padding-bottom: 10px;
 }
 .newsletter {
 	max-width:330px;

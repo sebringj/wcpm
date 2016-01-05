@@ -1,0 +1,17 @@
+.sort-filter-bar {
+	padding:0;
+}
+.sort-filter-bar .control,
+.sort-filter-bar .control.form-control {
+	display:inline-block;
+	margin-right: 40px;
+	margin: 10px 40px 10px 0;
+	width: auto;
+}
+.sort-filter-bar .sort {
+	cursor: pointer;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-o-user-select: none;
+}

@@ -2,6 +2,7 @@
 
 {% block head %}
 	<link rel="stylesheet" href="/css/partner-collection.css">
+	<link rel="stylesheet" href="/css/sort-filter.css">
 {% endblock %}
 
 {% block top %}
@@ -25,18 +26,37 @@
 	{% endif %}
 </div>
 <div class="content">
-	<h1 class="h1-flourish {{ items.recipesTitle.classNames }}">{{ items.recipesTitle.content }}</h1>
+	<h1 class="h1 {{ items.recipesTitle.classNames }}">{{ items.recipesTitle.content }}</h1>
+	<h2 class="h2-flourish {{ items.recipesSubTitle.classNames }}">{{ items.recipesSubTitle.content }}</h2>
+	<div class="sort-filter-bar">
+		<a class="sort control" data-sort="asc">
+			<i class="fa fa-sort"></i> sorted <span class="sort-by">a-z</span>
+		</a>
+		<select class="control form-control filter-meat">
+			<option>filter by meat</option>
+			<option>Beef</option>
+			<option>Burgers</option>
+			<option>Lamb &amp; Goat</option>
+			<option>Pork</option>
+			<option>Poultry</option>
+			<option>Seafood</option>
+			<option>Veal</option>
+		</select>
+		<select class="control form-control filter-contributor">
+			<option>filter by contributor</option>
+		</select>
+	</div>
 	<div class="collection clearfix {{ items.recipesList.classNames }}">
 		{% if items.recipesList.content %}
 			{% for item in items.recipesList.content %}
 			<div class="row">
-				<div class="col-sm-3">
-					<div class="img" style="background-image:url({{ item.src }})"><img src="/img/transparent_square.png" class="img-responsive"></div>
+				<div class="col-sm-6">
+					<a class="img" href="{{ item.href }}" style="background-image:url({{ item.src }})"><img alt="{{ item.alt }}" src="/img/transparent_square.png" class="img-responsive"></a>
 				</div>
-				<div class="col-sm-9">
+				<div class="col-sm-6">
 					<div class="title">{{ item.title }}</div>
 					<div class="description">{{ item.description | safe }}</div>
-					<a class="more" href="{{ item.href }}">More</a><br>
+					<a class="more" href="{{ item.href }}">View Recipe</a><br>
 				</div>
 			</div>
 			{% endfor %}
@@ -49,5 +69,5 @@
 {% endblock %}
 
 {% block foot %}
-
+	<script src="/js/recipes.js"></script>
 {% endblock %}

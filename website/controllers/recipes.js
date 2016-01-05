@@ -36,6 +36,7 @@ function landing(context) {
 			items : [
 				{ id: 'recipesRotator', editorType: 'bootstrap-carousel-json' },
 				{ id: 'recipesTitle', editorType: 'inline' },
+				{ id: 'recipesSubTitle', editorType: 'inline' },
 				{ id: 'recipesList', editorType: 'collection-json' }
 			]
 		}, function(kg){

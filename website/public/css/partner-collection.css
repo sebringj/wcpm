@@ -4,7 +4,9 @@
 #top div.top-section {
 	background-color:#E9E4E0;
 }
-h1 { color: #4D2732; margin:0; padding:0;}
+.content h1 { color: #4D2732; margin:0; padding:0;}
+.content h1, .content h2 { font-family: 'Open Sans Condensed', sans-serif; }
+.content h2 { color:#8B8682; font-size: 16px; font-style: italic; }
 .content {
 	padding:40px 40px; font-family:Georgia;
 }
@@ -46,9 +48,10 @@ h1 { color: #4D2732; margin:0; padding:0;}
 	background-position:center center;
 	margin-bottom:20px;
 	padding:20px;
+	display:block;
 }
 .collection .img img {
-	
+
 }
 .collection .title {
 	color:#882C13;

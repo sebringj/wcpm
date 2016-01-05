@@ -132,6 +132,7 @@ function template3(context, route) {
 			items : [
 				{ id: pageID + 'Title', editorType: 'inline' },
 				{ id: pageID + 'SubTitle', editorType: 'inline' },
+				{ id: pageID + 'Image', editorType : 'bootstrap-carousel-json' },
 				{ id: pageID + 'Content', editorType: 'html' },
 				{ id: pageID + 'RightHeader', editorType: 'inline' },
 				{ id: pageID + 'RightContent', editorType: 'html' }
