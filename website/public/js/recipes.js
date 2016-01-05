@@ -13,8 +13,18 @@
 
 	var $fc = $('.filter-contributor');
 	var options = [];
-	rows = _.sortByOrder(rows, ['contributor'], ['asc'])
+	var contributorLookup = {};
+	var contributors = [];
+
 	_.each(rows, function(row) {
+		if (contributorLookup[row.contributor])
+			return;
+		contributorLookup[row.contributor] = true;
+		contributors.push({ contributor: row.contributor });
+	});
+	
+	contributors = _.sortByOrder(contributors, ['contributor'], ['asc'])
+	_.each(contributors, function(row) {
 		var $option = $('<option>').text(row.contributor);
 		options.push($('<div>').append($('<option>').text(row.contributor)).html());
 	});
@@ -41,7 +51,10 @@
 		var html = _.map(rowsClone, function(row) {
 			return row.html;
 		});
-		$('.collection').html(html.join(''));
+		var rendered = html.join('');
+		if (rendered === '')
+			rendered = '<div class="no-results">Oops, nothing matches.</div>'
+		$('.collection').html(rendered);
 	}
 
 	$('.content a.sort').on('click', function() {
