@@ -14,9 +14,11 @@ module.exports = {
 	template2: template2,
 	template3: template3,
 	blog: blog,
+	blogItem: blogItem,
 	contact: contact,
 	faq: faq,
-	resourceLanding: resourceLanding
+	resourceLanding: resourceLanding,
+	blogItem: blogItem
 };
 
 function template1(context, route) {
@@ -431,12 +433,21 @@ function contact(context, route) {
 }
 
 function template(context, route, kitguiItems) {
-	context.app.get(route, function(req, res){
+	templateHelper(context, {
+		route: route,
+		template: 'template2',
+		kitguiItems: kitguiItems
+	});
+}
+
+function templateHelper(context, options) {
+	options = _.assign({ verb: 'get', kitguiItems: [] }, options);
+	context.app[options.verb](options.route, function(req, res){
 		var routeOK = false;
 		var pageID = cleanURL(req.path);
 
 		function render() {
-			res.render('template2', context.cache[pageID]);
+			res.render(options.template, context.cache[pageID]);
 		}
 		if (req.cookies.kitgui === '1' || req.query.refresh) {
 			routeOK = true;
@@ -445,6 +456,7 @@ function template(context, route, kitguiItems) {
 		if (context.cache[pageID]) {
 			return render();
 		}
+		var kitguiItems = _.clone(options.kitguiItems);
 		for(var i = 0; i < kitguiItems.length; i++) {
 			kitguiItems[i].id = pageID + kitguiItems[i].id;
 		}
@@ -465,6 +477,63 @@ function template(context, route, kitguiItems) {
 				title : kg.seo.title,
 				description : kg.seo.description
 			};
+			render();
+		});
+	});
+}
+
+function blogItem(context, route) {
+	templateHelper(context, {
+		route: route,
+		template: 'blog_item',
+		kitgui: [
+			{ id: 'Title', editorType: 'inline' },
+			{ id: 'SubTitle', editorType: 'inline' },
+			{ id: 'Content', editorType: 'html' }
+		]
+	});
+}
+
+function templateHelper(context, options) {
+	options = _.assign({ verb: 'get', kitguiItems: [] }, options);
+	context.app[options.verb](options.route, function(req, res){
+		var routeOK = false;
+		var pageID = cleanURL(req.path);
+
+		function render() {
+			res.render(options.template, context.cache[pageID]);
+		}
+
+		if (req.cookies.kitgui === '1' || req.query.refresh) {
+			routeOK = true;
+			delete context.cache[pageID];
+		}
+
+		if (context.cache[pageID]) {
+			return render();
+		}
+		var kitguiItems = _.clone(options.kitgui, true);
+		for(var i = 0; i < kitguiItems.length; i++) {
+			kitguiItems[i].id = pageID + kitguiItems[i].id;
+		}
+
+		kitgui.getContents({
+			basePath : config.kitgui.basePath,
+			host : config.kitgui.host,
+			pageID : pageID,
+			items : kitguiItems
+		}, function(kg){
+			if (!routeOK && !kg.seo.title) {
+				return res.redirect('/404');
+			}
+			context.cache[pageID] = _.assign({}, options, {
+				layout : context.cache.layout,
+				kitguiAccountKey : config.kitgui.accountKey,
+				pageID : pageID,
+				items : kg.items,
+				title : kg.seo.title,
+				description : kg.seo.description
+			});
 			render();
 		});
 	});

@@ -15,6 +15,11 @@
 .content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
 	color: #4D2732;
 }
+@media screen and (min-width:768px) {
+	.carousel-caption {
+		font-style: italic;
+	}
+}
 .main-image {
 	border:5px solid #fff;
 }
