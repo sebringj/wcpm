@@ -12,6 +12,9 @@
 	color:#8B8682;
 	font-family:Georgia;
 }
+.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
+	color: #4D2732;
+}
 .main-image {
 	border:5px solid #fff;
 }

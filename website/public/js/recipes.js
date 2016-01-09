@@ -7,7 +7,7 @@
 			title: $this.find('.title').text(),
 			contributor: $this.find('.description p a').text(),
 			meat: $this.find('img').attr('alt'),
-			html: '<div class="row">' + $this.html() + '</div>'
+			html: '<div class="col-md-6"><div class="row">' + $this.html() + '</div></div>'
 		});
 	});
 
@@ -22,7 +22,7 @@
 		contributorLookup[row.contributor] = true;
 		contributors.push({ contributor: row.contributor });
 	});
-	
+
 	contributors = _.sortByOrder(contributors, ['contributor'], ['asc'])
 	_.each(contributors, function(row) {
 		var $option = $('<option>').text(row.contributor);
@@ -54,6 +54,8 @@
 		var rendered = html.join('');
 		if (rendered === '')
 			rendered = '<div class="no-results">Oops, nothing matches.</div>'
+		else
+			rendered = '<div class="row">' + rendered + '</div>';
 		$('.collection').html(rendered);
 	}
 

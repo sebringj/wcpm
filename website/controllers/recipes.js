@@ -4,7 +4,9 @@ templateHelper = require('../lib/templateHelper.js');
 
 module.exports.set = function(context) {
 	landing(context);
-	templateHelper.template3(context,/-recipe$/);
+	templateHelper.template3(context, /-recipe$/, {
+		styles: ['/css/recipe.css']
+	});
 };
 
 function landing(context) {

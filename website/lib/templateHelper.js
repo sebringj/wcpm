@@ -1,7 +1,8 @@
-var kitgui = require('kitgui'),
-config = require('config'),
-async = require('async'),
-parser = require('rssparser');
+var kitgui = require('kitgui');
+var config = require('config');
+var async = require('async');
+var parser = require('rssparser');
+var _ = require('lodash');
 
 var monthNameLookup = [
 	'January', 'February', 'March', 'April', 'May', 'June',
@@ -109,7 +110,7 @@ function template2(context, route) {
 	});
 }
 
-function template3(context, route) {
+function template3(context, route, options) {
 	context.app.get(route, function(req, res){
 		var routeOK = false;
 		var pageID = cleanURL(req.path);
@@ -141,14 +142,16 @@ function template3(context, route) {
 			if (!routeOK && !kg.seo.title) {
 				return res.redirect('/404');
 			}
-			context.cache[pageID] = {
+
+			options = options || {};
+			context.cache[pageID] = _.assign({}, options, {
 				layout: context.cache.layout,
 				kitguiAccountKey: config.kitgui.accountKey,
 				pageID: pageID,
 				items: kg.items,
 				title: kg.seo.title,
 				description: kg.seo.description
-			};
+			});
 			render();
 		});
 	});

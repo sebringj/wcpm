@@ -2,6 +2,11 @@
 
 {% block head %}
 	<link rel="stylesheet" href="/css/template3.css">
+	{% if styles %}
+		{% for style in styles %}
+			<link rel="stylesheet" href="{{style}}">
+		{% endfor %}
+	{% endif %}
 {% endblock %}
 
 {% block top %}
