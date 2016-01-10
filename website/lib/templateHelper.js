@@ -440,48 +440,6 @@ function template(context, route, kitguiItems) {
 	});
 }
 
-function templateHelper(context, options) {
-	options = _.assign({ verb: 'get', kitguiItems: [] }, options);
-	context.app[options.verb](options.route, function(req, res){
-		var routeOK = false;
-		var pageID = cleanURL(req.path);
-
-		function render() {
-			res.render(options.template, context.cache[pageID]);
-		}
-		if (req.cookies.kitgui === '1' || req.query.refresh) {
-			routeOK = true;
-			delete context.cache[pageID];
-		}
-		if (context.cache[pageID]) {
-			return render();
-		}
-		var kitguiItems = _.clone(options.kitguiItems);
-		for(var i = 0; i < kitguiItems.length; i++) {
-			kitguiItems[i].id = pageID + kitguiItems[i].id;
-		}
-		kitgui.getContents({
-			basePath : config.kitgui.basePath,
-			host : config.kitgui.host,
-			pageID : pageID,
-			items : kitguiItems
-		}, function(kg){
-			if (!routeOK && !kg.seo.title) {
-				return res.redirect('/404');
-			}
-			context.cache[pageID] = {
-				layout : context.cache.layout,
-				kitguiAccountKey : config.kitgui.accountKey,
-				pageID : pageID,
-				items : kg.items,
-				title : kg.seo.title,
-				description : kg.seo.description
-			};
-			render();
-		});
-	});
-}
-
 function blogItem(context, route) {
 	templateHelper(context, {
 		route: route,
