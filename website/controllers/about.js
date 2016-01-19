@@ -19,7 +19,8 @@ function landing(context) {
 				pageID : pageID,
 				items : context.cache.about.items,
 				title : context.cache.about.title,
-				description : context.cache.about.description
+				description : context.cache.about.description,
+				vars: context.cache.about.vars
 			});
 		}
 		if (req.cookies.kitgui) {
@@ -53,10 +54,10 @@ function landing(context) {
 			context.cache.about = {
 				items : kg.items,
 				title : kg.seo.title,
-				description : kg.seo.description
+				description : kg.seo.description,
+				vars: kg.vars
 			};
 			render();
 		});
 	});
 }
-

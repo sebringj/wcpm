@@ -59,7 +59,8 @@ function template1(context, route) {
 				pageID : pageID,
 				items : kg.items,
 				title : kg.seo.title,
-				description : kg.seo.description
+				description : kg.seo.description,
+				vars: kg.vars
 			};
 			render();
 		});
@@ -105,7 +106,8 @@ function template2(context, route) {
 				pageID : pageID,
 				items : kg.items,
 				title : kg.seo.title,
-				description : kg.seo.description
+				description : kg.seo.description,
+				vars: kg.vars
 			};
 			render();
 		});
@@ -152,7 +154,8 @@ function template3(context, route, options) {
 				pageID: pageID,
 				items: kg.items,
 				title: kg.seo.title,
-				description: kg.seo.description
+				description: kg.seo.description,
+				vars: kg.vars
 			});
 			render();
 		});
@@ -267,6 +270,7 @@ function blog(context, route) {
 			if (!routeOK && !kg.seo.title) {
 				return res.redirect('/404');
 			}
+			context.cache[pageID].vars = kg.vars;
 			context.cache[pageID].items = kg.items;
 			context.cache[pageID].title = kg.seo.title;
 			context.cache[pageID].description = kg.seo.description;
@@ -310,12 +314,13 @@ function resourceLanding(context, route) {
 			}
 			if (kg.items)
 			context.cache[pageID] = {
-				layout : context.cache.layout,
-				kitguiAccountKey : config.kitgui.accountKey,
-				pageID : pageID,
-				items : kg.items,
-				title : kg.seo.title,
-				description : kg.seo.description
+				layout: context.cache.layout,
+				kitguiAccountKey: config.kitgui.accountKey,
+				pageID: pageID,
+				items: kg.items,
+				title: kg.seo.title,
+				description: kg.seo.description,
+				vars: kg.vars
 			};
 			render();
 		});
@@ -366,6 +371,7 @@ function faq(context, route) {
 					if (!routeOK && !kg.seo.title) {
 						return res.redirect('/404');
 					}
+					context.cache[pageID].vars = kg.vars;
 					context.cache[pageID].items = kg.items;
 					context.cache[pageID].title = kg.seo.title;
 					context.cache[pageID].description = kg.seo.description;
@@ -420,6 +426,7 @@ function contact(context, route) {
 					if (!routeOK && !kg.seo.title) {
 						return res.redirect('/404');
 					}
+					context.cache[pageID].vars = kg.vars;
 					context.cache[pageID].items = kg.items;
 					context.cache[pageID].title = kg.seo.title;
 					context.cache[pageID].description = kg.seo.description;
@@ -485,11 +492,12 @@ function templateHelper(context, options) {
 				return res.redirect('/404');
 			}
 			context.cache[pageID] = _.assign({}, options, {
-				layout : context.cache.layout,
-				kitguiAccountKey : config.kitgui.accountKey,
-				pageID : pageID,
-				items : kg.items,
-				title : kg.seo.title,
+				layout: context.cache.layout,
+				kitguiAccountKey: config.kitgui.accountKey,
+				pageID: pageID,
+				items: kg.items,
+				vars: kg.vars,
+				title: kg.seo.title,
 				description : kg.seo.description
 			});
 			render();

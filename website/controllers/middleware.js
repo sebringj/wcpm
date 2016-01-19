@@ -1,5 +1,6 @@
-var kitgui = require('kitgui'),
-config = require('config');
+var kitgui = require('kitgui');
+var config = require('config');
+var _ = require('lodash');
 
 module.exports.set = function(context){
 	setLayoutCache(context);

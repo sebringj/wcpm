@@ -18,7 +18,8 @@ function landing(context) {
 				pageID : pageID,
 				items : context.cache[cacheKey].items,
 				title : context.cache[cacheKey].title,
-				description : context.cache[cacheKey].description
+				description : context.cache[cacheKey].description,
+				vars : context.cache[cacheKey].vars
 			});
 		}
 		if (req.cookies.kitgui) {
@@ -43,7 +44,8 @@ function landing(context) {
 			context.cache[cacheKey] = {
 				items : kg.items,
 				title : kg.seo.title,
-				description : kg.seo.description
+				description : kg.seo.description,
+				vars: kg.vars
 			};
 			render();
 		});

@@ -54,7 +54,7 @@
 				<div id="links" class="{{ items[pageID + 'Gallery'].classNames }}" id="{{ items[pageID + 'Gallery'].classNames }}" data-ride="carousel">
 					{% if items[pageID + 'Gallery'].content %}
 						{% for item in items[pageID + 'Gallery'].content %}
-					    <a href="{{ item.src }}" title="{{ item.caption }}" data-gallery>
+					    <a href="{{ item.src }}" title="{{ item.caption }}" style="background-image:url('{{ item.src }}')" data-gallery>
 					        <img src="{{ item.src }}" alt="{{ item.alt }}">
 					    </a>
 						{% endfor %}

@@ -13,12 +13,13 @@ function landing(context) {
 		var pageID = cacheKey;
 		function render() {
 			res.render('generic', {
-				layout : context.cache.layout,
-				kitguiAccountKey : config.kitgui.accountKey,
-				pageID : pageID,
-				items : context.cache[cacheKey].items,
-				title : context.cache[cacheKey].title,
-				description : context.cache[cacheKey].description
+				layout: context.cache.layout,
+				kitguiAccountKey: config.kitgui.accountKey,
+				pageID: pageID,
+				items: context.cache[cacheKey].items,
+				title: context.cache[cacheKey].title,
+				description: context.cache[cacheKey].description,
+				vars: context.cache[cacheKey].vars
 			});
 		}
 		if (req.cookies.kitgui) {
@@ -39,9 +40,10 @@ function landing(context) {
 			]
 		}, function(kg){
 			context.cache[cacheKey] = {
-				items : kg.items,
-				title : kg.seo.title,
-				description : kg.seo.description
+				items: kg.items,
+				title: kg.seo.title,
+				description: kg.seo.description,
+				vars: kg.vars
 			};
 			render();
 		});

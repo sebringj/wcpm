@@ -32,7 +32,7 @@ h2 { font-size:25px;}
 .right-content {
 	font-family:Georgia;
 }
-.right-content ol, 
+.right-content ol,
 .right-content ul {
 	color:#973A11;
 	margin:20px 0;
@@ -53,7 +53,7 @@ h2 { font-size:25px;}
 	margin-bottom:40px;
 }
 #links {
-	
+
 }
 #links a {
 	overflow:hidden;
@@ -62,10 +62,14 @@ h2 { font-size:25px;}
 	margin-right:5px;
 	margin-bottom:5px;
 	border:3px solid #fff;
+	background-position: center center;
+	background-repeat:no-repeat;
+	background-size: cover;
 }
 #links a img {
 	width:100px;
 	height:auto;
+	visibility: hidden;
 }
 .modal img {
 	width:100%;height:auto;
