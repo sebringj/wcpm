@@ -112,7 +112,7 @@ if (window.glut) {
   glut.cart.on('change', function handleCartChange() {
   	var totalQuantity = glut.cart.totalQuantity();
   	if (totalQuantity > 0)
-  		$('#cartIndicator').find('.qty').text(totalQuantity + '').end().css({ display: 'block' });
+  		$('#cartIndicator').find('.qty').text(totalQuantity + '').end().css({ display: 'inline-block' });
   	else
   		$('#cartIndicator').hide();
   });

@@ -14,16 +14,47 @@ html,body {
 #mobileMenu {
 	display:none;
 }
-#cartIndicator {
+#right-nav {
 	position: absolute;
-	display: none;
 	color: #fff;
 	font-size: 30px;
-	text-align: middle;
+	text-align: right;
 	top:10px;
 	right: 20px;
 	z-index: 10;
 	text-decoration: none;
+	white-space: nowrap;
+	position:relative;
+}
+#right-nav a {
+	display: inline-block;
+	color: #fff;
+	font-size: 12px;
+	min-width: 10px;
+}
+#right-nav span {
+	color: #fff;
+	font-size: 14px;
+	display:inline-block;
+	padding: 0 10px;
+}
+@media (max-width:992px) {
+	#right-nav a.non-mobile,
+	#right-nav span.non-mobile {
+		display: none;
+	}
+}
+#right-nav a#cartIndicator {
+	display: none;
+	color: #fff;
+	font-size: 30px;
+	text-align: middle;
+	text-decoration: none;
+	margin-left: 20px;
+}
+#right-nav a#cartIndicator span {
+	font-size: 30px;
+	padding:0;
 }
 #top {
 	background-image:url(/img/Curved-Wooden-Backdrops.jpg);

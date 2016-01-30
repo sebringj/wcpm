@@ -32,6 +32,7 @@ function setLayoutCache(context) {
 				{ id : 'homeNavItem5', editorType : 'inline' },
 				{ id : 'homeNavItem6', editorType : 'inline' },
 				{ id : 'homeNavItem7', editorType : 'inline' },
+				{ id : 'homeNavItem8', editorType : 'inline' },
 				{ id : 'layoutContactHeader', editorType : 'inline' },
 				{ id : 'layoutContactText1', editorType : 'inline' },
 				{ id : 'layoutContactRight1', editorType : 'inline' },
