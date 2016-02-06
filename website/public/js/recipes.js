@@ -6,7 +6,7 @@
 		rows.push({
 			title: $this.find('.title').text(),
 			contributor: $this.find('.description p a').text(),
-			meat: $this.find('img').attr('alt'),
+			meats: $this.find('img').attr('alt').split(','),
 			html: '<div class="col-md-6"><div class="row">' + $this.html() + '</div></div>'
 		});
 	});
@@ -17,6 +17,14 @@
 	var contributors = [];
 
 	_.each(rows, function(row) {
+		for(var i = 0; i < row.meats.length; i++) {
+			if (row.meats[i].trim() === '') {
+				row.meats.splice(i, 1);
+				i--;
+			}
+		}
+		if (!row.contributor || row.contributor.trim() === '')
+			return;
 		if (contributorLookup[row.contributor])
 			return;
 		contributorLookup[row.contributor] = true;
@@ -41,7 +49,7 @@
 		var rowsClone = _.clone(rows);
 		if (sortFilter.meat)
 			rowsClone = _.filter(rowsClone, function(row) {
-				return row.meat === sortFilter.meat;
+				return row.meats.indexOf(sortFilter.meat) > -1;
 			});
 		if (sortFilter.contributor)
 			rowsClone = _.filter(rowsClone, function(row) {
