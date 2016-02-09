@@ -3,9 +3,16 @@
 
 	$('.collection .row').each(function() {
 		var $this = $(this);
+		var contributor = $this.find('.description p').text();
+		if (typeof contributor === 'string') {
+			contributor = contributor.split(':');
+			if (contributor.length === 2)
+				contributor = contributor[1].trim();
+		} else
+			contributor = undefined;
 		rows.push({
 			title: $this.find('.title').text(),
-			contributor: $this.find('.description p a').text(),
+			contributor: contributor,
 			meats: $this.find('img').attr('alt').split(','),
 			html: '<div class="col-md-6"><div class="row">' + $this.html() + '</div></div>'
 		});
@@ -23,7 +30,7 @@
 				i--;
 			}
 		}
-		if (!row.contributor || row.contributor.trim() === '')
+		if (!row.contributor)
 			return;
 		if (contributorLookup[row.contributor])
 			return;
