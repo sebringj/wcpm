@@ -64,15 +64,6 @@ html,body {
 	background-size:100%;
 	position: relative;
 }
-#promoCookbook {
-	background-image:url(/img/buy-now-cookbook.png);
-	background-repeat:no-repeat;
-	background-position:center center;
-	width: 100%;
-	height:100px;
-	background-color:#c12727;
-	display:none;
-}
 #desktopNav {
 	height:72px;
 	font-family:Georgia;
