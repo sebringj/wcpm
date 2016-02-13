@@ -15,7 +15,6 @@ html,body {
 	display:none;
 }
 #right-nav {
-	position: absolute;
 	color: #fff;
 	font-size: 30px;
 	text-align: right;
@@ -28,9 +27,10 @@ html,body {
 }
 #right-nav a {
 	display: inline-block;
-	color: #fff;
-	font-size: 12px;
+	font-size: 14px;
 	min-width: 10px;
+	margin: 25px 0 0 5px;
+	padding: 5px 25px;
 }
 #right-nav span {
 	color: #fff;
@@ -64,19 +64,10 @@ html,body {
 	background-size:100%;
 	position: relative;
 }
-#promoCookbook {
-	background-image:url(/img/buy-now-cookbook.png);
-	background-repeat:no-repeat;
-	background-position:center center;
-	width: 100%;
-	height:100px;
-	background-color:#c12727;
-	display:none;
-}
 #desktopNav {
 	height:72px;
 	font-family:Georgia;
-	margin:90px -15px 0 -15px;
+	margin:60px -15px 0 -15px;
 	font-size:0;
 	position:relative;
 }
@@ -223,6 +214,9 @@ html,body {
 		display:inline-block;
 		bottom:-30px;
 		z-index:5;
+	}
+	#right-nav {
+		display:none;
 	}
 }
 #top .top-section {
