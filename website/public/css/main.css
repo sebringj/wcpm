@@ -415,3 +415,18 @@ form textarea.error {
 	background-color:#fcc;
 	color:#f00;
 }
+.learn-more {
+	display:inline-block;
+	background-color:#fff;
+	color:#663333;
+	text-align:center;
+	font-size:18px;
+	border-bottom:3px solid #e8a219;
+	font-family: 'Open Sans Condensed', sans-serif;
+	padding:10px 30px;
+	margin:50px 0;
+}
+.learn-more:hover {
+	color:#e8a219;
+	text-decoration:none;
+}
