@@ -9,8 +9,35 @@
 	<h1 class="{{ items[pageID + 'Title'].classNames }}">{{ items[pageID + 'Title'].content }}</h1>
 	<h2 class="flourish {{ items[pageID + 'SubTitle'].classNames }}">{{ items[pageID + 'SubTitle'].content }}</h2>
 	<div class="row">
-		<div class="col-sm-12 {{ items[pageID + 'Content'].classNames }}">
+		<div class="col-sm-8 {{ items[pageID + 'Content'].classNames }}">
 			{{ items[pageID + 'Content'].content | safe }}
+		</div>
+		<div class="col-sm-4">
+			{% if months %}
+			<h2 class="right-header">Archive</h2>
+			<div class="right-content">
+					{% for month in months %}
+						<a class="archive-entry" href="/blog/{{ month.month }}-{{ month.year }}">{{ month.month }} {{ month.year }}</a>
+					{% endfor %}
+			</div>
+			{% endif %}
+			{% if categories %}
+			<h2 class="right-header">Categories</h2>
+			<div class="right-content">
+				{% for name, count in categories %}
+					<a class="category-entry" href="/blog/{{ name }}">{{ name }} ({{ count }})</a>
+				{% endfor %}
+			</div>
+			{% endif %}
+			<h2 class="right-header"></h2>
+			<div class="right-content"></div>
+			<div class="newsletter">
+				<div>
+					<input type="text" name="name" placeholder="your name">
+					<input type="email" name="email" placeholder="your email">
+					<button>SUBMIT</button>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

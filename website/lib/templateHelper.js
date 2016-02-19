@@ -173,20 +173,25 @@ function blog(context, route) {
 			var months = [];
 			var content;
 			var urlParts = req.url.substr(1).split('/');
-			var dateParts, urlMonth, urlYear;
+			var parts, urlMonth, urlYear;
+			var category, categories;
 			var obj, newObj, i, date, month, year,
 			contentList = [], leastLength, blogItemKey = pageID + 'Blog';
 
 			if (urlParts.length === 2) {
-				dateParts = urlParts[1].split('-');
-				urlMonth = dateParts[0];
-				urlYear = dateParts[1];
+				parts = urlParts[1].split('-');
+				if (parts.length === 1)
+					category = parts[0];
+				else if (parts.length === 2) {
+					urlMonth = parts[0];
+					urlYear = parts[1];
+				}
 			}
 
 			obj = context.cache[pageID];
 			newObj = obj;
 
-			// get month objects for archive output
+			// parse out right nav
 			if (obj.items && obj.items[blogItemKey] && obj.items[blogItemKey].content) {
 				json = obj.items[blogItemKey].content;
 				if (obj.months) {
@@ -196,6 +201,20 @@ function blog(context, route) {
 					obj.months = months;
 				}
 
+				if (!obj.categories) {
+					categories = {};
+					json.forEach(function(item) {
+						if (item.tags) {
+							item.tags.forEach(function(tag) {
+								if (!categories[tag])
+									categories[tag] = 1;
+								else
+									categories[tag] = categories[tag] + 1;
+							});
+						}
+					});
+					obj.categories = categories;
+				}
 
 				// if we have a filter defined then remove out entries that are not in the filter
 				if (urlMonth) {
@@ -207,6 +226,11 @@ function blog(context, route) {
 							contentList.push(json[i]);
 						}
 					}
+				} else if (category) {
+					json.forEach(function(item) {
+						if (item.tags && item.tags.indexOf(category) > -1)
+							contentList.push(item);
+					});
 				} else { // otherwise we limit the results to 20
 					leastLength = (json.length < 20) ? json.length : 20;
 					for(i = 0; i < leastLength; i++) {
@@ -448,6 +472,12 @@ function template(context, route, kitguiItems) {
 }
 
 function blogItem(context, route) {
+	var data = {};
+	if (context.cache['-blog'])
+		data = {
+			months: context.cache['-blog'].months,
+			categories: context.cache['-blog'].categories
+		};
 	templateHelper(context, {
 		route: route,
 		template: 'blog_item',
@@ -455,7 +485,9 @@ function blogItem(context, route) {
 			{ id: 'Title', editorType: 'inline' },
 			{ id: 'SubTitle', editorType: 'inline' },
 			{ id: 'Content', editorType: 'html' }
-		]
+		],
+		months: data.months,
+		categories: data.categories
 	});
 }
 

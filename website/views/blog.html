@@ -42,14 +42,22 @@
 			</div>
 		</div>
 		<div class="col-sm-4">
+			{% if months %}
 			<h2 class="right-header">Archive</h2>
 			<div class="right-content">
-				{% if months %}
 					{% for month in months %}
 						<a class="archive-entry" href="/blog/{{ month.month }}-{{ month.year }}">{{ month.month }} {{ month.year }}</a>
 					{% endfor %}
-				{% endif %}
 			</div>
+			{% endif %}
+			{% if categories %}
+			<h2 class="right-header">Categories</h2>
+			<div class="right-content">
+				{% for name, count in categories %}
+					<a class="category-entry" href="/blog/{{ name }}">{{ name }} ({{ count }})</a>
+				{% endfor %}
+			</div>
+			{% endif %}
 			<h2 class="right-header"></h2>
 			<div class="right-content"></div>
 			<div class="newsletter">
