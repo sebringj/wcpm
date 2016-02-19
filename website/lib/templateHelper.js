@@ -472,12 +472,6 @@ function template(context, route, kitguiItems) {
 }
 
 function blogItem(context, route) {
-	var data = {};
-	if (context.cache['-blog'])
-		data = {
-			months: context.cache['-blog'].months,
-			categories: context.cache['-blog'].categories
-		};
 	templateHelper(context, {
 		route: route,
 		template: 'blog_item',
@@ -486,8 +480,14 @@ function blogItem(context, route) {
 			{ id: 'SubTitle', editorType: 'inline' },
 			{ id: 'Content', editorType: 'html' }
 		],
-		months: data.months,
-		categories: data.categories
+		onRender: function(obj) {
+			if (context.cache['-blog'])
+				return _.assign({}, obj, {
+					months: context.cache['-blog'].months,
+					categories: context.cache['-blog'].categories
+				});
+			return obj;
+		}
 	});
 }
 
@@ -498,7 +498,10 @@ function templateHelper(context, options) {
 		var pageID = cleanURL(req.path);
 
 		function render() {
-			res.render(options.template, context.cache[pageID]);
+			var cache = context.cache[pageID];
+			if (options.onRender)
+				cache = options.onRender(cache)
+			res.render(options.template, cache);
 		}
 
 		if (req.cookies.kitgui === '1' || req.query.refresh) {
