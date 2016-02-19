@@ -13,6 +13,9 @@ h2 {
 	font-size: 32px;
   line-height: 1.25;
 }
+h2 a:link, h2 a[href] {
+	color: #4D2732;
+}
 h3 {
 	font-size: 26px;
 }

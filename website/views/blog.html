@@ -32,7 +32,11 @@
 				{% if items[pageID + 'Blog'].content %}
 					{% for item in items[pageID + 'Blog'].content %}
 						{% if item.mode == 'live' %}
-							<h2>{{ item.title | safe }}</h2>
+							{% if item.link %}
+								<h2><a href="{{ item.link }}">{{ item.title | safe }}</a></h2>
+							{% else %}
+								<h2>{{ item.title | safe }}</h2>
+							{% endif %}
 							<div class="date-published">{{ item.date | date('Y-m-d') }}</div>
 							<p>{{ item.description | safe }}</p>
 							<div class="line"></div>
