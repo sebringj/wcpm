@@ -82,12 +82,12 @@
 .top-sep {
   border-bottom: 2px solid #E2DBD3;
   box-shadow: 0 2px 0 #F8F1EB;
-  margin: 20px 0 40px;
+  margin: -20px 0 30px;
 }
 .bottom-sep {
   border-bottom: 2px solid #E2DBD3;
   box-shadow: 0 2px 0 #F8F1EB;
-  margin: 20px 0;
+  margin: -20px 0 20px 0;
 }
 .contrib-photo img {
   width: 100%;
