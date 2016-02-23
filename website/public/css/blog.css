@@ -52,6 +52,7 @@ h6 {
 }
 .right-content {
 	font-family:Georgia;
+	margin-bottom: 30px;
 }
 .right-content ol,
 .right-content ul {
@@ -71,4 +72,40 @@ h6 {
 	margin-top:10px;
 	color:#973A11;
 	font-size:16px;
+}
+.date-published {
+	font-style: italic;
+}
+.entry-logo {
+  display: inline-block;
+	width: 140px;
+	height: 140px;
+	border-radius: 50%;
+	position: relative;
+	overflow: hidden;
+	vertical-align: top;
+}
+.entry-logo img {
+  width: 140px;
+}
+.entry-description {
+  display: inline-block;
+  width: 550px;
+  margin: 20px 0 0 20px;
+}
+.entry-btn a {
+  color: #fff;
+  background: #973201;
+  border: none;
+  padding: 10px 20px 10px 20px;
+  border-radius: 2px;
+  text-decoration: none;
+}
+.entry-btn a:hover {
+  background: #ad3903;
+  text-decoration: none;
+  color: #fff;
+}
+.col-sm-4 {
+	padding-left: 60px;
 }
