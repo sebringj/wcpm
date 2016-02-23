@@ -181,7 +181,7 @@ function blog(context, route) {
 			if (urlParts.length === 2) {
 				parts = urlParts[1].split('-');
 				if (parts.length === 1)
-					category = parts[0];
+					category = decodeURIComponent(parts[0]);
 				else if (parts.length === 2) {
 					urlMonth = parts[0];
 					urlYear = parts[1];
