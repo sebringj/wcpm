@@ -74,3 +74,41 @@ h2 { font-size:25px;}
 .modal img {
 	width:100%;height:auto;
 }
+.top-sep {
+  border-bottom: 2px solid #E2DBD3;
+  box-shadow: 0 2px 0 #F8F1EB;
+  margin: -20px 0 30px 0;
+}
+.bottom-sep {
+  border-bottom: 2px solid #E2DBD3;
+  box-shadow: 0 2px 0 #F8F1EB;
+  margin: -20px 0 20px 0;
+}
+.rest-info {
+  margin: 10px 0 30px 0;
+}
+.rest-info p {
+  padding-bottom: 10px;
+  margin-left: 40px;
+}
+.feat-recipe {
+    position: relative;
+    margin-top: 30px;
+}
+.feat-recipe img {
+    max-width: 100%;
+    width: auto;
+    border: 5px solid #fff;
+    min-width: 300px;
+}
+#feat-title {
+    position: absolute;
+    top: 80%;
+    font: 20px 'Open Sans Condensed';
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    color: #8B8682;
+    padding: 20px;
+    text-align: center;
+}

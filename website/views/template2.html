@@ -49,19 +49,6 @@
 					</div>
 				{% endif %}
 			</div>
-			<div class="gallery">
-				<div class="line top-line"></div>
-				<div id="links" class="{{ items[pageID + 'Gallery'].classNames }}" id="{{ items[pageID + 'Gallery'].classNames }}" data-ride="carousel">
-					{% if items[pageID + 'Gallery'].content %}
-						{% for item in items[pageID + 'Gallery'].content %}
-					    <a href="{{ item.src }}" title="{{ item.caption }}" style="background-image:url('{{ item.src }}')" data-gallery>
-					        <img src="{{ item.src }}" alt="{{ item.alt }}">
-					    </a>
-						{% endfor %}
-					{% endif %}
-				</div>
-				<div class="line bottom-line"></div>
-			</div>
 			<div class="main-content {{ items[pageID + 'Content'].classNames }}">
 				{{ items[pageID + 'Content'].content | safe }}
 			</div>
