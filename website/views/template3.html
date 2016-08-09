@@ -12,7 +12,13 @@
 {% block top %}
 <div class="content">
 	<h1 class="{{ items[pageID + 'Title'].classNames }}">{{ items[pageID + 'Title'].content }}</h1>
-	<h2 class="flourish {{ items[pageID + 'SubTitle'].classNames }}">{{ items[pageID + 'SubTitle'].content }}</h2>
+	<h2 class="flourish {{ items[pageID + 'SubTitle'].classNames }}">
+		{{ items[pageID + 'SubTitle'].content }}
+		{% if items[pageID + 'FlourishRight'].content and items[pageID + 'FlourishRight'].content.src %}
+			<img class="flourish-right {{ items[pageID + 'FlourishRight'].classNames }}"
+			src="{{ items[pageID + 'FlourishRight'].content.src }}" alt="{{ items[pageID + 'FlourishRight'].content.alt }}" />
+		{% endif %}
+	</h2>
 	<div class="row">
 		<div class="col-sm-8">
 			<div class="main-image carousel slide {{ items[pageID + 'Image'].classNames }}" id="{{ items[pageID + 'Image'].classNames }}" data-ride="carousel">

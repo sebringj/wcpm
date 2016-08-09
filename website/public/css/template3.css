@@ -145,3 +145,12 @@
   text-decoration: none;
   color: #fff;
 }
+h2.flourish {
+	background-image: none;
+	position: relative;
+}
+h2.flourish img.flourish-right {
+	position: absolute;
+	right: 0;
+	bottom: 15px;
+}

@@ -137,6 +137,7 @@ function template3(context, route, options) {
 			items : [
 				{ id: pageID + 'Title', editorType: 'inline' },
 				{ id: pageID + 'SubTitle', editorType: 'inline' },
+				{ id: pageID + 'FlourishRight', editorType: 'image' },
 				{ id: pageID + 'Image', editorType : 'bootstrap-carousel-json' },
 				{ id: pageID + 'Content', editorType: 'html' },
 				{ id: pageID + 'RightHeader', editorType: 'inline' },
@@ -148,6 +149,8 @@ function template3(context, route, options) {
 			}
 
 			options = options || {};
+			if (!kg.items[pageID + 'FlourishRight'].content || !kg.items[pageID + 'FlourishRight'].content.src)
+				kg.items[pageID + 'FlourishRight'].content = { src: '/img/flourish2.png', alt: 'flourish' };
 			context.cache[pageID] = _.assign({}, options, {
 				layout: context.cache.layout,
 				kitguiAccountKey: config.kitgui.accountKey,

@@ -70,7 +70,7 @@ $('#mobileNavToggle').click(function(ev){
 });
 $('#copyrightYear').text((new Date()).getFullYear());
 
-$('form').on('submit', function(ev) {
+$('#wcpm-contact-form').on('submit', function(ev) {
 	ev.preventDefault();
 
 	var emailRe = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
@@ -80,7 +80,7 @@ $('form').on('submit', function(ev) {
 
 	$form.find('input,textarea').each(function(){
 		var $this = $(this);
-		if (blankRe.test($this.val())) {
+		if (!$this.data('optional') && blankRe.test($this.val())) {
 			$this.addClass('error');
 			isError = true;
 		}
