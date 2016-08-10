@@ -149,7 +149,7 @@ h2.flourish {
 	background-image: none;
 	position: relative;
 }
-h2.flourish img.flourish-right {
+h2.flourish div.flourish-right {
 	position: absolute;
 	right: 0;
 	bottom: 15px;

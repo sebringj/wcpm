@@ -149,8 +149,10 @@ function template3(context, route, options) {
 			}
 
 			options = options || {};
-			if (!kg.items[pageID + 'FlourishRight'].content || !kg.items[pageID + 'FlourishRight'].content.src)
-				kg.items[pageID + 'FlourishRight'].content = { src: '/img/flourish2.png', alt: 'flourish' };
+			if (!kg.items[pageID + 'FlourishRight'].content)
+				kg.items[pageID + 'FlourishRight'].content = '<img src="/img/flourish2.png" alt="flourish">';
+			else
+				kg.items[pageID + 'FlourishRight'].content = kg.items[pageID + 'FlourishRight'].content.replace('http:', '');
 			context.cache[pageID] = _.assign({}, options, {
 				layout: context.cache.layout,
 				kitguiAccountKey: config.kitgui.accountKey,
