@@ -154,3 +154,14 @@ h2.flourish div.flourish-right {
 	right: 0;
 	bottom: 15px;
 }
+
+h2.flourish div.flourish-right img {
+	height: auto;
+	width: auto;
+}
+
+@media(max-width:464px) {
+	h2.flourish div.flourish-right img {
+		max-height: 75px;
+	}
+}
