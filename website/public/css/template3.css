@@ -162,6 +162,6 @@ h2.flourish div.flourish-right img {
 
 @media(max-width:464px) {
 	h2.flourish div.flourish-right img {
-		max-height: 75px;
+		max-height: 65px;
 	}
 }
