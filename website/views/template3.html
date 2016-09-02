@@ -14,8 +14,9 @@
 	<h1 class="{{ items[pageID + 'Title'].classNames }}">{{ items[pageID + 'Title'].content }}</h1>
 	<h2 class="flourish {{ items[pageID + 'SubTitle'].classNames }}">
 		{% if items[pageID + 'FlourishRight'].content %}
-			<div class="flourish-right {{ items[pageID + 'FlourishRight'].classNames }}"
-			>{{ items[pageID + 'FlourishRight'].content | raw }}</div>
+			<div class="flourish-right {{ items[pageID + 'FlourishRight'].classNames }}">
+				{{ items[pageID + 'FlourishRight'].content | raw }}
+			</div>
 		{% endif %}
 	</h2>
 	<div class="row">
