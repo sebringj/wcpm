@@ -13,9 +13,11 @@
 <div class="content">
 	<h1 class="{{ items[pageID + 'Title'].classNames }}">{{ items[pageID + 'Title'].content }}</h1>
 	<div style="clear:both"></div>
-	<h2 class="flourish {{ items[pageID + 'SubTitle'].classNames }}">
-		{{ items[pageID + 'SubTitle'].content }}
-	</h2>
+	{% if items[pageID + 'SubTitle'].content %}
+		<h2 class="flourish {{ items[pageID + 'SubTitle'].classNames }}">
+			{{ items[pageID + 'SubTitle'].content }}
+		</h2>
+	{% endif %}
 	{% if items[pageID + 'FlourishRight'].content %}
 		<div class="flourish-right {{ items[pageID + 'FlourishRight'].classNames }}">
 			{{ items[pageID + 'FlourishRight'].content | raw }}
