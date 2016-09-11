@@ -16,13 +16,9 @@
 		<div class="flourish-right {{ items[pageID + 'FlourishRight'].classNames }}">
 			{{ items[pageID + 'FlourishRight'].content | safe }}
 		</div>
-		{% if items[pageID + 'SubTitle'].content %}
-			<h2 class="flourish {{ items[pageID + 'SubTitle'].classNames }}">
-					{{ items[pageID + 'SubTitle'].content }}
-			</h2>
-		{% else %}
-			<h2 class="flourish"></h2>
-		{% endif %}
+		<h2 class="flourish {{ items[pageID + 'SubTitle'].classNames }}">
+				{{ items[pageID + 'SubTitle'].content }}
+		</h2>
 	</div>
 	<div class="row">
 		<div class="col-sm-8">
