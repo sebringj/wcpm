@@ -145,24 +145,27 @@
   text-decoration: none;
   color: #fff;
 }
+.template-3-content-header {
+	position: relative;
+}
 h2.flourish {
 	background-image: none;
 	position: relative;
-	float: left;
 }
-h2.flourish div.flourish-right {
+div.flourish-right {
 	position: absolute;
 	right: 0;
 	bottom: 15px;
+	min-width: 50px;
+	min-height: 50px;
 }
-
-h2.flourish div.flourish-right img {
+div.flourish-right img {
 	height: auto;
 	width: auto;
 }
 
 @media(max-width:464px) {
-	h2.flourish div.flourish-right img {
+	div.flourish-right img {
 		max-height: 65px;
 	}
 }
