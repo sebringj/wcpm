@@ -138,23 +138,23 @@ function home(context) {
 
 function home_new(context) {
 	context.app.get('/new', function(req, res) {
-		var cacheKey = 'home';
-		var pageID = 'home';
+		var cacheKey = 'home_new';
+		var pageID = 'home_new';
 		function render() {
 			res.render('index-new', {
 				layout: context.cache.layout,
 				kitguiAccountKey: config.kitgui.accountKey,
 				pageID: pageID,
-				items: context.cache.home.items,
-				title: context.cache.home.title,
-				description: context.cache.home.description,
-				vars: context.cache.home.vars
+				items: context.cache.home_new.items,
+				title: context.cache.home_new.title,
+				description: context.cache.home_new.description,
+				vars: context.cache.home_new.vars
 			});
 		}
 		if (req.cookies.kitgui) {
 			delete context.cache.home;
 		}
-		if (context.cache.home) {
+		if (context.cache.home_new) {
 			render();
 			return;
 		}
@@ -179,7 +179,7 @@ function home_new(context) {
 				{ id: 'homePartners', editorType : 'collection-json' }
 			]
 		}, function(kg){
-			context.cache.home = {
+			context.cache.home_new = {
 				items: kg.items,
 				title: kg.seo.title,
 				description: kg.seo.description,

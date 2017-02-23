@@ -24,6 +24,7 @@
 }
 @media (max-width: 992px) {
   .home-squares {
+    margin-left: -20px;
     margin-right: -15px;
   }
 }
@@ -38,7 +39,7 @@
     margin-bottom: -30px;
   }
   .row.home-squares {
-    margin-top: 170px;
+    margin-top: -20px;
   }
 }
 .home-square {
@@ -49,6 +50,12 @@
   text-align: center;
   border: 5px solid #fff;
   padding: 20px;
+}
+@media (max-width: 992px) {
+  .home-square-wrapper {
+    border-left: none;
+    border-right: none;
+  }
 }
 .home-square-title {
   color: #4D2732;
@@ -270,11 +277,6 @@
 @media (max-width:768px) {
 	.carousel {
 		margin-bottom:50px;
-	}
-}
-@media (max-width:479px) {
-	.carousel {
-		display:none;
 	}
 }
 .home-partners {
