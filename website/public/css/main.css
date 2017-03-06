@@ -276,6 +276,7 @@ html,body {
 	font-size:30px;
 	font-weight:100;
 	margin-bottom:20px;
+	font-family: 'Open Sans Condensed', sans-serif;
 }
 #bottom .contact-us form {
 	padding-bottom:20px;
