@@ -48,7 +48,7 @@
 .home-square-wrapper {
   background-color: #F3F2EE;
   text-align: center;
-  border: 5px solid #fff;
+  border: 7px solid #fff;
   padding: 20px;
 }
 @media (max-width: 992px) {
@@ -59,13 +59,12 @@
 }
 .home-square-title {
   color: #4D2732;
-	font-size:18px;
-	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
-	font-weight:bold;
+	font-size:22px;
+	font-family:'Open Sans Condensed', sans-serif;
 	margin-bottom:5px;
 }
 .home-square-flourish {
-  background-image: url('/img/line_flourish.png');
+  background-image: url('https://s3.amazonaws.com/kitgui/clients/a009f65654d241638cbb908f41f03f9b/files/flourish-cta.png');
   background-position: center center;
   width: 100px;
   height: 25px;
@@ -77,14 +76,17 @@
 }
 .home-square-description div {
   display: inline-block;
-  max-width: 170px;
+  max-width: 200px;
+  font-size: 15px;
+  color: #8B8682;
 }
 .home-square-more {
   background-color: #973201;
   padding: 10px 20px;
   color: #fff;
-  font-size: 12px;
+  font-size: 14px;
   cursor: pointer;
+  font-family: Georgia;
 }
 .home-square-more:hover {
   color: #fff;
