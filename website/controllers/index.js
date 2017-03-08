@@ -13,6 +13,7 @@ var emailRoutes = require('./emails');
 var productRoutes = require('./product');
 var cartRoute = require('./cart');
 var checkoutRoute = require('./checkout');
+var specialsRoutes = require('./specialsRoutes');
 
 var redirects = [
 	{match: /^\/our_team\.htm$/i, redirect: '/about/our-cutting-team'},
@@ -37,6 +38,7 @@ module.exports.set = function(context) {
 	home_new(context);
 	restaurantMeatServiceRoutes.set(context);
 	restaurantPartnersRoutes.set(context);
+	specialsRoutes.set(context);
 	wholesalePartnersRoutes.set(context);
 	recipes.set(context);
 	blogRoutes.set(context);
