@@ -1,14 +1,14 @@
 {% extends 'layout.html' %}
 
 {% block head %}
-	<link rel="stylesheet" href="/css/home.css">
+	<link rel="stylesheet" href="/css/home-new.css">
 {% endblock %}
 
 {% block top %}
-	<div id="carousel-example-generic" class="carousel slide {{ items.homeSlider.classNames }}" data-ride="carousel">
-		{% if items.homeSlider.content %}
+	<div id="carousel-example-generic" class="carousel slide {{ items.homeSlider_2017.classNames }}" data-ride="carousel">
+		{% if items.homeSlider_2017.content %}
 			<ol class="carousel-indicators">
-				{% for item in items.homeSlider.content %}
+				{% for item in items.homeSlider_2017.content %}
 				   {% if loop.first %}
 					<li data-target="#carousel-example-generic" class="active"></li>
 				   {% else %}
@@ -17,7 +17,7 @@
 				{% endfor %}
 			</ol>
 			<div class="carousel-inner">
-				{% for item in items.homeSlider.content %}
+				{% for item in items.homeSlider_2017.content %}
 					   {% if loop.first %}
 	   				    <div class="item active">
 	   				      <a href="{{ item.href }}"><img src="{{ item.src }}" alt="{{ item.alt }}"></a>
@@ -39,7 +39,22 @@
 			</a>
 		{% endif %}
 	</div>
-	<div class="carousel-shadow"></div>
+	<div class="container home-squares-container {{ items.homeSquares.classNames }}">
+		{% if items.homeSquares.content %}
+			<div class="row home-squares">
+			{% for item in items.homeSquares.content %}
+	      <div class="col-sm-4 home-square">
+	        <div class="home-square-wrapper">
+	          <div class="home-square-title">{{ item.title }}</div>
+						<div class="home-square-flourish"></div>
+	          <div class="home-square-description"><div>{{ item.description }}</div></div>
+	          <a class="home-square-more" href="{{ item.href }}">More</a>
+	        </div>
+	      </div>
+			{% endfor %}
+    	</div>
+		{% endif %}
+  </div>
 {% endblock %}
 
 {% block middle %}
@@ -106,5 +121,5 @@
 {% endblock %}
 
 {% block foot %}
-	
+
 {% endblock %}

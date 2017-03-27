@@ -106,3 +106,36 @@
 	font-size:14;
 	text-decoration:none;
 }
+
+.block4 {
+	padding: 40px;
+}
+.block4 .main-content {
+	color: #fff;
+}
+#top .block4 h1.h1-flourish {
+	background-image: none;
+	border-bottom: none;
+	box-shadow: none;
+	color: #fff;
+}
+.block4 .col-sm-6 {
+	text-align:center;
+}
+.block4 a {
+	border:none;
+	text-decoration:none;
+}
+.block4 h2 {
+	margin-top:10px;
+	color: #fff;
+}
+.block4 .line {
+	border-bottom:none;
+	box-shadow: none;
+	margin-top:20px;
+	margin-bottom:40px;
+}
+.block4 .col-sm-6  .main-content {
+	text-align:left;
+}

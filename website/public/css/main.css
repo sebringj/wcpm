@@ -104,20 +104,32 @@ html,body {
 	font-size:16px;
 	color:#eee0bb;
 	margin:0 10px;
-	width:120px;
 	position:relative;
 	top:17px;
+	height: 25px;
+}
+#desktopNav .nav-left, .nav-center, .nav-right {
+	display: inline-block;
+}
+#desktopNav .nav-left, #desktopNav .nav-right {
+	width: 35%;
+}
+#desktopNav .nav .nav-left a {
+	padding: 0 20px;
+}
+#desktopNav .nav .nav-right a {
+	padding: 0 15px;
 }
 #desktopNav .nav a.logo {
 	width:237px;
-	height:20px;
 	position:relative;
+	padding: 0;
 }
 #desktopNav .nav a.logo span {
 	width:237px;
 	height:166px;
 	background-image:url(/img/WCPM_logo.png);
-	top:-90px;
+	top:-60px;
 	left:0;
 	position:absolute;
 	display:block;
@@ -128,23 +140,6 @@ html,body {
 @media (max-width:1200px) {
 	#desktopNav .nav a {
 		font-size:12px;
-		margin:0 5px;
-		width:100px;
-		top:17px;
-	}
-	#desktopNav .nav a.logo {
-		width:237px;
-		height:20px;
-		position:relative;
-	}
-	#desktopNav .nav a.logo span {
-		width:237px;
-		height:166px;
-		background-image:url(/img/WCPM_logo.png);
-		top:-90px;
-		left:0;
-		position:absolute;
-		display:block;
 	}
 }
 @media (max-width:992px) {

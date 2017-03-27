@@ -21,7 +21,9 @@ var redirects = [
 	{match: /^\/our_products.htm$/i, redirect: '/restaurant-hospitality-meat-service'},
 	{match: /^\/dry_aging.htm$/i, redirect: '/dry-aged-beef-supplier'},
 	{match: /^\/what_sets_us_apart.htm$/i, redirect: '/about'},
-	{match: /^\/contact_us.htm$/i, redirect: '/resources/contact'}
+	{match: /^\/resources$/i, redirect: '/contact'},
+	{match: /^\/resources\/contact$/i, redirect: '/contact'},
+	{match: /^\/resources\/frequently-asked-questions$/, redirect: '/about/frequently-asked-questions'}
 ];
 
 module.exports.set = function(context) {
@@ -35,7 +37,7 @@ module.exports.set = function(context) {
 	});
 
 	home(context);
-	home_new(context);
+	resourcesRoutes.set(context);
 	restaurantMeatServiceRoutes.set(context);
 	restaurantPartnersRoutes.set(context);
 	specialsRoutes.set(context);
@@ -43,7 +45,6 @@ module.exports.set = function(context) {
 	recipes.set(context);
 	blogRoutes.set(context);
 	aboutRoutes.set(context);
-	resourcesRoutes.set(context);
 	jobRoutes.set(context);
 	emailRoutes.set(context.app);
 	productRoutes.set(context);
@@ -87,63 +88,10 @@ module.exports.set = function(context) {
 
 function home(context) {
 	context.app.get('/', function(req, res) {
-		var cacheKey = 'home';
-		var pageID = 'home';
-		function render() {
-			res.render('index', {
-				layout: context.cache.layout,
-				kitguiAccountKey: config.kitgui.accountKey,
-				pageID: pageID,
-				items: context.cache.home.items,
-				title: context.cache.home.title,
-				description: context.cache.home.description,
-				vars: context.cache.home.vars
-			});
-		}
-		if (req.cookies.kitgui) {
-			delete context.cache.home;
-		}
-		if (context.cache.home) {
-			render();
-			return;
-		}
-		kitgui.getContents({
-			basePath: config.kitgui.basePath,
-			host: config.kitgui.host,
-			pageID: pageID,
-			url: 'http://' + config.domain + req.path,
-			items: [
-				{ id: 'homeSlider', editorType : 'bootstrap-carousel-json' },
-				{ id: 'homeSlogan', editorType : 'inline' },
-				{ id: 'homeBlurb1', editorType : 'html' },
-				{ id: 'homeLearnMore', editorType : 'inline' },
-				{ id: 'homeProductsHeader', editorType : 'inline' },
-				{ id: 'homeProductsText', editorType : 'inline' },
-				{ id: 'homeRestaurantsHeader', editorType : 'inline' },
-				{ id: 'homeRestaurantsText', editorType : 'inline' },
-				{ id: 'homeTeamHeader', editorType : 'inline' },
-				{ id: 'homeTeamText', editorType : 'inline' },
-				{ id: 'homePartnersHeader', editorType : 'inline' },
-				{ id: 'homePartners', editorType : 'collection-json' }
-			]
-		}, function(kg){
-			context.cache.home = {
-				items: kg.items,
-				title: kg.seo.title,
-				description: kg.seo.description,
-				vars: kg.vars
-			};
-			render();
-		});
-	});
-}
-
-function home_new(context) {
-	context.app.get('/new', function(req, res) {
 		var cacheKey = 'home_new';
 		var pageID = 'home_new';
 		function render() {
-			res.render('index-new', {
+			res.render('index', {
 				layout: context.cache.layout,
 				kitguiAccountKey: config.kitgui.accountKey,
 				pageID: pageID,

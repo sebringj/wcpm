@@ -76,10 +76,38 @@
 	<p class="copy {{ items.aboutB3Copy.classNames }}">{{ items.aboutB3Copy.content | safe }}</p>
 	<a href="/about/our-cutting-team" class="more">More</a>
 </div>
+
+<div class="block4">
+	<h1 class="h1-flourish {{ items.resourcesTitle.classNames }}">{{ items.resourcesTitle.content }}</h1>
+	<div class="main-content {{ items.resourcesMainContent.classNames }}">{{ items.resourcesMainContent.content | safe }}</div>
+	<div class="row categories">
+		<div class="col-sm-6">
+			<a href="/contact"><img src="/img/contactus_icon.png"></a>
+			<h2 class="{{ items.resourcesH21.classNames }}">{{ items.resourcesH21.content }}</h2>
+			<div class="line"></div>
+			<div class="main-content {{ items.resourcesCatContent1.classNames }}">
+				{{ items.resourcesCatContent1.content | safe }}
+			</div>
+		</div>
+		<div class="col-sm-6">
+			<a href="/about/frequently-asked-questions"><img src="/img/FAQ_icon.png"></a>
+			<h2 class="{{ items.resourcesH22.classNames }}">{{ items.resourcesH22.content }}</h2>
+			<div class="line"></div>
+			<div class="main-content {{ items.resourcesCatContent2.classNames }}">
+				{{ items.resourcesCatContent2.content | safe }}
+			</div>
+		</div>
+	</div>
+	<div style="text-align:center">
+		<div class="line"></div>
+		<img src="/img/flourish.png" class="bottom-flourish">
+	</div>
+</div>
+
 {% endblock %}
 
 {% block middle %}
-	
+
 {% endblock %}
 
 {% block foot %}

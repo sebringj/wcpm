@@ -48,7 +48,14 @@ function landing(context) {
 				{ id : 'aboutB2C3Copy', editorType : 'html' },
 				{ id : 'aboutB3H2', editorType : 'inline' },
 				{ id : 'aboutB3Img', editorType : 'image' },
-				{ id : 'aboutB3Copy', editorType : 'html' }
+				{ id : 'aboutB3Copy', editorType : 'html' },
+				{ id : 'resourcesRotator', editorType : 'bootstrap-carousel-json' },
+				{ id : 'resourcesTitle', editorType : 'inline' },
+				{ id : 'resourcesMainContent', editorType : 'html' },
+				{ id : 'resourcesH21', editorType : 'inline' },
+				{ id : 'resourcesCatContent1', editorType : 'html' },
+				{ id : 'resourcesH22', editorType : 'inline' },
+				{ id : 'resourcesCatContent2', editorType : 'html' }
 			]
 		}, function(kg){
 			context.cache.about = {
