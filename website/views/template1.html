@@ -28,7 +28,7 @@
 	<h1 class="h1-flourish {{ items[pageID + 'Title'].classNames }}">{{ items[pageID + 'Title'].content }}</h1>
 	<div class="row">
 		<div class="col-sm-8">
-			<div class="carousel slide {{ items[pageID + 'Image'].classNames }}" id="{{ items[pageID + 'Image'].classNames }}" data-ride="carousel">
+			<div class="main-image carousel slide {{ items[pageID + 'Image'].classNames }}" id="{{ items[pageID + 'Image'].classNames }}" data-ride="carousel">
 				{% if items[pageID + 'Image'].content %}
 					<div class="carousel-inner">
 						{% for item in items[pageID + 'Image'].content %}
