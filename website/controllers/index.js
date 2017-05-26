@@ -102,7 +102,7 @@ function home(context) {
 			});
 		}
 		if (req.cookies.kitgui) {
-			delete context.cache.home;
+			delete context.cache.home_new;
 		}
 		if (context.cache.home_new) {
 			render();
