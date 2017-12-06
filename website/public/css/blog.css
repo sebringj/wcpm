@@ -94,7 +94,7 @@ h6 {
 }
 .entry-description {
   display: inline-block;
-  width: 550px;
+  width: auto;
   margin: 20px 0 0 20px;
 }
 .entry-btn a {

@@ -333,6 +333,9 @@ h1 {
 	box-shadow: none;
 	font-family: 'Open Sans Condensed', sans-serif;
 }
+h1.headerfix {
+	padding-top: 20px;
+}
 h1.flourish, h1.h1-flourish,
 h2.h2-fourish, h2.flourish  {
 	padding-bottom:20px;
