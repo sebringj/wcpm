@@ -1,7 +1,7 @@
 var kitgui = require('kitgui');
 var config = require('config');
 var async = require('async');
-var parser = require('rssparser');
+//var parser = require('rssparser');
 var _ = require('lodash');
 
 var monthNameLookup = [
@@ -378,13 +378,13 @@ function faq(context, route) {
 			url : 'http://' + config.domain + req.path
 		};
 		async.parallel([
-			function(callback) {
-				parser.parseURL('http://wcpm-blog.emeraldcode.com/rss/', {}, function(err, out){
-					if (err) { return callback(); }
-					context.cache[pageID].rss = out;
-					callback();
-				});
-			},
+			//function(callback) {
+				//parser.parseURL('http://wcpm-blog.emeraldcode.com/rss/', {}, function(err, out){
+				//	if (err) { return callback(); }
+				//	context.cache[pageID].rss = out;
+				//	callback();
+			//	});
+			//},
 			function(callback) {
 				kitgui.getContents({
 					basePath : config.kitgui.basePath,
@@ -435,13 +435,13 @@ function contact(context, route) {
 			url : 'http://' + config.domain + req.path
 		};
 		async.parallel([
-			function(callback) {
-				parser.parseURL('http://wcpm-blog.emeraldcode.com/rss/', {}, function(err, out){
-					if (err) { return callback(); }
-					context.cache[pageID].rss = out;
-					callback();
-				});
-			},
+			//function(callback) {
+				//parser.parseURL('http://wcpm-blog.emeraldcode.com/rss/', {}, function(err, out){
+				//	if (err) { return callback(); }
+			//		context.cache[pageID].rss = out;
+			//		callback();
+			//	});
+			//},
 			function(callback) {
 				kitgui.getContents({
 					basePath : config.kitgui.basePath,

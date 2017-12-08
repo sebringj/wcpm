@@ -1,4 +1,6 @@
+*/node_modules/*
 */config/*
+website/package-lock.json
 *.pem
 *.key
 *.crt

@@ -1,5 +1,6 @@
 var kitguiAccountKey = process.env.KITGUI_ACCOUNT_KEY;
 module.exports = {
+  doLocal: process.env.DO_LOCAL,
   domain: process.env.DOMAIN,
   port: process.env.PORT,
   sslPort: process.env.SSL_PORT,
@@ -18,5 +19,9 @@ module.exports = {
   },
 	glut: {
 		api: process.env.GLUT_API
-	}
+	},
+  letsEncrypt: {
+    domains: (process.env.LETSENCRYPT_DOMAINS || '').split(','),
+    email: process.env.LETSENCRYPT_EMAIL,
+  },
 }; // 216.31.162.187

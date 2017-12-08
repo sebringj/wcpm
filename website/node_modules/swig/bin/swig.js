@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/*jslint es5: true */
 
 var swig = require('../index'),
   optimist = require('optimist'),
@@ -22,6 +23,9 @@ var command,
       j: 'Variable context as a JSON file.',
       c: 'Variable context as a CommonJS-style file. Used only if option `j` is not provided.',
       m: 'Minify compiled functions with uglify-js',
+      'filters': 'Custom filters as a CommonJS-style file',
+      'tags': 'Custom tags as a CommonJS-style file',
+      'options': 'Customize Swig\'s Options from a CommonJS-style file',
       'wrap-start': 'Template wrapper beginning for "compile".',
       'wrap-end': 'Template wrapper end for "compile".',
       'method-name': 'Method name to set template to and run from.'
@@ -68,11 +72,13 @@ var command,
   files,
   fn;
 
+// What version?
 if (argv.v) {
   console.log(require('../package').version);
   process.exit(0);
 }
 
+// Pull in any context data provided
 if (argv.j) {
   ctx = JSON.parse(fs.readFileSync(argv.j, 'utf8'));
 } else if (argv.c) {
@@ -93,9 +99,28 @@ if (argv.o !== 'stdout') {
 
   out = function (file, str) {
     file = path.basename(file);
-    fs.writeFileSync(argv.o + file, str);
+    fs.writeFileSync(argv.o + file, str, { flags: 'w' });
     console.log('Wrote', argv.o + file);
   };
+}
+
+// Set any custom filters
+if (argv.filters) {
+  utils.each(require(path.resolve(argv.filters)), function (filter, name) {
+    swig.setFilter(name, filter);
+  });
+}
+
+// Set any custom tags
+if (argv.tags) {
+  utils.each(require(path.resolve(argv.tags)), function (tag, name) {
+    swig.setTag(name, tag.parse, tag.compile, tag.ends, tag.block);
+  });
+}
+
+// Specify swig default options
+if (argv.options) {
+  swig.setDefaults(require(argv.options));
 }
 
 switch (command) {
