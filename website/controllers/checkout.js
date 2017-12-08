@@ -11,13 +11,13 @@ module.exports.set = function(context) {
 
 		function render() {
 			res.render('checkout', {
-				layout: context.cache.layout,
+				layout: Object.assign({},context.cache.layout),
 				kitguiAccountKey: config.kitgui.accountKey,
 				pageID: cacheKey,
-				items: context.cache[cacheKey].items,
+				items: Object.assign({},context.cache[cacheKey].items),
 				title: context.cache[cacheKey].title,
-				vars: context.cache[cacheKey].vars || {},
-				years: context.cache[cacheKey].years
+				vars: Object.assign({},context.cache[cacheKey].vars) || {},
+				years: Object.assign({},context.cache[cacheKey].years)
 			});
 		}
 

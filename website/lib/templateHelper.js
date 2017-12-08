@@ -54,13 +54,13 @@ function template1(context, route) {
 				return res.redirect('/404');
 			}
 			context.cache[pageID] = {
-				layout : context.cache.layout,
+				layout : Object.assign({},context.cache.layout),
 				kitguiAccountKey : config.kitgui.accountKey,
 				pageID : pageID,
-				items : kg.items,
+				items : Object.assign({},kg.items),
 				title : kg.seo.title,
 				description : kg.seo.description,
-				vars: kg.vars
+				vars: Object.assign({},kg.vars)
 			};
 			render();
 		});
@@ -101,13 +101,13 @@ function template2(context, route) {
 				return res.redirect('/404');
 			}
 			context.cache[pageID] = {
-				layout : context.cache.layout,
+				layout : Object.assign({},context.cache.layout),
 				kitguiAccountKey : config.kitgui.accountKey,
 				pageID : pageID,
-				items : kg.items,
+				items : Object.assign({},kg.items),
 				title : kg.seo.title,
 				description : kg.seo.description,
-				vars: kg.vars
+				vars: Object.assign({},kg.vars)
 			};
 			render();
 		});
@@ -154,13 +154,13 @@ function template3(context, route, options) {
 			else
 				kg.items[pageID + 'FlourishRight'].content = kg.items[pageID + 'FlourishRight'].content.replace('http:', '');
 			context.cache[pageID] = _.assign({}, options, {
-				layout: context.cache.layout,
+				layout: Object.assign({},context.cache.layout),
 				kitguiAccountKey: config.kitgui.accountKey,
 				pageID: pageID,
-				items: kg.items,
+				items: Object.assign({},kg.items),
 				title: kg.seo.title,
 				description: kg.seo.description,
-				vars: kg.vars
+				vars: Object.assign({},kg.vars)
 			});
 			render();
 		});
@@ -280,7 +280,7 @@ function blog(context, route) {
 		};
 		if (pageID) {
 			context.cache[pageID] = {
-				layout : context.cache.layout,
+				layout : Object.assign({}, context.cache.layout),
 				kitguiAccountKey : config.kitgui.accountKey,
 				pageID : pageID
 			};
@@ -299,8 +299,8 @@ function blog(context, route) {
 			if (!routeOK && !kg.seo.title) {
 				return res.redirect('/404');
 			}
-			context.cache[pageID].vars = kg.vars;
-			context.cache[pageID].items = kg.items;
+			context.cache[pageID].vars = Object.assign({},kg.vars);
+			context.cache[pageID].items = Object.assign({},kg.items);
 			context.cache[pageID].title = kg.seo.title;
 			context.cache[pageID].description = kg.seo.description;
 			render();
@@ -343,13 +343,13 @@ function resourceLanding(context, route) {
 			}
 			if (kg.items)
 			context.cache[pageID] = {
-				layout: context.cache.layout,
+				layout: Object.assign({},context.cache.layout),
 				kitguiAccountKey: config.kitgui.accountKey,
 				pageID: pageID,
-				items: kg.items,
+				items: Object.assign({},kg.items),
 				title: kg.seo.title,
 				description: kg.seo.description,
-				vars: kg.vars
+				vars: Object.assign({},kg.vars)
 			};
 			render();
 		});
@@ -372,7 +372,7 @@ function faq(context, route) {
 			return render();
 		}
 		context.cache[pageID] = {
-			layout : context.cache.layout,
+			layout : Object.assign({},context.cache.layout),
 			kitguiAccountKey : config.kitgui.accountKey,
 			pageID : pageID,
 			url : 'http://' + config.domain + req.path
@@ -400,8 +400,8 @@ function faq(context, route) {
 					if (!routeOK && !kg.seo.title) {
 						return res.redirect('/404');
 					}
-					context.cache[pageID].vars = kg.vars;
-					context.cache[pageID].items = kg.items;
+					context.cache[pageID].vars = Object.assign({},kg.vars);
+					context.cache[pageID].items = Object.assign({},kg.items);
 					context.cache[pageID].title = kg.seo.title;
 					context.cache[pageID].description = kg.seo.description;
 					callback();
@@ -455,8 +455,8 @@ function contact(context, route) {
 					if (!routeOK && !kg.seo.title) {
 						return res.redirect('/404');
 					}
-					context.cache[pageID].vars = kg.vars;
-					context.cache[pageID].items = kg.items;
+					context.cache[pageID].vars = Object.assign({},kg.vars);
+					context.cache[pageID].items = Object.assign({},kg.items);
 					context.cache[pageID].title = kg.seo.title;
 					context.cache[pageID].description = kg.seo.description;
 					callback();
@@ -532,11 +532,11 @@ function templateHelper(context, options) {
 				return res.redirect('/404');
 			}
 			context.cache[pageID] = _.assign({}, options, {
-				layout: context.cache.layout,
+				layout: Object.assign({},context.cache.layout),
 				kitguiAccountKey: config.kitgui.accountKey,
 				pageID: pageID,
-				items: kg.items,
-				vars: kg.vars,
+				items: Object.assign({},kg.items),
+				vars: Object.assign({},kg.vars),
 				title: kg.seo.title,
 				description : kg.seo.description
 			});

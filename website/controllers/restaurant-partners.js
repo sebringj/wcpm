@@ -13,13 +13,13 @@ function landing(context) {
 		var pageID = cacheKey;
 		function render() {
 			res.render('restaurant-partners', {
-				layout : context.cache.layout,
+				layout : Object.assign({},context.cache.layout),
 				kitguiAccountKey : config.kitgui.accountKey,
 				pageID : pageID,
-				items : context.cache[cacheKey].items,
+				items : Object.assign({},context.cache[cacheKey].items),
 				title : context.cache[cacheKey].title,
 				description : context.cache[cacheKey].description,
-				vars: context.cache[cacheKey].vars
+				vars: Object.assign({},context.cache[cacheKey].vars)
 			});
 		}
 		if (req.cookies.kitgui) {

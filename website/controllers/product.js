@@ -29,14 +29,14 @@ module.exports.set = function(context) {
 
 		function render() {
 			res.render('product', {
-				layout: context.cache.layout,
+				layout: Object.assign({},context.cache.layout),
 				kitguiAccountKey: config.kitgui.accountKey,
 				pageID: cacheKey,
-				items: context.cache[cacheKey].items,
+				items: Object.assign({},context.cache[cacheKey].items),
 				title: context.cache[cacheKey].title,
 				description: context.cache[cacheKey].description,
-				vars: context.cache[cacheKey].vars || {},
-				product: context.cache[cacheKey].product
+				vars: Object.assign({},context.cache[cacheKey].vars) || {},
+				product: Object.assign({},context.cache[cacheKey].product)
 			});
 		}
 
