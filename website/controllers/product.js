@@ -67,11 +67,11 @@ module.exports.set = function(context) {
 			}
 			getProduct(kg.vars.upc, function(product) {
 				context.cache[cacheKey] = {
-					items: kg.items,
+					items: Object.assign({}, kg.items),
 					title: kg.seo.title,
 					description: kg.seo.description,
-					vars: kg.vars,
-					product: product
+					vars: Object.assign({}, kg.vars),
+					product: Object.assign({}, product)
 				};
 				render();
 			});

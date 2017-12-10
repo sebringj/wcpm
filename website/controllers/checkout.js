@@ -42,9 +42,9 @@ module.exports.set = function(context) {
 				years.push(year+i);
 			}
 			context.cache[cacheKey] = {
-				items: kg.items,
+				items: Object.assign({}, kg.items),
 				title: kg.seo.title,
-				vars: kg.vars,
+				vars: Object.assign({}, kg.vars),
 				years: years
 			};
 			render();

@@ -44,10 +44,10 @@ function landing(context) {
 			]
 		}, function(kg){
 			context.cache[cacheKey] = {
-				items: kg.items,
+				items: Object.assign({}, kg.items),
 				title: kg.seo.title,
 				description: kg.seo.description,
-				vars: kg.vars
+				vars: Object.assign({}, kg.vars)
 			};
 			render();
 		});
