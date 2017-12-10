@@ -18,7 +18,6 @@ module.exports = {
 	contact: contact,
 	faq: faq,
 	resourceLanding: resourceLanding,
-	blogItem: blogItem
 };
 
 function template1(context, route) {
@@ -193,7 +192,7 @@ function blog(context, route) {
 				}
 			}
 
-			obj = context.cache[pageID];
+			obj = context.cache[pageID] || {};
 			newObj = obj;
 
 			// parse out right nav
@@ -486,12 +485,12 @@ function blogItem(context, route) {
 			{ id: 'Content', editorType: 'html' }
 		],
 		onRender: function(obj) {
-			if (context.cache['-blog'])
-				return _.assign({}, obj, {
+			if (context.cache['-blog'] )
+				return Object.assign({}, obj, {
 					months: context.cache['-blog'].months,
 					categories: context.cache['-blog'].categories
 				});
-			return obj;
+			return obj || {};
 		}
 	});
 }
@@ -503,9 +502,9 @@ function templateHelper(context, options) {
 		var pageID = cleanURL(req.path);
 
 		function render() {
-			var cache = context.cache[pageID];
+			var cache = context.cache[pageID] || {};
 			if (options.onRender)
-				cache = options.onRender(cache)
+				cache = options.onRender(cache) || {}
 			res.render(options.template, cache);
 		}
 
@@ -515,9 +514,10 @@ function templateHelper(context, options) {
 		}
 
 		if (context.cache[pageID]) {
+			//console.log('has cache')
 			return render();
 		}
-		var kitguiItems = _.clone(options.kitgui, true);
+		var kitguiItems = _.cloneDeep(options.kitgui, true);
 		for(var i = 0; i < kitguiItems.length; i++) {
 			kitguiItems[i].id = pageID + kitguiItems[i].id;
 		}
@@ -531,12 +531,18 @@ function templateHelper(context, options) {
 			if (!routeOK && !kg.seo.title) {
 				return res.redirect('/404');
 			}
+			console.log(pageID)
 			context.cache[pageID] = _.assign({}, options, {
-				layout: Object.assign({},context.cache.layout),
+				layout: Object.assign({}, context.cache.layout),
 				kitguiAccountKey: config.kitgui.accountKey,
 				pageID: pageID,
-				items: Object.assign({},kg.items),
+				items: Object.assign({
+					[pageID + 'Title']: '',
+					[pageID + 'SubTitle']: '',
+					[pageID + 'Content']: {}
+				},kg.items),
 				vars: Object.assign({},kg.vars),
+				seo: kitgui.seo || {},
 				title: kg.seo.title,
 				description : kg.seo.description
 			});
