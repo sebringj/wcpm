@@ -250,7 +250,7 @@
 }
 .block3 .partners-row {
 	text-align:center;
-	margin:0 20px;
+        margin: 20px 20px 0 20px;
 }
 .block3 .our-partners {
 	max-width:1075px;
@@ -283,4 +283,9 @@
 }
 .home-partners {
 	text-align:center;
+}
+
+div.col-xs-4:nth-child(2) {
+  margin-top: -30px;
+  padding: 0 1px;
 }
