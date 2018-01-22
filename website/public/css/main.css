@@ -24,12 +24,17 @@ html,body {
 	text-decoration: none;
 	white-space: nowrap;
 	position:relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+	margin-top: 20px;
+	margin-bottom: -40px;
 }
-#right-nav a {
+#right-nav a#cartIndicator {
 	display: inline-block;
 	font-size: 14px;
 	min-width: 10px;
-	margin: 25px 0 0 5px;
 	padding: 5px 25px;
 }
 #right-nav span {
@@ -44,8 +49,39 @@ html,body {
 		display: none;
 	}
 }
+#right-nav .phone {
+	display: flex;
+	flex-direction: row;
+}
+#right-nav .phone .ph {
+	font-family: "Open Sans Condensed",Helvetica,Arial,sans-serif;
+	background-color: #E9A323;
+	color: #390E05;
+	font-size: 14px;
+	box-sizing: border-box;
+	padding: 8px;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#right-nav .phone .ph a {
+	color: #390E05;
+}
+#right-nav .phone .icon {
+	background-color: #F2C173;
+	font-size: 18px;
+	padding: 8px;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#right-nav .phone .icon i {
+	color: #390E05;
+}
 #right-nav a#cartIndicator {
-	display: none;
+	display: block;
 	color: #fff;
 	font-size: 30px;
 	text-align: middle;
@@ -211,7 +247,14 @@ html,body {
 		z-index:5;
 	}
 	#right-nav {
-		display:none;
+		background-color: #F2A100;
+		box-sizing: border-box;
+		margin: 0;
+		top: 0;
+		right: 0;
+	}
+	#right-nav .phone .icon {
+		background-color: #E9A323;
 	}
 }
 #top .top-section {
