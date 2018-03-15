@@ -20,10 +20,14 @@ h2 { font-size:25px;}
 .main-content {
 	margin-top:30px;
 	line-height:30px;
+	color:#8B8682;
 }
 .main-content a {
 	color:#973A11;
 	font-weight:bold;
+}
+.main-content h2 {
+	margin-bottom: 15px;
 }
 .right-header {
 	text-transform:uppercase;
