@@ -149,3 +149,27 @@
 .block4 .col-sm-6  .main-content {
 	text-align:left;
 }
+#top .block4 {
+	background-color: #461D09;
+	min-height: 500px;
+	padding: 30px 60px 80px 60px;
+}
+#top .block4 p {
+	font-family: Georgia;
+	color: #CFBDAF;
+	line-height: 30px;
+	margin-bottom: 20px;
+}
+#top .block4 h2 {
+	color: #fff;
+	font-family: 'Open Sans Condensed', sans-serif;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.col-sm-6 {
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+}
