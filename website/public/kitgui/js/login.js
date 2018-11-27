@@ -4,7 +4,7 @@
         var $win = $(win),
 		$document = $(win.document),
 		pr = 's',
-		baseURL = (k.env) ? 'https://' + k.env + '.kitgui.com/' : 'https://www.kitgui.com/',
+		baseURL = 'https://kitgui.com/',
 		loginURL = baseURL + 'login',
 		statusURL = baseURL + 'status',
 		blankURL = 'http' + pr + '://s3.amazonaws.com/kitgui/blank.htm',
